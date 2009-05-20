@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="welcome">
+  <div class="span-13">
+  	{% include "components/photo_big.html" %}
+  </div>
+  <div class="span-11 last" id="intro">
+	<h2>Want healthy and delicious food for your family?</h2>
+	<h3>Join us with 12,000 cooking mothers...</h3>
+	<h3>Over 234,500 recipes with photos...</h3>
+	<h3>Easy to use recipes book and shopping list tools...</h3>
+	<h3><a href="#">Join us now!</a></h3>
+  </div>
+</div>
+
+<div>
+	<div class="span-13" >
+		<h2>Hot receipes</h2>
+		{% include "components/recipes_list.html" %}
+	</div>
+	<div class="span-11 last">
+		<h2>What's going on...</h2>
+		{% include "components/activities_list.html" %}
+	</div>
+</div>
+<hr/>
+{% endblock %}

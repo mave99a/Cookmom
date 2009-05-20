@@ -1,0 +1,22 @@
+{% extends "base_content.html" %}
+{% block main %}
+<h2>Todo...</h2>
+things i need to do / notifies to me
+
+<h2>What's in your mind?</h2>
+<ul>
+<li><a href="/recipesbook/">My Recipes Book...</a>  <a href="#">Add new recipies</a>  </li>
+<li><a href="/blog/">My Cooking Blog...</a> <a href="#">Write a new blog</a></li>
+<li><a href="/shoppinglist/">My Shopping Lists... <a href="#">Create new shopping list</a></a></li>
+<li><a href="/mealplan/">My Meal Plan... <a href="#">Create new meal plan</a></a></li>
+</ul>
+{% endblock %}
+
+{% block side %}
+<h2>Recent activities...</h2>
+{% include "components/articles_list.html" %}
+
+<h2>Friends activities...</h2>
+{% include "components/articles_list.html" %}
+
+{% endblock %}

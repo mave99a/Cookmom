@@ -1,0 +1,259 @@
+body {
+	padding-top: 5px;
+	background: #f1f1f1;
+}
+
+.container
+{
+	background: #fff;
+}
+
+/*
+*  Header part
+*/
+
+#header {
+}
+	#header h1 {
+		padding: 10px 0 0 10px;
+	}
+	#signin {
+		padding: 5px;
+	}
+	
+		#facebookSignIn { 
+			padding-left: 18px; 
+			background: transparent url(global/img/icon_facebook.gif) no-repeat center left; 
+		}
+
+	#search {
+		padding: 5px;
+	}
+		#search input:edit {
+			
+		}
+		.feed {
+			margin-left: 10px;
+			padding-left: 14px; 
+			background: transparent url(global/img/rss_12x12.png) no-repeat center left; 		
+		}
+
+/*
+*  Navi menu
+*  http://woork.blogspot.com/2008/02/elegant-navigation-bar-using-css.html
+*/
+
+#navbar{
+	width:auto;
+	height:36px;
+	background:url(global/img/menu/navbar-bg.png) left top repeat-x;
+}
+#navbar .inbar{
+	display:block;
+	height:36px;
+	background:url(global/img/menu/right-round.png) right top no-repeat;
+}
+#navbar ul, #navbar ul li{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	height:36px;
+	line-height:36px;
+}
+#navbar ul{
+	background:url(global/img/menu/left-round.png) left top no-repeat;
+}
+#navbar ul li{
+	float:left;
+	display:block;
+	line-height:36px;
+}
+#navbar ul li a{
+	color:#403e32;
+	text-decoration:none;
+	font-weight:bold;
+	display:block;
+}
+#navbar ul li a span{
+	padding:0 20px 0 0;
+	height:36px;
+	line-height:36px;
+	display:block;
+	margin-left:20px;
+}
+#navbar .navhome a, #navbar .navhome a:hover{
+	background:url(global/img/menu/a-bg.png) left top no-repeat;
+	height:36px;
+	line-height:36px;
+}
+#navbar .navhome a span, #navbar .navhome a:hover span{
+	color:#FFFFFF;
+	background:url(global/img/menu/span-bg.png) right top no-repeat;
+	height:36px;
+	line-height:36px;
+}
+#navbar ul li a:hover{
+	background:url(global/img/menu/ahover-bg.png) left top no-repeat;
+	height:36px;
+	line-height:36px;
+}
+#navbar ul li a:hover span{
+	background:url(global/img/menu/spanhover-bg.png) right top no-repeat;
+	height:36px;
+	line-height:36px;
+}
+                    
+/*
+*  Welcome text blocks
+*/                    
+#welcome {
+	height: 300px;
+	padding: 10px 0 10px 0; 
+	overflow: hidden;
+}                    
+	#intro {
+		text-align: center;
+	}
+
+/*
+*  main picture of home page slide show big pictures
+*/
+div.recipes_photo_big_holder {
+	height: 300px; 
+}
+
+.recipes_photo_big {
+	position: absolute;
+	height: 300px; 
+	width: 490px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+
+.recipes_photo_medium {
+	position: absolute;
+	height: 160px; 
+	width: 240px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+
+	div.description {
+		color: white;
+		position: absolute;
+		padding-left: 5px;
+		overflow: hidden;
+		background: transparent url(global/img/trans_bg.png);
+		left: 0px; 
+		width: 100%;
+		bottom: 0px;
+		height: 40px; 
+	}	
+		div.description a {
+			color: white;
+		}
+		div.description h4 {
+			padding: 0; 
+			margin: 0;
+			color: white;
+		}
+		div.description .reactions {
+			position: absolute;
+			padding-left: 12px;
+			background: transparent url(global/img/comment.gif) no-repeat center left;
+			left: 80%;
+		}
+		
+/*
+*  recipes list
+*/
+
+ul.recipes_list {
+	list-style: none;
+	margin: 0; 
+	padding: 0;
+}
+
+ul.recipes_list li {
+	float: left;
+	width: 240px;
+	height: 160px;
+	margin: 0 10px 10px 0;
+	overflow: hidden;
+}
+
+/*
+*  Activities list
+*/
+ul.activities, ul.comments, ul.articles {
+	list-style: none;
+}		
+
+ul.activities li{
+	border-top: 1px dashed #ccc;
+}
+
+/*
+* Actions list
+*/
+ul.actions_list {
+	list-style: none;
+}	
+
+a.action {
+	text-decoration: none;
+	font-size: 1.5em;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+a.action:hover {
+	background: #ee0;
+}
+
+/*
+* articles
+*/
+
+.mini_recipe {
+	float: right; 
+	margin-left: 10px; 
+	padding: 10px; 
+	width: 200px; 
+	border: 1px solid #ccc;
+}
+
+/*
+http://blog.yosle.com/2007/09/20/css-round-corners/
+*/
+
+.bubble
+{
+padding: 0; margin: 0;
+padding-top: 5px;
+}
+
+.arrow
+{
+width:9px;padding: 0; margin: 0;
+}
+
+.b1f, .b2f, .b3f, .b4f{font-size:1px; overflow:hidden; display:block; }
+.b1f {height:1px; background:#eee; margin:0 5px;}
+.b2f {height:1px; background:#eee; margin:0 3px;}
+.b3f {height:1px; background:#eee; margin:0 2px;}
+.b4f {height:2px; background:#eee; margin:0 1px;}
+.contentf {background: #eee; padding-left: 5px; padding-right: 5px;}
+
+.uparrow {display:block; width:0; height:0; color:#d8d8ee; overflow:hidden; border-bottom:12px solid #eee; border-left:12px dotted transparent; border-right:12px dotted transparent; margin-left:50px;}
+/* hack for IE5.5 */
+* html .uparrow {width:24px; height:12px; w\idth:0; hei\ght:0;}
+
+.downarrow {display:block; width:0; height:0; color:#d8d8ee; overflow:hidden; border-top:12px solid #eee; border-left:12px dotted transparent; border-right:12px dotted transparent; margin-left:50px;}
+/* hack for IE5.5 */
+* html .downarrow {width:24px; height:12px; w\idth:0; hei\ght:0;}
+
+.leftarrow {display:block; width:0; height:0; color:#d8d8ee; overflow:hidden; border-right:12px solid #eee; border-top:12px dotted transparent; border-bottom:12px dotted transparent; margin-top: 4px;}
+/* hack for IE5.5 */
+* html .leftarrow {width:24px; height:12px; w\idth:0; hei\ght:0;}

@@ -1,0 +1,43 @@
+{% extends "base_content.html" %}
+{% block main %}
+
+<h2>Chinese Noodle</h2>
+  	{% include "components/photo_big.html" %}
+<h3>Author</h2>
+
+<h3>Ingredients</h2>
+<ul>
+  <li>100g butter , softened </li>
+  <li>140g golden caster sugar </li>
+  <li>100g ground almonds</li>
+  <li>1 tbsp Grand Marnier or Disaronno </li>
+  <li>200g ripe  apricots  , stoned and thickly sliced </li>
+</ul>
+
+<h3>Preparation</h3>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.
+</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.
+</p>
+
+
+<h3>8 comments</h3>
+{% include "components/comments_list.html" %}
+{% endblock %}
+
+
+{% block side %}
+<h2>Actions...</h2>
+<ul class='actions_list'>
+  <li><a class='action' href='#'>Add to my recipes book</a></li>
+  <li><a class='action' href='#'>Add to my meal plan</a></li> 
+  <li><a class='action' href='#'>Share the experience</a></li> 
+</ul>
+
+<h3>6 shared cooking experiences</h3>
+{% include "components/articles_list.html" %}
+
+{% include "ad-square.html" %}
+</h2>
+
+{% endblock %} 
