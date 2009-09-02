@@ -23,7 +23,7 @@ body {
 	
 		#facebookSignIn { 
 			padding-left: 18px; 
-			background: transparent url(global/img/icon_facebook.gif) no-repeat center left; 
+			background: transparent url(img/icon_facebook.gif) no-repeat center left; 
 		}
 
 	#search {
@@ -35,7 +35,7 @@ body {
 		.feed {
 			margin-left: 10px;
 			padding-left: 14px; 
-			background: transparent url(global/img/rss_12x12.png) no-repeat center left; 		
+			background: transparent url(img/rss_12x12.png) no-repeat center left; 		
 		}
 
 /*
@@ -46,12 +46,12 @@ body {
 #navbar{
 	width:auto;
 	height:36px;
-	background:url(global/img/menu/navbar-bg.png) left top repeat-x;
+	background:url(img/menu/navbar-bg.png) left top repeat-x;
 }
 #navbar .inbar{
 	display:block;
 	height:36px;
-	background:url(global/img/menu/right-round.png) right top no-repeat;
+	background:url(img/menu/right-round.png) right top no-repeat;
 }
 #navbar ul, #navbar ul li{
 	border:0px;
@@ -62,7 +62,7 @@ body {
 	line-height:36px;
 }
 #navbar ul{
-	background:url(global/img/menu/left-round.png) left top no-repeat;
+	background:url(img/menu/left-round.png) left top no-repeat;
 }
 #navbar ul li{
 	float:left;
@@ -83,23 +83,23 @@ body {
 	margin-left:20px;
 }
 #navbar .navhome a, #navbar .navhome a:hover{
-	background:url(global/img/menu/a-bg.png) left top no-repeat;
+	background:url(img/menu/a-bg.png) left top no-repeat;
 	height:36px;
 	line-height:36px;
 }
 #navbar .navhome a span, #navbar .navhome a:hover span{
 	color:#FFFFFF;
-	background:url(global/img/menu/span-bg.png) right top no-repeat;
+	background:url(img/menu/span-bg.png) right top no-repeat;
 	height:36px;
 	line-height:36px;
 }
 #navbar ul li a:hover{
-	background:url(global/img/menu/ahover-bg.png) left top no-repeat;
+	background:url(img/menu/ahover-bg.png) left top no-repeat;
 	height:36px;
 	line-height:36px;
 }
 #navbar ul li a:hover span{
-	background:url(global/img/menu/spanhover-bg.png) right top no-repeat;
+	background:url(img/menu/spanhover-bg.png) right top no-repeat;
 	height:36px;
 	line-height:36px;
 }
@@ -144,7 +144,7 @@ div.recipes_photo_big_holder {
 		position: absolute;
 		padding-left: 5px;
 		overflow: hidden;
-		background: transparent url(global/img/trans_bg.png);
+		background: transparent url(img/trans_bg.png);
 		left: 0px; 
 		width: 100%;
 		bottom: 0px;
@@ -161,7 +161,7 @@ div.recipes_photo_big_holder {
 		div.description .reactions {
 			position: absolute;
 			padding-left: 12px;
-			background: transparent url(global/img/comment.gif) no-repeat center left;
+			background: transparent url(img/comment.gif) no-repeat center left;
 			left: 80%;
 		}
 		
