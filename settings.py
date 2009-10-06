@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'blueprintcss',
           
     'directtemplate',
+    'cookmom', 
 
     'django.contrib.auth',
     'django.contrib.sessions',
