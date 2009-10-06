@@ -134,6 +134,7 @@ IGNORE_APP_SETTINGS = IGNORE_APP_URLSAUTO = (
 )
 
 # Remote access to production server (e.g., via manage.py shell --remote)
+#
 DATABASE_OPTIONS = {
     # Override remoteapi handler's path (default: '/remote_api').
     # This is a good idea, so you make it not too easy for hackers. ;)
