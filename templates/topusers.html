@@ -1,0 +1,14 @@
+{% extends "base_content.html" %}
+{% block main %}
+<h1>Top Users</h1>
+
+
+<h3>Rcent activity</h3>
+		{% include "components/activities_list.html" %}
+		
+<h3>Recipes from top users:</h3>
+
+		{% include "components/recipes_list.html" %}
+
+
+{% endblock %}
