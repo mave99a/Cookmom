@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>{% block title %}{% endblock %}CookMom: healthy and delicious cooking made easy!</title>
+<title>{% block title %}CookMom: healthy and delicious cooking made easy!{% endblock %}</title>
 <meta name="keywords" content="Mothers, cook, food, recipes,{% block metakey %}{% endblock %}" />
 <meta name="description" content="{% block metadesc %}CookMom.com provide free online tools such as personalized meal planner, shopping list and recipes book, which makes the users have a better experience to share recipes, cooking stories and beyond. {% endblock %}" />
 <link rel="stylesheet" type="text/css" media="screen, projection" href="{{ MEDIA_URL }}combined-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
@@ -39,9 +39,10 @@
 		<span class="inbar">
 			<ul>
 		    	<li class="navhome"><a href="/home/"><span>Home</span></a></li>
-		        <li><a href="/my/"><span>My</span></a></li>
 		        <li><a href="/recipe/"><span>Recipes</span></a></li>
-		        <li><a href="/"><span>Ingredients Wiki</span></a></li>
+		        <li><a href="/ingredient/"><span>Ingredients</span></a></li>
+		        <li><a href="/tool/"><span>Kitchen tools</span></a></li>
+		        <li><a href="/answer/"><span>Ask Cookmom</span></a></li>
 		    </ul>			
 		</span>
 	</div>	
@@ -53,9 +54,9 @@
 	<div class="span-6">
 		<h3>About CookMom...</h3>
 		<ul>
-		<li><a href="/about/">Cookmom stories</a>
-		<li><a href="/blog/">Blog of Cookers of Cookmom</a>
-		<li><a href="/contact/">Contact CookMom</a>
+		<li><a href="/about/">About</a>
+		<li><a href="/blog/">Blog</a>
+		<li><a href="/contact/">Contact</a>
 		<li><a href="/tos/">Term of Service</a>
 		<li><a href="/privacy/">Privacy</a>
 		</ul>
@@ -71,9 +72,8 @@
 	<div class="span-6">
 		<h3>Quick links...</h3>
 		<ul>
-		<li><a href="#">Top 100 recips</a></li>
-		<li><a href="#">Top 100 recipes book</a></li>
-		<li><a href="#">Top 100 cookmoms</a></li>
+		<li><a href="#">Top recips</a></li>
+		<li><a href="#">Top cookmoms</a></li>
 		<li><a href="#">Browse recipes by style</a></li>
 		</ul>
 	</div>
@@ -87,10 +87,10 @@
 
 <script type="text/javascript" src="{{ MEDIA_URL }}combined-{{ LANGUAGE_CODE }}.js"></script>
 <script type="text/javascript">
-    Cufon.replace('h1');
-    Cufon.replace('h2');
-    Cufon.replace('h3');
-    Cufon.replace('h4');
+ //   Cufon.replace('h1');
+ //   Cufon.replace('h2');
+ //   Cufon.replace('h3');
+ //   Cufon.replace('h4');
 </script>
 
 </body>

@@ -1,0 +1,36 @@
+{% extends "base_content.html" %}
+{% block main %}
+
+<h2>Green bean</h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.
+</p>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Foods.jpg/250px-Foods.jpg" />
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.
+</p>
+
+<h3>articles on green bean</h3>
+		{% include "components/activities_list.html" %}
+<h3>where to buy</h3>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.
+</p>
+
+<h3>Reciepes cooks with green bean</h3>
+
+		{% include "components/recipes_list.html" %}
+<hr/>
+<h3>8 comments</h3>
+{% include "components/comments_list.html" %}
+{% endblock %}
+
+
+{% block side %}
+<h2>Actions...</h2>
+<ul class='actions_list'>
+  <li><a class='action' href='#'>Share the experience</a></li> 
+</ul>
+
+
+{% include "ad-square.html" %}
+</h2>
+
+{% endblock %} 
