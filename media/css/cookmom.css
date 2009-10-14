@@ -173,24 +173,6 @@ ul.activities li{
 }
 
 /*
-* Actions list
-*/
-ul.actions_list {
-	list-style: none;
-}	
-
-a.action {
-	text-decoration: none;
-	font-size: 1.5em;
-	padding: 10px;
-	margin-bottom: 10px;
-}
-
-a.action:hover {
-	background: #ee0;
-}
-
-/*
 * articles
 */
 
@@ -433,3 +415,35 @@ a:hover.button{
 		padding:4px;
 		text-align:center;
 	}
+
+/*
+* section 
+*/
+.section
+{
+  padding: 10px;
+}
+.section h2{ margin:0px;
+	padding:0px;
+	border:0px;
+}
+.section h2{	color:#FFFFFF; 
+	font-size:13px; 
+	display:block; 
+	background:url(img/h2_bg.gif) top left no-repeat #9A9A9A;
+}
+.section h2 span{
+	padding:5px 10px; 
+	background:url(img/h2_span_bg.gif) top right no-repeat; 
+	display:block;
+}
+
+.section div{
+	background:url(img/section_bg_left.png) bottom left  no-repeat #EEEEEE; 
+	font-size:12px;
+}
+.section div div{
+background:url(img/section_bg_right.png) right bottom no-repeat; 
+	padding:10px; 
+}
+
