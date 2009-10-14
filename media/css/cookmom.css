@@ -43,68 +43,43 @@ body {
 
 /*
 *  Navi menu
-*  http://woork.blogspot.com/2008/02/elegant-navigation-bar-using-css.html
+*  http://woork.blogspot.com/2008/03/clean-tab-bar-digg-like-using-css.html
 */
-
-#navbar{
-	width:auto;
-	height:36px;
-	background:url(img/menu/navbar-bg.png) left top repeat-x;
-}
-#navbar .inbar{
+ul.tab, li {border:0; margin:0; padding:0; list-style:none;}
+ul.tab {border-bottom:solid 1px #DEDEDE; height:29px; padding-left:20px;}
+ul.tab li{float:left; margin-right:2px;}
+.tab a:link, .tab a:visited{
+	background:url(img/tab-round.png) right 60px;
+	color:#666666;
 	display:block;
-	height:36px;
-	background:url(img/menu/right-round.png) right top no-repeat;
-}
-#navbar ul, #navbar ul li{
-	border:0px;
-	margin:0px;
-	padding:0px;
-	list-style:none;
-	height:36px;
-	line-height:36px;
-}
-#navbar ul{
-	background:url(img/menu/left-round.png) left top no-repeat;
-}
-#navbar ul li{
-	float:left;
-	display:block;
-	line-height:36px;
-}
-#navbar ul li a{
-	color:#403e32;
-	text-decoration:none;
 	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	text-decoration:none;
+}
+.tab a span{
+	background:url(img/tab-round.png) left 60px;
+	display:block;
+	height:30px;
+	margin-right:14px;
+	padding-left:14px;
+}
+.tab a:hover{
+	background:url(img/tab-round.png) right 30px;
 	display:block;
 }
-#navbar ul li a span{
-	padding:0 20px 0 0;
-	height:36px;
-	line-height:36px;
+.tab a:hover span{
+	background:url(img/tab-round.png) left 30px;
 	display:block;
-	margin-left:20px;
 }
-#navbar .navhome a, #navbar .navhome a:hover{
-	background:url(img/menu/a-bg.png) left top no-repeat;
-	height:36px;
-	line-height:36px;
-}
-#navbar .navhome a span, #navbar .navhome a:hover span{
-	color:#FFFFFF;
-	background:url(img/menu/span-bg.png) right top no-repeat;
-	height:36px;
-	line-height:36px;
-}
-#navbar ul li a:hover{
-	background:url(img/menu/ahover-bg.png) left top no-repeat;
-	height:36px;
-	line-height:36px;
-}
-#navbar ul li a:hover span{
-	background:url(img/menu/spanhover-bg.png) right top no-repeat;
-	height:36px;
-	line-height:36px;
+
+/* -------------------------------- */
+/* 	ACTIVE ELEMENTS					*/
+.active a:link, .active a:visited, .active a:visited, .active a:hover{
+	background:url(img/tab-round.png) right 0 no-repeat;
+} 
+.active a span, .active a:hover span{
+	background:url(img/tab-round.png) left 0 no-repeat;
 }
                     
 /*
