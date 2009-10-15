@@ -9,6 +9,14 @@ body {
 }
 
 /*
+* icons
+*/
+.icon { padding-left: 18px; }
+
+.feed { background: transparent url(img/rss_12x12.png) no-repeat center left; }
+.facebook {	background: transparent url(img/icon_facebook.gif) no-repeat center left; }
+
+/*
 *  Header part
 */
 
@@ -23,22 +31,12 @@ body {
 	#signin {
 		padding: 5px;
 	}
-	
-		#facebookSignIn { 
-			padding-left: 18px; 
-			background: transparent url(img/icon_facebook.gif) no-repeat center left; 
-		}
 
 	#search {
 		padding: 5px;
 	}
 		#search input:edit {
 			
-		}
-		.feed {
-			margin-left: 10px;
-			padding-left: 14px; 
-			background: transparent url(img/rss_12x12.png) no-repeat center left; 		
 		}
 
 /*
@@ -182,6 +180,20 @@ ul.activities li{
 	padding: 10px; 
 	width: 200px; 
 	border: 1px solid #ccc;
+}
+
+/*
+* author description
+*/
+.author_desc p{
+	text-align:left;
+	margin: 0; 
+	padding: 0;
+}
+
+.author_desc .vcard {
+	float: left;
+	margin: 4px;
 }
 
 /*
