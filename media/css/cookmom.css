@@ -9,6 +9,15 @@ body {
 }
 
 /*
+* fonts
+*/
+h1, h2, h3, h4, h5, h6 {	font-family:Georgia, "Times New Roman", Times, serif; }
+
+h1 {
+	font-size: 2em;
+	margin-top: 0.6em; 
+}
+/*
 * icons
 */
 .icon { padding-left: 18px; }
@@ -24,9 +33,6 @@ body {
 }
 	#header h1 {
 		padding: 10px 0 0 10px;
-		font-family:Georgia, "Times New Roman", Times, serif;
-		font-weight:normal;
-		
 	}
 	#signin {
 		padding: 5px;
@@ -173,6 +179,27 @@ ul.activities li{
 /*
 * articles
 */
+.article h1 {
+	text-align: center; 
+}
+
+.byauthor {
+	font: italic 1.1em Times, serif; letter-spacing: 1px; 
+	margin: 0 0 1.5em;
+	text-align:center;
+}
+
+.byauthor a:link, .byauthor a:visited {
+	font: bold 0.85em Verdana, sans-serif;
+	text-transform: uppercase; letter-spacing: 2px;
+	margin-left: 0.25em;
+	text-decoration: none;
+}
+
+.byauthor a:hover {
+	border-bottom-width: 1px;
+}
+
 
 .mini_recipe {
 	float: right; 
@@ -185,12 +212,20 @@ ul.activities li{
 /*
 * author description
 */
+.author_desc {
+	margin: 1em 0 1em 0;
+}
+
 .author_desc p{
 	text-align:left;
 	margin: 0; 
 	padding: 0;
 }
-
+.author_desc h4 {
+	text-align: left; 
+	margin: 0; 
+	padding: 0;
+}
 .author_desc .vcard {
 	float: left;
 	margin: 4px;
