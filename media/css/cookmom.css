@@ -11,7 +11,7 @@ body {
 /*
 * fonts
 */
-h1, h2, h3, h4, h5, h6 {	font-family:Georgia, "Times New Roman", Times, serif; }
+h1, h2, h3, h4, h5, h6, cite {	font-family:Georgia, "Times New Roman", Times, serif; }
 
 h1 {
 	font-size: 2em;
@@ -134,6 +134,9 @@ div.recipes_photo_big_holder {
 	}	
 		div.description a {
 			color: white;
+			text-decoration: none;
+			font-style: normal;
+			font-family: Verdana, sans-serif;
 		}
 		div.description h4 {
 			padding: 0; 
