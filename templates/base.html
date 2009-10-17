@@ -88,6 +88,20 @@
  //   Cufon.replace('h2');
  //   Cufon.replace('h3');
  //   Cufon.replace('h4');
+ 
+$(document).ready(function(){
+  SexyLightbox.initialize({
+    find          : 'lightbox', // rel="lightbox"
+    color         : 'white',
+    dir           : '{{ MEDIA_URL }}lightbox',
+    emergefrom    : 'top',
+    OverlayStyles : {
+      'background-color': '#000',
+      'opacity' : 0.2
+    }
+  });
+});
+ 
 </script>
 
 </body>

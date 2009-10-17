@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     # javascripts lib, css framework
     'jquerylib',
     'blueprintcss',
+    'lightbox', 
           
     'directtemplate',
     'cookmom', 
