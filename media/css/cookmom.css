@@ -122,7 +122,7 @@ div.recipes_photo_big_holder {
 }
 
 	div.description {
-		color: white;
+		color: #ccc;
 		position: absolute;
 		padding-left: 5px;
 		overflow: hidden;
@@ -133,7 +133,7 @@ div.recipes_photo_big_holder {
 		height: 40px; 
 	}	
 		div.description a {
-			color: white;
+			color: #ccc;
 			text-decoration: none;
 			font-style: normal;
 			font-family: Verdana, sans-serif;
@@ -142,6 +142,7 @@ div.recipes_photo_big_holder {
 			padding: 0; 
 			margin: 0;
 			color: white;
+			letter-spacing: 1px;
 		}
 		div.description .reactions {
 			position: absolute;
