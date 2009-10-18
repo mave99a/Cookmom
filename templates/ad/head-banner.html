@@ -1,0 +1,80 @@
+<!--AD comes here -->
+					    <div id="advertcontainer">
+
+			<div id="advertcontainerInner">
+				                 <!-- V/6 generated DART tag v3.0 --><!-- sstype=other -->
+                <!--DART params(1|7|0|/v_food:0)--> 
+                <script language="javascript" type="text/javascript">
+				//<![CDATA[
+		function getQueryParamValue(param) { 
+		var q = document.location.search; 
+		var detectIndex = q.indexOf(param); 
+		var endIndex = (q.indexOf("&", detectIndex) != -1) ? q.indexOf("&", detectIndex) : q.length; 
+		if(q.length > 1 && detectIndex != -1) { 
+				return unescape(q.substring(q.indexOf("=", detectIndex)+1, endIndex)); 
+			} else { 
+				return ""; 
+			} 
+		}
+
+	              document.checkedPBA = (location.search == '')? true:false
+                  if (!document.iv_arrival_pba) document.iv_arrival_pba = '';
+                  if (!document.dartFTT) document.dartFTT = '';
+                  if (!document.dartTData) document.dartTData = '';
+                  if (!document.dartTid) document.dartTid = '';
+                  if (!document.catid) document.catid = '';
+                  if (!document.ivrtt) document.ivrtt = '';
+                  if (typeof eTandomAd == "undefined") eTandomAd = "none";
+
+                  document.iv_commonDARTJS = '';
+
+                  if (typeof iv_showCobrand == 'string') {
+	                if (iv_showCobrand == 'msnwomen' || iv_showCobrand == 'msndiet') {
+                      document.iv_commonDARTJS = '!category=msn;'
+                    }
+                  }
+
+                  if (!document.ivNPA) {
+                    qs = location.search.substring(1).split('&');
+                    document.ivNPA = '';
+                    for (i = 0; i < qs.length; i++) {
+                      valSplit = qs[i].split('=');
+                      if (valSplit[0] == 'ivNPA') {
+                        if (valSplit[1] == 1) {
+                          document.iv_arrival_pba = '!category=nopopup;!category=nopopunder;';
+                          break;
+                        }
+                      }
+                    }
+                  }
+
+                  if (!document.checkedPBA) {
+                    for (i = 0; i < qs.length; i++) {
+                      pos = qs[i].indexOf('=');
+                      if (qs[i].substring(0, pos) == 'pba') {
+                        document.iv_arrival_pba = unescape(qs[i].substring(pos+1)+';!category=nopopup;!category=nopopunder;');
+                        document.checkedPBA = 1;
+                        break;
+                      }
+                    }
+                  }
+
+
+			var suppArrLyr = getQueryParamValue('suppArrLyr');
+			if (!suppArrLyr) {
+                document.write('<scr'+'ipt language="javascript" type="text/javascript" src="http://iv.doubleclick.net/adj/nbcu.ivillage/food_hp;chan=food;cont=10;!category=food;pageid=hp;sz=970x66,728x90;pos=1;tile=1;dcopt=ist;'+(top.__nbcudigitaladops_dtparams||'')+'ord=214921?"><\/scr'+'ipt>');
+				//end - this comment is for parsing in standard article
+			} else {
+                 document.write('<scr'+'ipt language="javascript" type="text/javascript" src="http://iv.doubleclick.net/adj/nbcu.ivillage/food_hp;chan=food;cont=10;!category=food;pageid=hp;;sz=970x66,728x90;pos=1;tile=1;'+(top.__nbcudigitaladops_dtparams||'')+'ord=214921?"><\/scr'+'ipt>');
+			}
+ 			    //]]>
+                </script>
+				<noscript>
+		
+			<a href="http://iv.doubleclick.net/jump/nbcu.ivillage/food_hp;chan=food;cont=10;!category=food;pageid=hp;sz=970x66,728x90;pos=1;tile=1;dcopt=ist;ord=214921?">
+                    <img src="http://iv.doubleclick.net/ad/nbcu.ivillage/food_hp;chan=food;cont=10;!category=food;pageid=hp;sz=970x66,728x90;pos=1;tile=1;dcopt=ist;ord=214921?" 
+                         border="0" alt="Click Here!" /></a>
+
+		</noscript>                <!-- End DART Tag --> 
+		 	</div>
+	    </div>	

@@ -8,6 +8,7 @@ body {
 	background: #fff;
 	-moz-border-radius: 5px;
   	-webkit-border-radius: 5px;
+  	padding: 10px;
 }
 
 /*
@@ -50,6 +51,10 @@ a#joinbutton:hover {
 	background: #8CF500;
 }
 
+#advertcontainer{width:100%;clear:both;float:left;position:relative;text-align:center; z-index:1000;}
+#advertcontainerInner{background-color:#ffffff;width:100%;height:auto;float:none !important;margin:10px auto;}
+
+
 /*
 *  Header part
 */
@@ -60,6 +65,10 @@ a#joinbutton:hover {
 	#header h2 a {
 		color: #000; 
 		text-decoration: none; 
+		display: block;
+		height: 36px;
+		width: 210px;
+		background:url(img/logo.png);
 	}
 	
 	.login {
@@ -226,13 +235,13 @@ ul.activities li{
 * articles
 */
 .article h1 {
-	text-align: center; 
+  border-left: solid 6px #ccc;
+  padding-left: 10px;
 }
 
 .byauthor {
 	font: italic 1.1em Times, serif; letter-spacing: 1px; 
 	margin: 0 0 1.5em;
-	text-align:center;
 }
 
 .byauthor a:link, .byauthor a:visited {
