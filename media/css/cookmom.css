@@ -71,6 +71,10 @@ a#joinbutton:hover {
 		background:url(img/logo.png);
 	}
 	
+	#header h2  span {
+		display: none; 
+	}
+	
 	.login {
 		text-align: right;
 		padding-right: 10px;
