@@ -2,7 +2,9 @@
 {% block title %}How do I learn to master Chinese Noodle in 2 weeks - Cookmom{% endblock %}
 
 {% block topad %}
-{% include "ad/head-banner.html" %}
+<div id="head-banner">
+{% include "ad/leaderboard.html" %}
+</div>
 {% endblock %}
 
 {% block main %}
@@ -57,8 +59,17 @@
 </div>
 </div>
 
+{% include "ad/square-text.html" %}
 
+<div class="section">
+<h2><span>Actions...</span></h2>
+<div>
+    <div>
+<a href="#" class="button"><span class="add">Add to your bookmark</span></a>
 
-{% include "ad-square.html" %}
-
+<a href="#" class="button"><span class="delete">Delete bookmark</span></a>
+    </div>
+</div>
+</div>
+{% include "ad/square-image.html" %}
 {% endblock %} 

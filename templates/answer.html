@@ -35,17 +35,6 @@
 
 
 {% block side %}
-
-<div class="comments">
-	<div class="bubble">
-		<span class="count">{{ comments|length }}</span><br/>
-	    comments
-	</div>
-	
-	<h3>This is my new post</h3>
-	<p>About how to design a nice comments counter for your blog :)</p>
-</div>
-
 <div class="section">
 <h2><span>Actions...</span></h2>
 <div>
@@ -57,7 +46,7 @@
 </div>
 </div>
 
-{% include "ad-square.html" %}
+{% include "ad/square-text.html" %}
 
 <div class="section">
 <h2><span>Actions...</span></h2>
@@ -69,5 +58,5 @@
     </div>
 </div>
 </div>
-
+{% include "ad/square-image.html" %}
 {% endblock %} 

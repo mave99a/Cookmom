@@ -51,9 +51,21 @@ a#joinbutton:hover {
 	background: #8CF500;
 }
 
-#advertcontainer{width:100%;clear:both;float:left;position:relative;text-align:center; z-index:1000;}
-#advertcontainerInner{background-color:#ffffff;width:100%;height:auto;float:none !important;margin:10px auto;}
+#headbanner{
+	clear:both;
+	position:relative;
+	text-align:center; 
+	z-index:1000;
+	padding 10px;
+}
 
+#maincontent
+{
+}
+
+#sidebar
+{
+}
 
 /*
 *  Header part
@@ -290,6 +302,12 @@ ul.activities li{
 	margin: 4px;
 }
 
+.author_desc .vcard a img.photo {
+	width: 64px;
+	height: 64px;
+	padding: 0;
+	border: solid 3px white;
+}
 /*
 http://blog.yosle.com/2007/09/20/css-round-corners/
 */
@@ -527,7 +545,7 @@ a:hover.button{
 */
 .section
 {
-  padding: 10px;
+	padding-top:10px;
 }
 .section h2{ margin:0px;
 	padding:0px;
