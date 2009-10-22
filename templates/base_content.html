@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-{% block topad %}{%endblock%}
+{% block topad %}
+<div id="headbanner">
+{% include "ad/leaderboard.html" %}
+</div>
+{%endblock%}
 <div id="maincontent" class="span-17 ">
 {% block main %}{%endblock%}
 </div>
