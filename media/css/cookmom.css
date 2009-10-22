@@ -159,9 +159,8 @@ ul.tab li{float:left; margin-right:2px;}
 }
 
 	#search {
-		position: absolute;
+		float:right;
 		padding: 4px;
-		left:780px;
 		width: 250px;
 		margin: 0 5px 5px 0;
 		background: #eee;
