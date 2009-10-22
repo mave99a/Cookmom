@@ -32,11 +32,16 @@
 		</div>	
 	</div>
 	{% endif %}
-	<br style="clear:both;"/>
+	<br class="clearboth"/>
 	<!-- navi menu -->
 	<div id="navbar">
 		<div id="search">
-				<input type="edit" value="Recipes, names, ..."></input> <input type="button" value="Search"/>				
+				<form action="/search/" name="SearchForm" method="get" id="searchform_main">
+				     <input name="q" id="home_search_input" type="text" value="recipes, ingredients,..."></input>
+					<button id="search_button" type="submit">
+						<span>search</span>
+					</button>
+				</form>
 		</div>		
 		<ul class="tab">
 	    	<li class="{%block tabHome%}{%endblock%}"><a href="/home/"><span>Home</span></a></li>
@@ -47,6 +52,7 @@
 	    </ul>			
 	</div>	
 </div>
+<hr class="space clearboth" />
 <!-- main content -->
 {% block content %}{% endblock %}
 <!-- footer -->

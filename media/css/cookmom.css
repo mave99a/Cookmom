@@ -11,6 +11,14 @@ body {
   	padding: 10px;
 }
 
+.clearboth
+{
+	clear: both;
+	padding: 0; 
+	margin: 0;
+	height: 1px;
+}
+
 /*
 * fonts
 */
@@ -151,11 +159,20 @@ ul.tab li{float:left; margin-right:2px;}
 }
 
 	#search {
-		float: right;
-		padding: 0;
-		margin: 0 10px 5px 0;
-	}
-		#search input[type="edit"] {
+		position: absolute;
+		padding: 4px;
+		left:780px;
+		width: 250px;
+		margin: 0 5px 5px 0;
+		background: #eee;
+		-moz-border-radius-topleft: 5px;
+		-moz-border-radius-topright: 5px;
+  		-webkit-border-top-left-radius: 5px;
+  		-webkit-border-top-right-radius: 5px;
+  		}
+		#home_search_input {
+			width:180px;
+			margin-right: 5px;
 		}
                     
 /*
