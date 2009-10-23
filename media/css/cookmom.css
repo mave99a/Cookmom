@@ -161,6 +161,8 @@ ul.tab li{float:left; margin-right:2px;}
 		float:right;
 		padding: 4px;
 		width: 250px;
+		height: 21px;
+		overflow: hidden;
 		margin: 0 5px 5px 0;
 		background: #eee;
 		-moz-border-radius-topleft: 5px;
@@ -168,9 +170,14 @@ ul.tab li{float:left; margin-right:2px;}
   		-webkit-border-top-left-radius: 5px;
   		-webkit-border-top-right-radius: 5px;
   		}
+  		
 		#home_search_input {
-			width:180px;
-			margin-right: 5px;
+			width:170px;
+			margin: 0 5px 0 1px;
+		}
+		
+		#home_search_button {
+			width: 60px;
 		}
                     
 /*
