@@ -602,3 +602,70 @@ background:url(img/section_bg_right.png) right bottom no-repeat;
 	padding:10px; 
 }
 
+/*
+*   Vote style
+*/
+.ldVoteBlock {
+	font-size: 139%;
+}
+.ldVoteBlock img {
+	display: inline;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+.ldVoteUp {
+	color: #396;
+	display: inline;
+	white-space: nowrap;
+}
+.ldVoteDown {
+	color: #C25444;
+	display: inline;
+	white-space: nowrap;
+	margin-left: 1.0em;
+}
+.ldVoteUp a:link, .ldVoteUp a:visited, .ldVoteDown a:link, .ldVoteDown a:visited {
+	display: block;
+	float: left;
+	width: 137px;height: 46px;
+	text-decoration: none;
+	margin-top: 0.3em;color: #396;
+}
+.ldVoteUp a:link, .ldVoteUp a:visited {
+	color: #339966;
+	background :url(http://cdn.dzone.com/links/themes/reader/images/dz-comments-voteup-bg.gif ) 0 0 no-repeat;
+	margin-right: 5px;
+}
+.ldVoteUp a {
+	color: #339966;
+	background :url(http://cdn.dzone.com/links/themes/reader/images/dz-comments-voteup-bg.gif ) 0 0 no-repeat;
+	margin-right: 5px;
+}
+.ldVoteUp a:hover {
+	background :url(http://cdn.dzone.com/links/themes/reader/images/dz-comments-voteup-bg.gif ) 0 -46px no-repeat;
+	color: #fff;
+}
+.ldVoteUp a.voted {
+	background :url(http://cdn.dzone.com/links/themes/reader/images/dz-comments-voteup-bg.gif ) 0 -92px no-repeat;
+}
+.ldVoteDown a:link, .ldVoteDown a:visited {
+	color: #c25444;
+	background :url(http://cdn.dzone.com/links/themes/reader/images/dz-comments-votedown-bg.gif ) 0 0 no-repeat;
+}
+.ldVoteDown a:hover {
+	background :url(http://cdn.dzone.com/links/themes/reader/images/dz-comments-votedown-bg.gif ) 0 -46px no-repeat;
+	color: #fff;
+}
+.ldVoteDown a.voted {
+	background :url(http://cdn.dzone.com/links/themes/reader/images/dz-comments-votedown-bg.gif ) 0 -92px no-repeat;
+}
+.ldVoteUp span, .ldVoteDown span {
+	position: relative;left: 40px;line-height: 46px;font-weight: bold;
+}
+* html .ldVoteUp span, * html .ldVoteDown span {
+	 letter-spacing: -1px; 
+}
+*+html .ldVoteUp span, *+html .ldVoteDown span {
+	 letter-spacing: -1px; 
+}
+ul.ldStats {font-size: 76%;float: left;width: 8em;list-style-type: none;padding: 0;margin: 0.4em 0 0 1.5em;}.ldStats li {font-size: 139%;line-height: 1.2em;margin: 0;padding: 0;}li.ldStats-views, li.ldStats-clicks {margin-left: 2.7em;}li.ldStats-views {margin-top: -2.4em;}li.ldStats-up, li.ldStats-down {padding-left: 1.1em;}li.ldStats-views, li.ldStats-clicks {padding-left: 1em;}li.ldStats-up {background :url(http://cdn.dzone.com/links/themes/reader/images/vote-up-normal.gif ) 0 50% no-repeat;}li.ldStats-down {background :url(http://cdn.dzone.com/links/themes/reader/images/vote-down-normal.gif ) 0 50% no-repeat;}li.ldStats-views {background :url(http://cdn.dzone.com/links/themes/reader/images/icon-eye.gif ) 0 50% no-repeat;}li.ldStats-clicks {background :url(http://cdn.dzone.com/links/themes/reader/images/icon-pointer.gif ) 0 50% no-repeat;}.ldLeftCol {width: 246px;float: left;}
