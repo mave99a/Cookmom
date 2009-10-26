@@ -108,7 +108,7 @@ INSTALLED_APPS = (
     # your app-specific media files get combined, so jquery should normally
     # come first.
     # javascripts lib, css framework
-    'jquerylib',
+    # 'jquerylib',    # we will use Google's CDN,  so won't include this app here. 
     'blueprintcss',
     'lightbox', 
           
