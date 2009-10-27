@@ -9,8 +9,10 @@
 </p>
 
 <h3>6 shared cooking experiences</h3>
-
-		{% include "components/recipes_list.html" %}
+<div class='recipes_list'>
+{# latest 6 recipe as hotrecipes #}
+{% render hotrecipes %}
+</div>
 <hr/>
 
 {% include "components/comments_list.html" %}

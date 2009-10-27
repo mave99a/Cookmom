@@ -18,8 +18,10 @@
 </p>
 
 <h3>Reciepes cooks with green bean</h3>
-
-		{% include "components/recipes_list.html" %}
+<div class='recipes_list'>
+{# latest 6 recipe as hotrecipes #}
+{% render hotrecipes %}
+</div>
 <hr/>
 
 {% include "components/comments_list.html" %}

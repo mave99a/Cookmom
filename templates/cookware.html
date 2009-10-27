@@ -16,8 +16,10 @@
 </p>
 
 <h3>You may make following recipes with coffee machine</h3>
-
-		{% include "components/recipes_list.html" %}
+<div class='recipes_list'>
+{# latest 6 recipe as hotrecipes #}
+{% render hotrecipes %}
+</div>
 <hr/>
 
 {% include "components/comments_list.html" %}

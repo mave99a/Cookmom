@@ -5,7 +5,7 @@
 	<strong>
 		<a href="{{object.user.url}}" class="screen-name" title="{{object.user.name}}">{{object.user.name}}</a>
 	</strong>
-	<span class="entry-content">{{object.content}}</span>
+	<span class="entry-content">{{object.content|truncatewords:25}}</span>
 	<span class="meta entry-meta">
 		<span class="published" title="{{object.time}}">({{object.time|timesince}})</span>
 	</span>

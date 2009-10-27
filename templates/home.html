@@ -21,11 +21,17 @@
 <div>
 	<div class="span-13" >
 		<h2>Hot receipes</h2>
-		{% include "components/recipes_list.html" %}
+		<div class='recipes_list'>
+		{# latest 6 recipe as hotrecipes #}
+		{% render hotrecipes %}
+		</div>
 	</div>
 	<div class="span-11 last">
 		<h2>What's going on...</h2>
+		<div class='activities'>
+		{# latest 10 activity as activities #}
 		{% render activities %}
+		</div>
 	</div>
 </div>
 <hr/>
