@@ -54,13 +54,23 @@ def directtemplate(request, template):
                   'comments' : 19},
                   ]
     
-    activities = [{'user': {'username': 'Robert', 'url': '/', 'img_url':''},
+    activities = [{'templatename':'activity', 
+                   'user': {'username': 'Robert', 'url': '/', 'img_url':''},
                    'time':'',
                    'content' :'',
-                  },1,2,3,4,5,6 
+                  }, 
+                  {'templatename':'activity', 
+                   'user': {'username': 'Robert', 'url': '/', 'img_url':''},
+                   'time':'',
+                   'content' :'',
+                  }, 
+                  {'templatename':'activity', 
+                   'user': {'username': 'Robert', 'url': '/', 'img_url':''},
+                   'time':'',
+                   'content' :'',
+                  } 
                  ]
-    comments = [1,2,3,4,5]
-
+    comments = [1,2,3]
     articles = [1,2,3,4]
        
     return render_to_response(template, locals(), RequestContext(request))    

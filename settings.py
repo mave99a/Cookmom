@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'blueprintcss',
     'lightbox', 
           
+    'rendertag', 
     'directtemplate',
     'cookmom', 
 
