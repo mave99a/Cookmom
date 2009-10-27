@@ -1,16 +1,14 @@
 <div class="thumb author span-2">
-	{% include "components/usericon.html" %}
+	{% render object.user %}
 </div>
 <div class="status-body">
 	<strong>
-		<a href="/user/" class="screen-name" title="Mary Hodder">MaryHodder</a>
+		<a href="{{object.user.url}}" class="screen-name" title="{{object.user.name}}">{{object.user.name}}</a>
 	</strong>
-	<span class="entry-content">
-	moving day for friend's biz.  Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus...
-	moving day for friend's biz.  Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus...
-	</span>
+	<span class="entry-content">{{object.content}}</span>
 	<span class="meta entry-meta">
-		<span class="published">(27 minutes ago)</span>
+		<span class="published" title="{{object.time}}">({{object.time|timesince}})</span>
 	</span>
 </div>
 <hr class="space clearboth"/>
+	

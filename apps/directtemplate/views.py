@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponseNotFound
 from django.template import RequestContext
+from datetime import datetime
 
 def directtemplate(request, template):
     """
@@ -54,20 +55,21 @@ def directtemplate(request, template):
                   'comments' : 19},
                   ]
     
+    now = datetime.now()
     activities = [{'templatename':'activity', 
-                   'user': {'username': 'Robert', 'url': '/', 'img_url':''},
-                   'time':'',
-                   'content' :'',
+                   'user': {'name': 'Robert Mao', 'url': '/', 'img_url':'http://a1.twimg.com/profile_images/205153778/Suzie_0001s_normal.jpg', 'templatename':'user'},
+                   'time': now,
+                   'content' :'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus',
                   }, 
                   {'templatename':'activity', 
-                   'user': {'username': 'Robert', 'url': '/', 'img_url':''},
-                   'time':'',
-                   'content' :'',
+                   'user': {'name': 'Robert', 'url': '/', 'img_url':'http://a3.twimg.com/profile_images/82806383/remysharp_normal.jpg', 'templatename':'user'},
+                   'time':now,
+                   'content' :'Lsectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus',
                   }, 
                   {'templatename':'activity', 
-                   'user': {'username': 'Robert', 'url': '/', 'img_url':''},
-                   'time':'',
-                   'content' :'',
+                   'user': {'name': 'Mary Penston', 'url': '/', 'img_url':'http://a3.twimg.com/profile_images/374652761/IMG_6122_2_bigger.JPG', 'templatename':'user'},
+                   'time':now,
+                   'content' :'Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus',
                   } 
                  ]
     comments = [1,2,3]
