@@ -21,16 +21,15 @@
 <p>
 <span style="font-weight: bold;">Assemble the dish:</span><br><br>Make sure the zucchini are dry and arrange them on a baking paper lined tray. Generously spoon the filling into the channels - don't press the filling into zucchini, keep it nice and light. Finish off with a generous sprinkling of more grated Parmigiano.<br><br><center><a href="http://www.flickr.com/photos/haalo/3472039865/" title="stuffed zucchini© by Haalo, on Flickr"><img src="http://farm4.static.flickr.com/3344/3472039865_832e8e3b6a_o.jpg" alt="" height="672" width="450"></a></center><br><br><br>Bake in a preheated 180ºC/350ºF oven for about 30 minutes - or until the zucchini have heated through and a golden crust has formed.<br><br><center><a href="http://www.flickr.com/photos/haalo/3472040125/" title="stuffed zucchini© by Haalo, on Flickr"><img src="http://farm4.static.flickr.com/3336/3472040125_e77ec46f9d_o.jpg" alt="stuffed zucchini© by Haalo" height="672" width="450"></a></center><br><br>Best enjoyed hot from the oven - serve with a salad for a complete meal.
 </p>
-{% include "components/author_desc.html" %}
+{% render author %}
 </div><!-- end of article -->
-{% include "components/retweet.html" %}
 
-{% include "components/comments_list.html" %}
+{% render comments %}
 {% endblock %}
 
 
 {% block side %}
-{% include "components/vote.html" %}
+{% render vote %}
 
 <div class="section">
 <h2><span>Actions...</span></h2>

@@ -25,6 +25,7 @@ def directtemplate(request, template):
     #  mock data
     
     mainrecipe = {'name':'Chinese Noodle',
+                  'templatename':'mainrecipe',
                   'author_name': 'Robert Mao',
                   'big_img_url' : 'http://farm4.static.flickr.com/3583/3435647617_34783451df.jpg?v=0',
                   'comments' : 10}
@@ -78,7 +79,18 @@ def directtemplate(request, template):
                    'content' :'Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus',
                   } 
                  ]
-    comments = [1,2,3]
-    articles = [1,2,3,4]
-       
+    comments = [{'templatename':'comment',
+                   'user': {'name': 'Robert Mao', 'url': '/', 'img_url':'http://a1.twimg.com/profile_images/205153778/Suzie_0001s_normal.jpg', 'templatename':'user'},
+                   'time': now,
+                    'content' :'Lsectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus',
+               }
+                ]
+    author = {
+                'templatename':'author',
+                'user': {'name': 'Robert Mao', 'url': '/', 'img_url':'http://a1.twimg.com/profile_images/205153778/Suzie_0001s_normal.jpg', 'templatename':'user'},
+                 }
+    currentuser = author['user']; 
+    vote = {
+                'templatename':'vote',
+            }   
     return render_to_response(template, locals(), RequestContext(request))    

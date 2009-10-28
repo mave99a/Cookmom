@@ -15,7 +15,18 @@
 </div>
 <hr/>
 
-{% include "components/comments_list.html" %}
+<div class="comments">
+	<div class="bubble">
+		<span class="count">{{ comments|length }}</span><br/>
+	    comments
+	</div>
+	
+	<h3>This is my new post</h3>
+	<p>About how to design a nice comments counter for your blog :)</p>
+</div>
+<hr class='space clearall'/>
+{% render comments %}
+
 {% endblock %}
 
 
