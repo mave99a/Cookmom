@@ -5,11 +5,11 @@
 
 
 <h3>Rcent activity</h3>
-		{% include "components/activities_list.html" %}
+{% render activities %}
 		
 <h3>Recipes from top users:</h3>
 
-		{% include "components/recipes_list.html" %}
+{% render hotrecipes %}
 
 
 {% endblock %}
