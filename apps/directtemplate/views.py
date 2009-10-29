@@ -85,11 +85,28 @@ def directtemplate(request, template):
                     'content' :'Lsectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus',
                }
                 ]
-    author = {
+    article =  {'templatename':'article',
+                'title' : 'How to cook noodle in 1 days',
+                'content' : 'hold on...',
+                'attachments': {
+                                'ingredients': [
+                                     {'templatename':'ingredient', 'name':'Pork', 'uniqname':'pork', 'volume': 10, 'unit':'lbs',  } ,          
+                                     {'templatename':'ingredient', 'name':'Sugar', 'uniqname':'pork', 'volume': 10, 'unit':'lbs',  } ,          
+                                     {'templatename':'ingredient', 'name':'Water', 'uniqname':'pork', 'volume': 10, 'unit':'lbs',  } ,          
+                                     {'templatename':'ingredient', 'name':'Green beans', 'uniqname':'pork', 'volume': 10, 'unit':'lbs',  } ,          
+                                     {'templatename':'ingredient', 'name':'Donkey', 'uniqname':'pork', 'volume': 10, 'unit':'lbs',  },           
+                                                ],
+                                'photos': {},
+                                'links': {},
+                                'video': {},
+                                'books': {}
+                                },
+                'author': {
                 'templatename':'author',
                 'user': {'name': 'Robert Mao', 'url': '/', 'img_url':'http://a1.twimg.com/profile_images/205153778/Suzie_0001s_normal.jpg', 'templatename':'user'},
                  }
-    currentuser = author['user']; 
+                }
+    currentuser =  {'name': 'Robert Mao', 'url': '/', 'img_url':'http://a1.twimg.com/profile_images/205153778/Suzie_0001s_normal.jpg', 'templatename':'user'}; 
     vote = {
                 'templatename':'vote',
             }   

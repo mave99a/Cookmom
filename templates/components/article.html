@@ -1,0 +1,11 @@
+<h1>{{object.subject}}</h1>
+<h4 class="byauthor">By <a href="{{object.author.user.url}}" title='{{object.author.user.name}}'>{{object.author.user.name}}</a></h4>
+{% if object.attachments.ingredients %}
+<div class="mini_recipe ">
+<h3>Ingredients</h2>
+{% render object.attachments.ingredients %}
+</div>
+{% endif %}
+</p>{{object.content}}<p>
+<hr class='space'/>
+{% render object.author %}
