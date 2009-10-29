@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseNotFound
 from django.template import RequestContext
 from datetime import datetime
-from article.models import Article
+from article.models import Article, Author
 
 def directtemplate(request, template):
     """
@@ -108,7 +108,9 @@ def directtemplate(request, template):
 #                 }
 #                }
 
-#    x = Article(title='test in code', content='comen on man !')
+#    a = Author(name='James Bond')
+#    a.put()
+#    x = Article(title='007 rocking recipes!', content='Bond, james bond! I just love it!!! yesyesyes!!! comen on man !', author = a)
 #    x.put()
     
     currentuser =  {'name': 'Robert Mao', 'url': '/', 'img_url':'http://a1.twimg.com/profile_images/205153778/Suzie_0001s_normal.jpg', 'templatename':'user'}; 
