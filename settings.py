@@ -115,6 +115,8 @@ INSTALLED_APPS = (
     'rendertag', 
     'directtemplate',
     'cookmom', 
+    'article',
+    'comment',
 
     'django.contrib.auth',
     'django.contrib.sessions',

@@ -1,4 +1,4 @@
-<h1>{{object.subject}}</h1>
+<h1>{{object.title}}</h1>
 <h4 class="byauthor">By <a href="{{object.author.user.url}}" title='{{object.author.user.name}}'>{{object.author.user.name}}</a></h4>
 {% if object.attachments.ingredients %}
 <div class="mini_recipe ">
@@ -9,3 +9,4 @@
 </p>{{object.content}}<p>
 <hr class='space'/>
 {% render object.author %}
+<a href='{% url article.views.show_article key=object.key %}'>view...</a>

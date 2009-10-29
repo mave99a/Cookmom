@@ -19,9 +19,11 @@ from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 from directtemplate.views import directtemplate 
-
+from article import views
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^(.*)$', directtemplate), 
+    (r'^article/$', views.list_article), 
+    (r'^article/(?P<key>.+)$', views.show_article), 
+    (r'^(.*)$', directtemplate),     
 ) + urlpatterns
