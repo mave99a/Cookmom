@@ -24,6 +24,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^article/$', views.list_article), 
+    (r'^article/new/$', views.new_article), 
+    (r'^article/(?P<key>.+)/edit/$', views.edit_article),
+    (r'^article/(?P<key>.+)/dele/$', views.delete_article), 
     (r'^article/(?P<key>.+)$', views.show_article), 
     (r'^(.*)$', directtemplate),     
 ) + urlpatterns

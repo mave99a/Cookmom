@@ -9,4 +9,8 @@
 </p>{{object.content}}<p>
 <hr class='space'/>
 {% render object.author %}
-<a href='{% url article.views.show_article key=object.key %}'>view...</a>
+<ul>
+<li><a href='{% url article.views.show_article key=object.key %}'>view...</a></li>
+<li><a href='{% url article.views.edit_article key=object.key %}'>edit...</a></li>
+<li><a href='{% url article.views.delete_article key=object.key %}'>del...</a></li>
+</ul>
