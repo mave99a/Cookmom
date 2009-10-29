@@ -6,5 +6,5 @@ class Author(db.Model):
     
 class Article(db.Model):
     title = db.StringProperty(required=True)
-    content = db.StringProperty(required=True)
+    content = db.TextProperty(required=True, )
     author = db.ReferenceProperty(Author)
