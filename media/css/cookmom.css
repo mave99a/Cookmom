@@ -640,6 +640,12 @@ div.pagination span.disabled {
     color: #ccc;
 }
 
+/*
+* form styles
+*/
+ form p label {
+ 	display: block; 
+ }
 
 /*
 *   Vote style
