@@ -112,12 +112,18 @@ INSTALLED_APPS = (
     'blueprintcss',
     'lightbox', 
           
+    # tags
     'rendertag', 
+    'paginatortag', 
+    
+    # app modules
     'directtemplate',
     'cookmom', 
     'article',
     'comment',
+    'people',
 
+    #standard apps
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.admin',

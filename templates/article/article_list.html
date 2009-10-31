@@ -1,12 +1,7 @@
 {% extends "article/base.html" %}
 {% block main %}
+{% load paginator %}
+{% paginator %}
 {% render object_list%}
-<div>
-  {% if has_previous %}
-    <a href="?page={{ previous }}">&lt;-previous</a>
-  {% endif %}
-  {% if has_next %}
-    <a href="?page={{ next }}">next-&gt;</a>
-  {% endif %}
-</div>
+{% paginator %}
 {% endblock %}
