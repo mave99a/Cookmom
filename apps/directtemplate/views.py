@@ -2,7 +2,8 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseNotFound
 from django.template import RequestContext
 from datetime import datetime
-from article.models import Article, Author
+from people.models import User
+from article.models import Article
 
 def directtemplate(request, template):
     """

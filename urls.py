@@ -19,14 +19,22 @@ from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 from directtemplate.views import directtemplate 
-from article import views
+import article.views
+import people.views
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^article/$', views.list_article), 
-    (r'^article/new/$', views.new_article), 
-    (r'^article/(?P<key>.+)/edit/$', views.edit_article),
-    (r'^article/(?P<key>.+)/dele/$', views.delete_article), 
-    (r'^article/(?P<key>.+)$', views.show_article), 
+    (r'^people/$', people.views.list_user), 
+    (r'^people/new/$', people.views.new_user), 
+    (r'^people/(?P<key>.+)/edit/$', people.views.edit_user),
+    (r'^people/(?P<key>.+)/dele/$', people.views.delete_user), 
+    (r'^people/(?P<key>.+)$', people.views.show_user), 
+
+    (r'^article/$', article.views.list_article), 
+    (r'^article/new/$', article.views.new_article), 
+    (r'^article/(?P<key>.+)/edit/$', article.views.edit_article),
+    (r'^article/(?P<key>.+)/dele/$', article.views.delete_article), 
+    (r'^article/(?P<key>.+)$', article.views.show_article), 
+    
     (r'^(.*)$', directtemplate),     
 ) + urlpatterns

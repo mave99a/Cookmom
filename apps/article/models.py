@@ -1,10 +1,8 @@
 from google.appengine.ext import db
 import datetime
-
-class Author(db.Model):
-    name = db.StringProperty(required=True)
+from people.models import User
     
 class Article(db.Model):
     title = db.StringProperty(required=True)
     content = db.TextProperty(required=True, )
-    author = db.ReferenceProperty(Author)
+    author = db.ReferenceProperty(User)
