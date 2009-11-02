@@ -117,12 +117,16 @@ INSTALLED_APPS = (
     'paginatortag', 
     
     # app modules
-    'directtemplate',
+    'directtemplate', 
     'cookmom', 
+    
+    # general purpose apps
+    'people',   # every following app will depends on people app
     'article',
     'comment',
-    'people',
-
+    'tagging',
+    'vote', 
+    
     #standard apps
     'django.contrib.auth',
     'django.contrib.sessions',
