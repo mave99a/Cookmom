@@ -2,4 +2,18 @@
 {% block title %}{{object.name}} - Cookmom{% endblock %}
 {% block main %}
 {% render object%}
+
+{% if object.article_set %}
+<h4>Articles by {{object.name}}</h4>
+{% render object.article_set %}
+{% else %}
+{{object.name}} not yet write any article
+{% endif %}
+{% if object.comment_set %}
+<h4>Comments by {{object.name}}</h4>
+{% render object.comment_set %}
+{% else %}
+{{object.name}} not yet write any comment
+{% endif %}
+
 {% endblock %}

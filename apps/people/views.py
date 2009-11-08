@@ -7,8 +7,7 @@ from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import create_object, delete_object, update_object
 from models import User
 
-class UserForm(forms.ModelForm):
-    
+class UserForm(forms.ModelForm):    
     class Meta:
         model = User
 UserForm = FormWithSets(UserForm)

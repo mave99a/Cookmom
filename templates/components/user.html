@@ -1,5 +1,5 @@
 <span class='vcard'>
-<a href="{{object.url}}" class="url" title="{{object.name}}">
+<a href="{% url people.views.show_user key=object.key%}" class="url" title="{{object.name}}">
 	<img alt="{{object.name}}" class="photo fn" src="{{object.img_url}}">
 </a>
 </span>

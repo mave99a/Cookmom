@@ -9,7 +9,7 @@
 </td>
 <td class="bubble"><div>
 	<b class="b1f"></b><b class="b2f"></b><b class="b3f"></b><b class="b4f"></b>
-	    <div class="contentf"><a href="{{object.author.url}}" title="{{object.author.name}}">{{object.author.name}}</a> post on {{object.mtime}}:<br/>
+	    <div class="contentf"><a href="{% url people.views.show_user key=object.author.key%}" title="{{object.author.name}}">{{object.author.name}}</a> post on {{object.mtime}}:<br/>
 	    {{object.content}}
 	    </div>
 	<b class="b4f"></b><b class="b3f"></b><b class="b2f"></b><b class="b1f"></b>
