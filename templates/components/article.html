@@ -1,4 +1,4 @@
-<h1>{{object.title}}</h1>
+<h1><a href="{% url article.views.show_article key=object.key %}" title="{{object.title}}">{{object.title}}</a></h1>
 <h4 class="byauthor">By <a href="{% url people.views.show_user key=object.author.key%}" title='{{object.author.name}}'>{{object.author.name}}</a></h4>
 {% if object.attachments.ingredients %}
 <div class="mini_recipe ">
@@ -8,12 +8,3 @@
 {% endif %}
 </p>{{object.content}}<p>
 <hr class='space'/>
-{% render object.author %}
-<div>
-{% render object.Comments %}
-</div>
-<ul>
-<li><a href='{% url article.views.show_article key=object.key %}'>view...</a></li>
-<li><a href='{% url article.views.edit_article key=object.key %}'>edit...</a></li>
-<li><a href='{% url article.views.delete_article key=object.key %}'>del...</a></li>
-</ul>

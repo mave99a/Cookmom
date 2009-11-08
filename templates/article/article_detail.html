@@ -2,4 +2,15 @@
 {% block title %}{{object.title}} - Cookmom{% endblock %}
 {% block main %}
 {% render object%}
+
+{% render object.author %}
+<div>
+{% render object.Comments %}
+</div>
+
+<ul>
+<li><a href='{% url article.views.edit_article key=object.key %}'>edit...</a></li>
+<li><a href='{% url article.views.delete_article key=object.key %}'>del...</a></li>
+</ul>
 {% endblock %}
+
