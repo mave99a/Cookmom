@@ -135,7 +135,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.redirects',
     'django.contrib.sites',
-    'django.contrib.webdesign', # app for generate 'lorem ipsum'
+    'django.contrib.webdesign', # app for generate 'lorem ipsum' 
     'appenginepatcher',
     'mediautils',
 )

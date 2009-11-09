@@ -6,14 +6,27 @@ from django.core.urlresolvers import reverse
 from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import create_object, delete_object, update_object
 from models import Article
+import datetime
+from people.models import User
+
+u = User(name='xxxxx')
+u.put()
 
 class ArticleForm(forms.ModelForm):
-    
     class Meta:
         model = Article
-ArticleForm = FormWithSets(ArticleForm)
+        exclude = ('author', 'ctime', 'mtime', 'lang', 'published')
+    def save(self):
+        obj = super(ArticleForm, self).save(commit = False)
 
+        now = datetime.datetime.now()
+        obj.ctime = now
+        obj.mtime = now
+        obj.author = u
 
+        obj.save()
+        return obj
+    
 def list_article(request):
     return object_list(request, Article.all(), paginate_by=10)
 
