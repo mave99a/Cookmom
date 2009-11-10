@@ -1,5 +1,5 @@
 <h1><a href="{% url article.views.show_article key=object.key %}" title="{{object.title}}">{{object.title}}</a></h1>
-<h4 class="byauthor">By <a href="{% url people.views.show_user key=object.author.key%}" title='{{object.author.name}}'>{{object.author.name}}</a></h4>
+<h4 class="byauthor">By <a href="{% url people.views.show_user key=object.author.key%}" title='{{object.author.name}}'>{{object.author.name}}</a> on {{object.ctime}}</h4>
 {% if object.attachments.ingredients %}
 <div class="mini_recipe ">
 <h3>Ingredients</h2>
