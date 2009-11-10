@@ -1,0 +1,13 @@
+{% extends "people/base.html" %}
+{% block main %}
+
+<form action="" method="post" enctype="multipart/form-data">
+{{ form.as_p }}
+<p>
+<input type="submit"
+    value="{% if object %}Apply changes{% else %}Create{% endif %}" />
+</p>
+</form>
+
+
+{% endblock %}
