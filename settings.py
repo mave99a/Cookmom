@@ -127,8 +127,6 @@ INSTALLED_APPS = (
     'tagging',
     'vote', 
     
-    # patchs
-    'generic_view_patch',
     #standard apps
     'django.contrib.auth',
     'django.contrib.sessions',
