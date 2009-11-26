@@ -1,7 +1,8 @@
 {% extends "article/base.html" %}
+{% block title %}Articles - Cookmom{% endblock %}
 {% block main %}
 {% load paginator %}
 {% paginator %}
-{% render object_list%}
+{% render object_list template=article_listitem.html%}
 {% paginator %}
 {% endblock %}
