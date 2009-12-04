@@ -11,6 +11,9 @@ from people.models import User
 u = User(name='Stupider', img_url='http://a3.twimg.com/profile_images/374652761/IMG_6122_2_bigger.JPG')
 u.put()
 
+def list_article(request):
+    return object_list(request, Article.all(), paginate_by = 10)
+
 def show_article(request, key):
     return object_detail(request, Article.all(), key)
 

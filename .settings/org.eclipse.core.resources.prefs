@@ -1,5 +1,6 @@
-#Sat Oct 31 01:29:55 GMT 2009
+#Thu Dec 03 22:40:01 PST 2009
 eclipse.preferences.version=1
 encoding//apps/article/views.py=UTF-8
+encoding//apps/comment/views.py=UTF-8
 encoding//apps/people/views.py=UTF-8
 encoding/settings.py=UTF-8

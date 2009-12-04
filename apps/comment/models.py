@@ -18,4 +18,4 @@ class Comment(db.Model):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        exclude = ('author', 'ctime', 'mtime', 'lang')          
+        exclude = ('author', 'ctime', 'mtime', 'lang', 'target')          
