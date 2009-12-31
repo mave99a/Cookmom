@@ -8,9 +8,6 @@ from models import Article, ArticleForm
 
 from people.models import User
 
-u = User(name='Stupider', img_url='http://a3.twimg.com/profile_images/374652761/IMG_6122_2_bigger.JPG')
-u.put()
-
 def list_article(request):
     return object_list(request, Article.all(), paginate_by = 10)
 
@@ -19,7 +16,7 @@ def show_article(request, key):
 
 def new_article(request):
     return create_object(request, form_class=ArticleForm,
-        extra_fields = {'author': u}, 
+        extra_fields = {'author': User.get_current_user()}, 
         post_save_redirect=reverse(show_article,
                                    kwargs=dict(key='%(key)s')))
 def edit_article(request, key):

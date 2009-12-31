@@ -14,13 +14,9 @@
 
 # Import default app urlpatterns, enable automatic url from apps
 from ragendja.urlsauto import urlpatterns
-
 from django.conf.urls.defaults import *
-from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 from directtemplate.views import directtemplate 
-import comment.views
-import people.views
 
 admin.autodiscover()
 
