@@ -74,7 +74,7 @@ MIDDLEWARE_CLASSES = (
     # Django authentication
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     # Google authentication
-    #'ragendja.auth.middleware.GoogleAuthenticationMiddleware',
+    'ragendja.auth.middleware.GoogleAuthenticationMiddleware',
     # Hybrid Django/Google authentication
     #'ragendja.auth.middleware.HybridAuthenticationMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     'django.contrib.webdesign', # app for generate 'lorem ipsum' 
     'appenginepatcher',
     'mediautils',
+    'ragendja',
 )
 
 # List apps which should be left out from app settings and urlsauto loading

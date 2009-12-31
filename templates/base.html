@@ -20,16 +20,16 @@
 	<div class="span-13"> 
 		<h2 ><a href="/" title="Cookmom"><span>Cookmom</span></a></h2>
 	</div>
-	{% if user %}
+	{% load googletags %}
+	{% if user.is_authenticated %}
 	<div class="login">
 	{% render currentuser %}
-	Welcome, Sabrina! <a href="/my/">My home</a> | <a href='#'>Logout</a>
+	Welcome! <a href="/my/">My home</a> | <a href='{% google_logout_url request.get_full_path%}'>Logout</a>
 	</div>
-	
 	{% else %}
 	<div class="span-9 last">
 		<div id="signin">
-			<a href="/html/login/index.html?TB_iframe=true&height=220&width=260&modal=1"  rel="lightbox" title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
+			<a href="{% google_login_url request.get_full_path %}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
 		</div>	
 	</div>
 	{% endif %}
