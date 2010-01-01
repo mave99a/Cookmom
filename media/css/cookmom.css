@@ -359,7 +359,7 @@ width:9px;padding: 0; margin: 0;
 .b2f {height:1px; background:#eee; margin:0 3px;}
 .b3f {height:1px; background:#eee; margin:0 2px;}
 .b4f {height:2px; background:#eee; margin:0 1px;}
-.contentf {background: #eee; padding-left: 5px; padding-right: 5px;}
+.contentf {background: #eee; padding: 10px;}
 
 .uparrow {display:block; width:0; height:0; color:#d8d8ee; overflow:hidden; border-bottom:12px solid #eee; border-left:12px dotted transparent; border-right:12px dotted transparent; margin-left:50px;}
 /* hack for IE5.5 */
@@ -373,6 +373,14 @@ width:9px;padding: 0; margin: 0;
 /* hack for IE5.5 */
 * html .leftarrow {width:24px; height:12px; w\idth:0; hei\ght:0;}
 
+/*
+* comment list table
+*/
+
+table.comment tr td.author
+{
+  width: 64px;
+}
 
 /*
 *  comments header
