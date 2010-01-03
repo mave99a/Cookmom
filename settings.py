@@ -77,6 +77,9 @@ MIDDLEWARE_CLASSES = (
     #'ragendja.auth.middleware.GoogleAuthenticationMiddleware',
     # Hybrid Django/Google authentication
     'ragendja.auth.middleware.HybridAuthenticationMiddleware',
+    
+    'ragendja.middleware.LoginRequiredMiddleware',
+    
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'ragendja.sites.dynamicsite.DynamicSiteIDMiddleware',
@@ -85,10 +88,10 @@ MIDDLEWARE_CLASSES = (
 )
 
 # Google authentication
-AUTH_USER_MODULE = 'ragendja.auth.google_models'
-AUTH_ADMIN_MODULE = 'ragendja.auth.google_admin'
+#AUTH_USER_MODULE = 'ragendja.auth.google_models'
+#AUTH_ADMIN_MODULE = 'ragendja.auth.google_admin'
 # Hybrid Django/Google authentication
-#AUTH_USER_MODULE = 'ragendja.auth.hybrid_models'
+AUTH_USER_MODULE = 'ragendja.auth.hybrid_models'
 
 LOGIN_URL = '/account/login/'
 LOGOUT_URL = '/account/logout/'
@@ -98,8 +101,7 @@ GLOBALTAGS = (
     'ragendja.templatetags.ragendjatags',
     'ragendja.templatetags.googletags',    
     'django.templatetags.i18n',
-    'sitemesh.templatetags.sitemesh',
-)
+ )
 
 INSTALLED_APPS = (
     # Add jquery support (app is in "common" folder). This automatically
@@ -111,6 +113,8 @@ INSTALLED_APPS = (
     # 'jquerylib',    # we will use Google's CDN,  so won't include this app here. 
     'blueprintcss',
     'lightbox', 
+    
+    'registration',
           
     # tags
     'rendertag', 

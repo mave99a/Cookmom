@@ -16,7 +16,7 @@
 from ragendja.urlsauto import urlpatterns
 from django.conf.urls.defaults import *
 from django.contrib import admin
-from directtemplate.views import directtemplate 
+from ragendja.auth.urls import urlpatterns as auth_patterns
 
 admin.autodiscover()
 

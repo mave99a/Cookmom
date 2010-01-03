@@ -24,12 +24,12 @@
 	{% if user.is_authenticated %}
 	<div class="login">
 	{% render currentuser %}
-	Welcome! <a href="/my/">My home</a> | <a href='{% google_logout_url request.get_full_path%}'>Logout</a>
+	Welcome! {{user.email}} <a href="/my/">My home</a> | <a href='{% url django.contrib.auth.views.logout %}?redirect_to={{ request.get_full_path|urlencode }}'>Logout</a>
 	</div>
 	{% else %}
 	<div class="span-9 last">
 		<div id="signin">
-			<a href="{% google_login_url request.get_full_path %}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
+			<a href="{% url django.contrib.auth.views.login %}?redirect_to={{ request.get_full_path|urlencode }}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
 		</div>	
 	</div>
 	{% endif %}
