@@ -1,6 +1,11 @@
-#Thu Dec 03 22:40:01 PST 2009
+#Sat Jan 02 21:25:56 PST 2010
 eclipse.preferences.version=1
 encoding//apps/article/views.py=UTF-8
 encoding//apps/comment/views.py=UTF-8
 encoding//apps/people/views.py=UTF-8
+encoding//common/appenginepatch/ragendja/auth/context_processors.py=UTF-8
+encoding//common/appenginepatch/ragendja/auth/decorators.py=UTF-8
+encoding//common/appenginepatch/ragendja/auth/urls.py=UTF-8
+encoding//common/appenginepatch/ragendja/auth/views.py=UTF-8
+encoding//common/appenginepatch/ragendja/middleware.py=UTF-8
 encoding/settings.py=UTF-8
