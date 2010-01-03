@@ -76,7 +76,7 @@ MIDDLEWARE_CLASSES = (
     # Google authentication
     #'ragendja.auth.middleware.GoogleAuthenticationMiddleware',
     # Hybrid Django/Google authentication
-    'ragendja.auth.middleware.HybridAuthenticationMiddleware',
+    #'ragendja.auth.middleware.HybridAuthenticationMiddleware',
     
     'ragendja.middleware.LoginRequiredMiddleware',
     
@@ -91,11 +91,11 @@ MIDDLEWARE_CLASSES = (
 #AUTH_USER_MODULE = 'ragendja.auth.google_models'
 #AUTH_ADMIN_MODULE = 'ragendja.auth.google_admin'
 # Hybrid Django/Google authentication
-AUTH_USER_MODULE = 'ragendja.auth.hybrid_models'
+#AUTH_USER_MODULE = 'ragendja.auth.hybrid_models'
 
 LOGIN_URL = '/account/login/'
 LOGOUT_URL = '/account/logout/'
-LOGIN_REDIRECT_URL = '/'
+#LOGIN_REDIRECT_URL = '/'
 
 GLOBALTAGS = (
     'ragendja.templatetags.ragendjatags',
