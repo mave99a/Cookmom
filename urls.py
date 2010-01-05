@@ -16,10 +16,8 @@
 from ragendja.urlsauto import urlpatterns
 from django.conf.urls.defaults import *
 from django.contrib import admin
-from ragendja.auth.urls import urlpatterns as auth_patterns
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
-#    (r'^(.*)$', directtemplate),     
+urlpatterns = patterns('',   
 ) + urlpatterns
