@@ -4,7 +4,7 @@
 {% block content %}
 <div id="welcome">
   <div class="span-13">
-  	{% render feature_articles templatename=mainrecipe %}
+  	{% render feature_articles template=components/mainrecipe.html, param=1 %}
   </div>
   <div class="span-11 last" id="intro">
 	<h2>Share your cooking experiences...</h2>
