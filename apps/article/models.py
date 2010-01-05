@@ -25,6 +25,15 @@ class Article(db.Model):
     img_url_big = db.StringProperty()
     img_url_small = db.StringProperty()
     
+    @classmethod
+    def get_featured(cls):
+        featured = Article.all().fetch(1)
+        return featured
+    
+    @classmethod
+    def get_top(cls):
+        top = Article.all().fetch(6)
+        return top
     
 class ArticleForm(forms.ModelForm):
     class Meta:
