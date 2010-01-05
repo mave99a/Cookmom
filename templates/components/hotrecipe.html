@@ -1,10 +1,10 @@
 <div class="recipes_photo_medium">
-	<a href='/article/' title="{{object.name}}">
-	<img src="{{object.medium_img_url}}" alt="{{object.name}}"/>
+	<a href='/article/' title="{{object.title}}">
+	<img src="{{object.img_url_small}}" alt="{{object.title}}"/>
 	</a>
 	<div class="description">
-		<h4>{{object.name}}</h4>
-		<cite>By <a href="#">{{object.author_name}}</a><span class='reactions'>{{object.comments}}</span>
+		<h4>{{object.title}}</h4>
+		<cite>By <a href="#">{{object.author.name}}</a><span class='reactions'>{{object.comment_count}}</span>
 		</cite>
 	</div>
 </div>
