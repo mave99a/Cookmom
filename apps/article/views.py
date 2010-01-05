@@ -12,21 +12,21 @@ from people.models import User
 def list_article(request):
     return object_list(request, Article.all(), paginate_by = 10)
 
-def show_article(request, key):
-    return object_detail(request, Article.all(), key)
+def show_article(request, slug):
+    return object_detail(request, Article.all(), slug=slug)
 
 @login_required
 def new_article(request):
     return create_object(request, form_class=ArticleForm,
         extra_fields = {'author': User.get_current_user()}, 
         post_save_redirect=reverse(show_article,
-                                   kwargs=dict(key='%(key)s')))
+                                   kwargs=dict(slug='%(slug)s')))
 @login_required
-def edit_article(request, key):
-    return update_object(request, object_id=key, form_class=ArticleForm,
+def edit_article(request, slug):
+    return update_object(request, slug=slug, form_class=ArticleForm,
         post_save_redirect=reverse(show_article,
-                                   kwargs=dict(key='%(key)s')))
+                                   kwargs=dict(slug='%(slug)s')))
 @login_required
-def delete_article(request, key):
-    return delete_object(request, Article, object_id=key,
+def delete_article(request, slug):
+    return delete_object(request, Article, slug=slug,
         post_delete_redirect=reverse(list_article))    

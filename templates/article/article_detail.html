@@ -11,8 +11,8 @@
 { renderview comment.view.newcomment target=object.key template='' }
 
 <ul>
-<li><a href='{% url article.views.edit_article key=object.key %}'>edit...</a></li>
-<li><a href='{% url article.views.delete_article key=object.key %}'>del...</a></li>
+<li><a href='{% url article.views.edit_article slug=object.slug %}'>edit...</a></li>
+<li><a href='{% url article.views.delete_article slug=object.slug %}'>del...</a></li>
 </ul>
 {% endblock %}
 
