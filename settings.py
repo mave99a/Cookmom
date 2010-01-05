@@ -121,8 +121,6 @@ INSTALLED_APPS = (
     'paginatortag', 
     
     # app modules
-    'directtemplate', 
-    'cookmom', 
     
     # general purpose apps
     'people',   # every following app will depends on people app

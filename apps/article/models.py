@@ -5,7 +5,7 @@ from django import forms
     
 class Article(db.Model):
     title = db.StringProperty(required=True)
-    content = db.TextProperty(required=True, )
+    content = db.TextProperty(required=True)
     author = db.ReferenceProperty(User)
     
     # create time
@@ -16,6 +16,15 @@ class Article(db.Model):
     lang = db.StringProperty(required=True, default='en')
     
     published = db.BooleanProperty(default=False, required=True)
+    
+    slug = db.StringProperty(required=True)
+    
+    # some cached properties for performance improving
+    read_count = db.IntegerProperty(default=0)
+    comment_count = db.IntegerProperty(default=0)
+    img_url_big = db.StringProperty()
+    img_url_small = db.StringProperty()
+    
     
 class ArticleForm(forms.ModelForm):
     class Meta:
