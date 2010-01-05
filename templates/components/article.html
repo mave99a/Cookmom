@@ -1,4 +1,4 @@
-<h1><a href="{% url article.views.show_article key=object.key %}" title="{{object.title}}">{{object.title}}</a></h1>
+<h1>{{object.title}}</h1>
 <h4 class="byauthor">By <a href="{% url people.views.show_user key=object.author.key%}" title='{{object.author.name}}'>{{object.author.name}}</a> on {{object.ctime|date}}</h4>
 {% if object.attachments.ingredients %}
 <div class="mini_recipe ">
@@ -6,5 +6,6 @@
 {% render object.attachments.ingredients %}
 </div>
 {% endif %}
+<img src='{{object.img_url_big}}' title='{{object.title}}'/>
 </p>{{object.content|safe}}<p>
 <hr class='space'/>

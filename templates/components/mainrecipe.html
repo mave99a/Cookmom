@@ -1,6 +1,6 @@
 <div class='recipes_photo_big_holder'>
 <div class="recipes_photo_big">
-<a href='/article/'>
+<a href='{% url article.views.show_article key=object.key %}'>
   <img class="" title='{{object.title}}' src='{{object.img_url_big}}' />
 </a>
 <div class="description">
