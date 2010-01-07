@@ -2,6 +2,8 @@ from google.appengine.ext import db
 import datetime
 from people.models import User
 from django import forms
+from django.core.urlresolvers import reverse
+from django.db import models
     
 class Article(db.Model):
     title = db.StringProperty(required=True)
@@ -25,6 +27,10 @@ class Article(db.Model):
     img_url_big = db.StringProperty()
     img_url_small = db.StringProperty()
     
+    @models.permalink
+    def get_absolute_url(self):
+        return ('article.views.show_article', [self.slug])
+        
     @classmethod
     def get_featured(cls):
         featured = Article.all().fetch(1)

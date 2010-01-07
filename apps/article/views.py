@@ -18,14 +18,12 @@ def show_article(request, slug):
 @login_required
 def new_article(request):
     return create_object(request, form_class=ArticleForm,
-        extra_fields = {'author': User.get_current_user()}, 
-        post_save_redirect=reverse(show_article,
-                                   kwargs=dict(slug='%(slug)s')))
+        extra_fields = {'author': User.get_current_user()})
+
 @login_required
 def edit_article(request, slug):
-    return update_object(request, slug=slug, form_class=ArticleForm,
-        post_save_redirect=reverse(show_article,
-                                   kwargs=dict(slug='%(slug)s')))
+    return update_object(request, slug=slug, form_class=ArticleForm)
+
 @login_required
 def delete_article(request, slug):
     return delete_object(request, Article, slug=slug,

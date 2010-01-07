@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     # app modules
     'cookmom',
     
-    # general purpose apps
+    # general purpose apps 
     'people',   # every following app will depends on people app
     'article',
     'comment',
