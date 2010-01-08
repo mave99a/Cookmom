@@ -85,6 +85,9 @@ MIDDLEWARE_CLASSES = (
     'ragendja.sites.dynamicsite.DynamicSiteIDMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    
+    # firepython for debug 
+    'firepython.middleware.FirePythonDjango',
 )
 
 # Google authentication
