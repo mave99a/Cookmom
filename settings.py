@@ -9,6 +9,7 @@ currentpath = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(currentpath, "libs"))
 sys.path.insert(0, os.path.join(currentpath, "apps"))
 
+
 # Increase this when you update your media on the production site, so users
 # don't have to refresh their cache. By setting this your MEDIA_URL
 # automatically becomes /media/MEDIA_VERSION/
@@ -142,6 +143,8 @@ INSTALLED_APPS = (
     'django.contrib.redirects',
     'django.contrib.sites',
     'django.contrib.webdesign', # app for generate 'lorem ipsum' 
+        
+    # app engine patch    
     'appenginepatcher',
     'mediautils',
     'ragendja',

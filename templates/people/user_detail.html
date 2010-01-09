@@ -5,7 +5,7 @@
 
 {% if object.article_set %}
 <h4>Articles by {{object.name}}</h4>
-{% render object.article_set %}
+{% render object.article_set template=components/article_listitem.html%}
 {% else %}
 {{object.name}} not yet write any article
 {% endif %}
@@ -16,5 +16,8 @@
 {% else %}
 {{object.name}} not yet write any comment
 {% endif %}
+
+{% load comments%}
+{% comment_form for object %}
 
 {% endblock %}

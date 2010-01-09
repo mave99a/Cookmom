@@ -2,13 +2,16 @@
 {% block title %}{{object.title}} - Cookmom{% endblock %}
 {% block main %}
 {% render object%}
-
 {% render object.author %}
-<div>
-{% render object.Comments %}
-</div>
+{% load comments%}
+{% comment_form for object %}
 
-{ renderview comment.view.newcomment target=object.key template='' }
+{% if object.Comments %}
+<h4>Comments</h4>
+{% render object.Comments %}
+{% else %}
+No comment.
+{% endif %}
 
 <ul>
 <li><a href='{% url article.views.edit_article slug=object.slug %}'>edit...</a></li>
