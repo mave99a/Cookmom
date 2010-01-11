@@ -1,5 +1,6 @@
 <h1>{{object.title}}</h1>
 <h4 class="byauthor">By <a href="{% url people.views.show_user key=object.author.key%}" title='{{object.author.name}}'>{{object.author.name}}</a> on {{object.ctime|date}}</h4>
+<div class='tags'>Tag: {{object.tags|join:", "}}</div>
 {% if object.attachments.ingredients %}
 <div class="mini_recipe ">
 <h3>Ingredients</h2>

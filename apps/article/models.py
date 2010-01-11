@@ -4,8 +4,9 @@ from people.models import User
 from django import forms
 from django.core.urlresolvers import reverse
 from django.db import models
+from tagging.models import Taggable
     
-class Article(db.Model):
+class Article(db.Model, Taggable):
     title = db.StringProperty(required=True)
     content = db.TextProperty(required=True)
     author = db.ReferenceProperty(User)
@@ -26,7 +27,9 @@ class Article(db.Model):
     comment_count = db.IntegerProperty(default=0)
     img_url_big = db.StringProperty()
     img_url_small = db.StringProperty()
-    
+
+    tags = db.StringListProperty()
+        
     @models.permalink
     def get_absolute_url(self):
         return ('article.views.show_article', [self.slug])

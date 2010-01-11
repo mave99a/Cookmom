@@ -1,12 +1,13 @@
 {% extends "base_content.html" %}
-{% block tabArticle %}active{% endblock %}
-{% block title %}{{article.title}} - Cookmom{% endblock %}
+{% block tabPeople %}active{% endblock %}
+{% block title %}Cookmom{% endblock %}
 
 {% block main %}
 <div class="article">
 {% render article %}
 </div>
 
+{% render comments %}
 {% endblock %}
 
 
@@ -21,15 +22,6 @@
 
 <a href="#" class="button"><span class="delete">Delete bookmark</span></a>
 
-<a href="#" class="button"><span class="user">Add to your friends</span></a>
-
-<a href="#" class="button"><span class="alert">Did you miss something?</span></a>
-
-<a href="#" class="button"><span class="msg">You have 2 new messages</span></a>
-
-<a href="#" class="button"><span class="download">Download this file</span></a>
-
-<a href="#" class="button"><span class="lens">Are you looking for...?</span></a>
 
 <a href="#" class="button"><span class="info">Do you need for help?</span></a>    </div>
 </div>
