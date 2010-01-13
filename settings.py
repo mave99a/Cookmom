@@ -131,7 +131,7 @@ INSTALLED_APPS = (
     'people',   # every following app will depends on people app
     'article',
     'comment',
-    'tagging', 
+    'taggable', 
     'vote', 
     'search',
     

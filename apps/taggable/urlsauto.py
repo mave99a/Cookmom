@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
 
 rootpatterns = patterns('',
-    (r'^tag/', include('tagging.urls')),
+    (r'^tag/', include('taggable.urls')),
 )
