@@ -1,5 +1,14 @@
+{% if taggable %}
 <span class='tags'>
-{% for tag in tags %}
-<a href='{%url taggable.views.show_by_tag tag=tag%}' class='tag' title='{{tag}}'>{{tag}}</a>{% if forloop.last%}{% else %}, {%endif%}
+{% for tag in taggable.tags %}
+<a href='{%url taggable.views.show_by_tag tag=tag%}' class='tag' title='{{tag}}'>{{tag}}</a>
+[<a href='{%url taggable.views.remove_tags%}?tags={{tag}}&target={{taggable.target.key}}' title='remove tag:{{tag}}'>X</a>]
+{% if forloop.last%}{% else %}, {%endif%}
 {% endfor %}
 </span>
+{% endif %}
+<form action='{%url taggable.views.add_tags%}'>
+<input type='input' name='tags'/>
+<input type='hidden' name='target' value='{{target.key}}'/>
+<input type='submit' value='Add tags'></input>
+</form>
