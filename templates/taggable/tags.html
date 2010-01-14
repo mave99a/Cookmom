@@ -1,0 +1,5 @@
+<span class='tags'>
+{% for tag in tags %}
+<a href='{%url taggable.views.show_by_tag tag=tag%}' class='tag' title='{{tag}}'>{{tag}}</a>{% if forloop.last%}{% else %}, {%endif%}
+{% endfor %}
+</span>
