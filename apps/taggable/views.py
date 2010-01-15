@@ -12,7 +12,8 @@ def tagcloud(request):
                               context_instance=RequestContext(request))
     
 def show_by_tag(request, tag):
-    return object_list(request, Taggable.get_by_tag(tag), paginate_by = 10)
+    return object_list(request, Taggable.get_by_tag(tag), paginate_by = 10, 
+                       extra_context={'tag':tag})
 
 @login_required
 def add_tags(request):

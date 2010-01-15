@@ -1,6 +1,7 @@
-{% extends "article/base.html" %}
-{% block title %}Articles - Cookmom{% endblock %}
+{% extends "taggable/base.html" %}
+{% block title %}{{tag}} - Cookmom{% endblock %}
 {% block main %}
+<h1>{{tag}}</h1>
 {% load paginator %}
 {% paginator %}
 {% render object_list%}
