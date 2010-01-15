@@ -1,0 +1,8 @@
+{% extends "taggable/base.html" %}
+{% block title %}Tagcloud - Cookmom{% endblock %}
+{% block main %}
+<h1>Tags Cloud</h1>
+{% for tag in object_list %}
+<a href='{%url taggable.views.show_by_tag tag=tag.name%}' title='{{tag.name}}'>{{tag.name}}<span class='count'>({{tag.count}})</span></a>
+{% endfor %}
+{% endblock %}

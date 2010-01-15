@@ -8,8 +8,7 @@ from django.http import HttpResponse
 from models import *
 
 def tagcloud(request):
-    return render_to_response('taggable/tagcloud.html', locals(), 
-                              context_instance=RequestContext(request))
+    return object_list(request, Tag.cloud(100))
     
 def show_by_tag(request, tag):
     return object_list(request, Taggable.get_by_tag(tag), paginate_by = 10, 

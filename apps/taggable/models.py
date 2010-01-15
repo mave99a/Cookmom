@@ -20,6 +20,7 @@ class Taggable(db.Model):
         '''clear_tags: remove all tag from an object'''
         taggable = Taggable.get_taggable(obj)
         if taggable is not None: 
+            Tag.removeset(taggable.tags) #decrease counter for all tags
             taggable.delete()
             
     @classmethod 
@@ -30,6 +31,7 @@ class Taggable(db.Model):
         else:
             taggable.tags = tags
         taggable.put()
+        Tag.addset(tags)
         
     @classmethod
     def add_tags(cls, obj, tags):
@@ -40,6 +42,7 @@ class Taggable(db.Model):
             for tag in tags:
                if tag not in taggable.tags:
                    taggable.tags.append(tag)
+                   Tag.add(tag) #increase the counter
         taggable.put()
        
     @classmethod
@@ -49,6 +52,7 @@ class Taggable(db.Model):
             for tag in tags: 
                 if tag in taggable.tags: 
                     taggable.tags.remove(tag)
+                    Tag.remove(tag) # decrease the counter
             
             if len(taggable.tags) == 0 : 
                 taggable.delete()
@@ -64,7 +68,45 @@ class Tag(db.Model):
     #last update time
     mtime = db.DateTimeProperty(auto_now=True)    
     # language, for filtering and automatic translation support
-    lang = db.StringProperty(required=True, default='en')    
+    lang = db.StringProperty(required=True, default='en') 
+    
+    @classmethod
+    def get_tag(cls, tag):
+        tag = Tag.all().filter('name =', tag)
+        return tag.get()
+    
+    @classmethod
+    def add(cls, tagname):
+        tag = cls.get_tag(tagname)
+        if tag is None:
+            tag = Tag(name=tagname, count=1)
+        else:
+            tag.count +=1
+        tag.put()
+    
+    @classmethod
+    def remove(cls, tagname):
+        tag = cls.get_tag(tagname)
+        if tag is not None:
+            tag.count -=1
+            if (tag.count >0):
+                tag.put()
+            else:
+                tag.delete()
+    
+    @classmethod
+    def addset(cls, tags):
+        for tag in tags:
+            cls.add(tag)
+    
+    @classmethod
+    def removeset(cls, tags):
+        for tag in tags: 
+            cls.remove(tag)
+            
+    @classmethod
+    def cloud(cls, n):
+       return Tag.all().order('count')
     
 class UserTag(Tag):
     pass
