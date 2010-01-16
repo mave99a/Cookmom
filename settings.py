@@ -135,6 +135,9 @@ INSTALLED_APPS = (
     'vote', 
     'search',
     
+    # unit test tool app
+    'gaeunit',
+    
     #standard apps
     'django.contrib.auth',
     'django.contrib.sessions',
