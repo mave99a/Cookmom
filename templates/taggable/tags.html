@@ -1,9 +1,12 @@
 {% if taggable %}
 <span class='tags'>
 {% for tag in taggable.tags %}
-<a href='{%url taggable.views.show_by_tag tag=tag%}' class='tag' title='{{tag}}'>{{tag}}</a>
+<span class='tag'>
+<a href='{%url taggable.views.show_by_tag tag=tag%}' title='{{tag}}'>{{tag}}</a>
+{% if isowner %}
 [<a href='{%url taggable.views.remove_tags%}?tags={{tag}}&target={{taggable.target.key}}' title='remove tag:{{tag}}'>X</a>]
-{% if forloop.last%}{% else %}, {%endif%}
+{% endif %}
+</span>
 {% endfor %}
 </span>
 {% endif %}
