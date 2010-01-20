@@ -1,5 +1,9 @@
-<li>
-<span>
+<p>
+<span class='articles-list'>
+<a href="{% url article.views.show_article slug=object.slug %}">
+{%load imageurl%}
+<img src='{%imageurl object.image small%}' alt='{{object.title}}' />
+</a>
 </span>
 <span>
 <a href="{% url article.views.show_article slug=object.slug %}" title="{{object.title}}">{{object.title}}</a>
@@ -10,4 +14,4 @@
 <span>
 {{object.ctime|date}}
 </span>
-</li>
+</p>

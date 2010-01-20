@@ -279,6 +279,18 @@ div.recipes_photo_big_holder {
 }
 
 /*
+* articles list
+*/
+
+span.articles-list  {
+	width: 240px;
+	height: 100px;
+	overflow: hidden;
+	border: 1px solid red;
+	padding: 4px;
+}
+
+/*
 * articles
 */
 .article h1 {

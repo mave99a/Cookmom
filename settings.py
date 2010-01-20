@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'taggable', 
     'vote', 
     'search',
+    'image',
     
     # unit test tool app
     'gaeunit',

@@ -37,7 +37,8 @@ class Taggable(db.Model):
     def add_tags(cls, obj, tags):
         taggable = Taggable.get_taggable(obj)
         if taggable is None: 
-          taggable = Taggable(target = obj, tags = tags)           
+          taggable = Taggable(target = obj, tags = tags)
+          Tag.addset(tags)           
         else: 
             for tag in tags:
                if tag not in taggable.tags:

@@ -24,8 +24,15 @@ class Article(db.Model):
     # some cached properties for performance improving
     read_count = db.IntegerProperty(default=0)
     comment_count = db.IntegerProperty(default=0)
-    img_url_big = db.StringProperty()
-    img_url_small = db.StringProperty()
+    
+    images_list = db.StringListProperty()
+    
+    def image(self):
+        '''return the main image of this article'''
+        try:
+            return self.images_list[0] 
+        except:
+            return '0'
         
     @models.permalink
     def get_absolute_url(self):
