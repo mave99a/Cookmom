@@ -3,6 +3,8 @@
 {% block main %}
 {% load paginator %}
 {% paginator %}
+<div class='articles_list'>
 {% render object_list template=components/article_listitem.html%}
+</div>
 {% paginator %}
 {% endblock %}

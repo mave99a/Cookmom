@@ -1,17 +1,16 @@
-<p>
-<span class='articles-list'>
-<a href="{% url article.views.show_article slug=object.slug %}">
-{%load imageurl%}
-<img src='{%imageurl object.image small%}' alt='{{object.title}}' />
-</a>
-</span>
-<span>
-<a href="{% url article.views.show_article slug=object.slug %}" title="{{object.title}}">{{object.title}}</a>
-</span>
-<span>
+<table>
+<tr>
+<td style='width:250px; padding:0; height: 50px; overflow: hidden; '>
+	<a href='{% url article.views.show_article slug=object.slug %}' title="{{object.title}}">
+	{% load imageurl %}
+	<img src="{%imageurl object.image small %}" alt="{{object.title}}"/>
+	</a>
+</td>
+<td style='vertical-align:top; padding: 0;'>
+<h3 style='width: 100%; background: #eee; padding: 4px; border-left: 5px solid #ccc; '>
+<a style='text-decoration: none;' href="{% url article.views.show_article slug=object.slug %}" title="{{object.title}}">{{object.title}}</a></h3>
 <a href="{% url people.views.show_user key=object.author.key%}" title='{{object.author.name}}'>{{object.author.name}}</a>
-</span>
-<span>
 {{object.ctime|date}}
-</span>
-</p>
+</td>
+</tr>
+</table>
