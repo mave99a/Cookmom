@@ -1,7 +1,8 @@
 {% extends "people/base.html" %}
 {% block title %}{{object.name}} - Cookmom{% endblock %}
 {% block main %}
-{% render object%}
+
+{% render object template=components/user_details.html %}
 
 {% if object.article_set %}
 <h4>Articles by {{object.name}}</h4>

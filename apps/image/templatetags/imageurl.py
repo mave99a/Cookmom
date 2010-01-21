@@ -44,9 +44,9 @@ mock_images = {
     '11':{'small':'http://farm5.static.flickr.com/4062/4268079021_616362af89_m.jpg',
          'square':'http://farm5.static.flickr.com/4062/4268079021_616362af89_s.jpg',
          'medium':'http://farm5.static.flickr.com/4062/4268079021_616362af89.jpg'},
-    '12':{'small':'',
-         'square':'',
-         'medium':''},
+    '12':{'small':'http://farm1.static.flickr.com/177/397671997_444c036cb1_m.jpg',
+         'square':'http://farm1.static.flickr.com/177/397671997_444c036cb1_s.jpg',
+         'medium':'http://farm1.static.flickr.com/177/397671997_444c036cb1.jpg'},
 }
 
 class ImageURLNode(template.Node):
