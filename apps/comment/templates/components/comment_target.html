@@ -1,0 +1,19 @@
+<table class="comment">
+<tr>
+<td class="author">
+{% render object.target templatetype=mini%}
+</td>
+{% spaceless %}
+<td class="arrow">
+  <em class="leftarrow"></em>
+</td>
+<td class="bubble"><div>
+	<b class="b1f"></b><b class="b2f"></b><b class="b3f"></b><b class="b4f"></b>
+	    <div class="contentf">
+	    		    {{object.content}}<span>(post on {{object.mtime}} <a href='{% url comment.views.show_comment key=object.key%}'>Permalink</a>)</span>
+	    </div>
+	<b class="b4f"></b><b class="b3f"></b><b class="b2f"></b><b class="b1f"></b>
+</div></td>
+{% endspaceless %}
+</tr>
+</table>

@@ -1,4 +1,9 @@
-<span class='vcard'>
+<td class='vcard'>
+<a href="{% url people.views.show_user key=object.key%}" class="url" title="{{object.name}}">
 	{%load imageurl %}
 	<img alt="{{object.name}}" class="photo fn" src="{% imageurl object.img square %}">
-</span>
+</a>
+</td>
+<td>
+{{object.name}}
+</td>

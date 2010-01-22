@@ -2,18 +2,18 @@
 {% block title %}{{object.name}} - Cookmom{% endblock %}
 {% block main %}
 
-{% render object template=components/user_details.html %}
+{% render object templatetype=details %}
 
 {% if object.article_set %}
 <h4>Articles by {{object.name}}</h4>
-{% render object.article_set template=components/article_listitem.html%}
+{% render object.article_set templatetype=listitem_self%}
 {% else %}
 {{object.name}} not yet write any article
 {% endif %}
 
 {% if object.comment_set %}
 <h4>Comments by {{object.name}}</h4>
-{% render object.comment_set %}
+{% render object.comment_set templatetype=target%}
 {% else %}
 {{object.name}} not yet write any comment
 {% endif %}

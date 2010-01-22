@@ -1,0 +1,4 @@
+<a href='{% url article.views.show_article slug=object.slug %}' title="{{object.title}}" style='width: 80px; height:80px;border: 1px solid #eee; padding: 3px;'>
+{% load imageurl %}
+<img src="{%imageurl object.image square %}" alt="{{object.title}}" />
+</a>
