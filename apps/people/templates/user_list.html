@@ -2,6 +2,6 @@
 {% block main %}
 {% load paginator %}
 {% paginator %}
-{% render object_list%}
+{% render object_list template=components/user_listitem.html%}
 {% paginator %}
 {% endblock %}
