@@ -1,7 +1,7 @@
 /*
 * Tags css styles
 */
-.tag {
+.tag, .deletedtag {
 	background:none repeat scroll 0 0 #E8F0F7;
 	color: #000;
 	padding: 2px 5px 0 5px;
@@ -13,32 +13,61 @@
 	vertical-align: center;
  }
  
- .tag:hover {
+.tag:hover {
  	color:#005DC9;
- }
+}
  
- .tagtext {
+.tagtext {
    padding-left:4px;
- }
+}
  
- .deletedtag {
+.deletedtag {
    background: #eee;
    color: #ccc;
- }
+}
  
- .deletedtag .tagtext{
+.deletedtag .tagtext{
  	text-decoration: line-through;	
- }
+}
  
- .tag .op {
+.remove {
 	background:url("http://l.yimg.com/hr/1125/img/del_sprite_smallIcons.gif") no-repeat scroll 0 -399px transparent;
 	width:13px;
 	opacity:0.2;
 	display: inline-block;
 	padding:0;
+}
+ 
+.remove:hover {
+ 	opacity:1;
+}
+ 
+.undo {
+	background:url("http://l.yimg.com/hr/1125/img/del_sprite_smallIcons.gif") no-repeat scroll 0 -439px transparent;
+	width:13px;
+	opacity:0.2;
+	display: inline-block;
+	padding:0;
+}
+ 
+.undo:hover {
+ 	opacity:1;
+}
+
+.deletedtag .undo {
+   display: auto;
+}
+
+.deletedtag .remove {
+  display: none;
  }
  
- .tag .op:hover
- {
- 	opacity:1;
+ .tag .undo {
+   display:none;
  }
+ 
+ .tag .remove {
+   display: auto;
+ }
+ 
+
