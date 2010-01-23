@@ -741,19 +741,3 @@ div.pagination span.disabled {
 	 letter-spacing: -1px; 
 }
 ul.ldStats {font-size: 76%;float: left;width: 8em;list-style-type: none;padding: 0;margin: 0.4em 0 0 1.5em;}.ldStats li {font-size: 139%;line-height: 1.2em;margin: 0;padding: 0;}li.ldStats-views, li.ldStats-clicks {margin-left: 2.7em;}li.ldStats-views {margin-top: -2.4em;}li.ldStats-up, li.ldStats-down {padding-left: 1.1em;}li.ldStats-views, li.ldStats-clicks {padding-left: 1em;}li.ldStats-up {background :url(http://cdn.dzone.com/links/themes/reader/images/vote-up-normal.gif ) 0 50% no-repeat;}li.ldStats-down {background :url(http://cdn.dzone.com/links/themes/reader/images/vote-down-normal.gif ) 0 50% no-repeat;}li.ldStats-views {background :url(http://cdn.dzone.com/links/themes/reader/images/icon-eye.gif ) 0 50% no-repeat;}li.ldStats-clicks {background :url(http://cdn.dzone.com/links/themes/reader/images/icon-pointer.gif ) 0 50% no-repeat;}.ldLeftCol {width: 246px;float: left;}
-
-/*
-* Tags
-*/
-.tag {
-	background: #eeeeee;
-	padding: 2px 5px 2px 5px;
-	margin: 1px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	display: inline-block;
- }
- 
- .tag a {
- 	text-decoration: none;
- }

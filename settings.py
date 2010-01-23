@@ -88,7 +88,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     
     # firepython for debug 
-    'firepython.middleware.FirePythonDjango',
+    #'firepython.middleware.FirePythonDjango',
 )
 
 # Google authentication
