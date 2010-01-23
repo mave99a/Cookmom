@@ -3,6 +3,10 @@ body {
 	background: #eee;
 }
 
+a {
+	outline: none;
+}
+
 .container
 {
 	background: #fff;
@@ -131,6 +135,7 @@ ul.tab li{float:left; margin-right:2px;}
 	height:30px;
 	line-height:30px;
 	text-decoration:none;
+	outline: none;
 }
 .tab a span{
 	background:url(img/tab-round.png) left 60px;
