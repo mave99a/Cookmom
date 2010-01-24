@@ -8,8 +8,8 @@ from django import template
 register = template.Library()
 
 mock_images = {
-    '0': {'small':'http://farm4.static.flickr.com/3269/2406169080_1e1cd8b94c.jpg_m.jpg', 
-          'square':'http://farm4.static.flickr.com/3269/2406169080_1e1cd8b94c.jpg_s.jpg',
+    '0': {'small':'http://farm4.static.flickr.com/3269/2406169080_1e1cd8b94c_m.jpg', 
+          'square':'http://farm4.static.flickr.com/3269/2406169080_1e1cd8b94c_s.jpg',
           'medium':'http://farm4.static.flickr.com/3269/2406169080_1e1cd8b94c.jpg'}, 
     '1': {'small':'http://farm4.static.flickr.com/3280/2638831430_afc0b9108f_m.jpg', 
           'square':'http://farm4.static.flickr.com/3280/2638831430_afc0b9108f_s.jpg',
@@ -51,17 +51,21 @@ mock_images = {
 
 class ImageURLNode(template.Node):
     def __init__(self, image_ref, size):
-        self.image_ref = template.Variable(image_ref)
+        self.image_ref = image_ref
         self.size = size
         
     def render(self, context):
-        imageid = self.image_ref.resolve(context)
         try: 
-            if imageid is not None:
-                # TBD, query DB to generate the URL of image 
-                return mock_images[imageid][self.size]
-        except:
-            return mock_images['0'][self.size]
+            return mock_images[self.image_ref][self.size]
+        except: 
+            imageid = template.Variable(self.image_ref).resolve(context)
+            try: 
+                if imageid is not None:
+                    # TBD, query DB to generate the URL of image 
+                    return mock_images[imageid][self.size]
+
+            except:
+                return mock_images['0'][self.size]
 
 def do_imageurl_tags(parser, token):
     tokens = token.contents.split()
