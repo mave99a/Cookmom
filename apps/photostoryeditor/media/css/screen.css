@@ -1,0 +1,103 @@
+a.imgeditor {
+	text-decoration:none;
+ 	position:relative;
+ 	display:block;
+ 	margin:0; 
+ 	padding:0;
+ 	height: 100px;
+}
+
+a.imgeditor img {
+	padding: 2px;
+	border: 1px solid #eee;
+	position:absolute;
+}
+
+a.imgeditor img:hover {
+	border: 1px solid #aaa;
+	opacity:0.9;
+}
+
+.moveup, .movedown {
+	position:absolute;
+	top: 85px;
+	width: 36px;
+	height: 16px;
+	border: 1px solid #ccc;
+	opacity:0.6;
+	text-align: center;
+	color: #ccc;
+}
+
+.moveup:hover, .movedown:hover {
+	border: 1px solid #aaa;
+	opacity:1;
+	color: #aaa;
+}
+
+.movedown 
+{
+	left: 42px;
+}
+
+a.imgeditor .moveup, a.imgeditor .movedown{
+ 	visibility:hidden;
+}
+
+a.imgeditor:hover .moveup, a.imgeditor:hover .movedown {
+	visibility:visible;
+}
+
+table.editor td{
+//	border: 1px solid red;
+	padding: 2px;
+	vertical-align: top;
+//	background: #eeeeaa;
+}
+
+td.image {
+  width: 80px;
+}
+
+td.textedit textarea {
+	width:98%; 
+	padding:5px;; 
+	margin:0; 
+	height:75px;
+	font-size: 1.3em;
+	border: 1px solid #ffffff;
+}
+
+td.textedit textarea:hover {
+	border: 1px solid #eeeeee;
+}
+
+td.textedit textarea:focus {
+	border: 1px solid #cccccc;
+}
+
+span.addrow {
+	border: 1px solid #eeeeee;
+	color: #eeeeee;
+	padding: 4px;
+	display: block;
+	text-align: center;
+	width: 98%;
+}
+
+span.addrow:hover {
+	border: 1px solid #cccccc;
+	color: #cccccc;
+}
+
+ul.actions {
+  list-style: none;
+  display: inline;
+  width: 100%;
+}
+
+ul.actions li {
+	display: block;
+	float: left;
+	width:200px; 
+}

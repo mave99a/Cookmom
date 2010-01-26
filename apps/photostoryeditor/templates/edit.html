@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load imageurl %}
+{% block title %}Write a new article - Cookmom{% endblock %}
+{% block content %}
+
+<h1>Share your cooking experience...</h1>
+<div class="span-18">
+<table id='editor' class="editor">
+<tr id='template-row'>
+<td class='image'>
+	<a class='imgeditor'>
+		<img src='{% imageurl 2 square%}' alt='Thumnail' title='Preview or change photo...'/>
+		<span class='moveup' title='Move this section up'>&uarr;</span>
+		<span class='movedown' title='Move this section down'>&darr;</span>
+	</a>
+</td>
+<td class='textedit'>
+	<textarea title='click to edit or add text here...'></textarea>
+</td>
+</tr>
+<tr>
+<td>
+
+</td>
+<td>
+<span class='addrow'>
+Click to add more...
+</span>
+</td>
+</tr>
+</table>
+
+<ul class='actions'>
+<li>
+ <a href="#" class="button"><span class="add">Save</span></a>
+</li>
+<li>
+ <a href="#" class="button"><span class="add">Preview</span></a>
+</li>
+<li>
+<a href="#" class="button"><span class="add">Publish</span></a>
+</li>
+</ul>
+
+</div>
+<div class="span-6 last">
+<a href="#" class="button"><span class="add">Upload photos</span></a>
+</div>
+
+{% endblock %}
+{% block addition_include_script %}
+<script src="http://sandbox.unwrongest.com/forms/js/jquery.elastic.js" type="text/javascript" charset="utf-8"></script>
+<script>
+function attachEvents()
+{
+$('textarea').elastic();
+$('.movedown').click(function() {
+	row = $(this).parents('tr')
+	row.hide()
+	row.insertAfter(row.next()).show()
+	row.show()
+})
+
+$('.moveup').click(function() {
+	row = $(this).parents('tr')
+	row.hide()
+	row.insertBefore(row.prev()).show()
+	row.show()
+})
+}
+</script>
+{% endblock %} 
+{% block doc_ready_script %}
+
+attachEvents()
+
+$('span.addrow').click(function() {
+	row = $(this).parents('tr')
+	$('#template-row').clone().insertBefore(row).show()
+	//attachEvents();
+});
+{% endblock %}

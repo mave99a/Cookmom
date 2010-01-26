@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'vote', 
     'search',
     'image',
+    'photostoryeditor',
     
     # unit test tool app
     'gaeunit',
