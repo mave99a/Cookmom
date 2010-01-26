@@ -2,21 +2,20 @@
 {% load imageurl %}
 {% block title %}Write a new article - Cookmom{% endblock %}
 {% block content %}
-<h1>Share your cooking experience...</h1>
 <style>
 a.imgeditor {
-	width: 100px;
-	height: 100px;
 	text-decoration:none;
  	position:relative;
  	display:block;
+ 	margin:0; 
+ 	padding:0;
+ 	height: 100px;
 }
 
 a.imgeditor img {
 	padding: 2px;
 	border: 1px solid #eee;
 	position:absolute;
-	left: 20px;	
 }
 
 a.imgeditor img:hover {
@@ -26,7 +25,7 @@ a.imgeditor img:hover {
 
 .moveup, .movedown, .del {
 	position:absolute;
-	left: 0;
+	top: 85px;
 	width: 16px;
 	height: 16px;
 	border: 1px solid #ccc;
@@ -40,11 +39,11 @@ a.imgeditor img:hover {
 
 .movedown 
 {
-	top: 20px;
+	left: 20px;
 }
 
 .del {
-	top: 40px;
+	left: 40px;
 }
 
 a.imgeditor .moveup, a.imgeditor .movedown, a.imgeditor .del{
@@ -55,42 +54,84 @@ a.imgeditor:hover .moveup, a.imgeditor:hover .movedown, a.imgeditor:hover .del {
 	visibility:visible;
 }
 
+table.editor td{
+//	border: 1px solid red;
+	padding: 2px;
+	vertical-align: top;
+//	background: #eeeeaa;
+}
+
+td.image {
+  width: 80px;
+}
+
+td.textedit textarea {
+	width:98%; 
+	padding:5px;; 
+	margin:0; 
+	height:75px;
+	font-size: 1.3em;
+	border: 1px solid #ffffff;
+}
+
+td.textedit textarea:hover {
+	border: 1px solid #eeeeee;
+}
+
+td.textedit textarea:focus {
+	border: 1px solid #cccccc;
+}
+
+span.addrow {
+	border: 1px solid #eeeeee;
+	color: #eeeeee;
+	padding: 4px;
+	display: block;
+	text-align: center;
+	width: 98%;
+}
+
+span.addrow:hover {
+	border: 1px solid #cccccc;
+	color: #cccccc;
+}
+
 
 </style>
-
-	<div class="span-3">Title</div>
-	<div class='span-19 last'><input /></div>
-<br style='clear:both;'/>
-<ul id='cc'>
-<li>
-	<div class="span-3">
+<h1>Share your cooking experience...</h1>
+<div class="span-18">
+<table id='editor' class="editor">
+<tr id='template-row'>
+<td class='image'>
 	<a class='imgeditor'>
 		<img src='{% imageurl 2 square%}' alt='Thumnail' title='Preview or change photo...'/>
 		<span class='moveup' title='Move this section up'>^</span>
 		<span class='movedown' title='Move this section down'>v</span>
 		<span class='del' title='Delete this sectionp'>x</span>
 	</a>
-	</div>
-	<div class='span-19 last'><textarea style='width:100%; padding:0; margin:0; height:75px;font-size: 1.3em;'></textarea></div>
-	<br style='clear:both;'/>
-</li>
-</ul>
-<ul style='display:none'>
-  <li id='tmpl' >
-	<div class="span-3">
-	<a class='imgeditor'>
-		<img src='{% imageurl 2 square%}'/>
-		<span class='moveup'>^</span>
-		<span class='movedown'>v</span>
-		<span class='del'>x</span>
-	</a>
-	</div>
-	<div class='span-19 last'><textarea style='width:100%; padding:0; margin:0; height:75px;font-size: 1.3em;'></textarea></div>
-	<br style='clear:both;'/>
-</li>
-</ul>
-<br syle='clear:both;'/>
-<button class='add' style="height: 35px;" > Adding more photos</button>
+</td>
+<td class='textedit'>
+	<textarea title='click to edit or add text here...'></textarea>
+</td>
+</tr>
+<tr>
+<td>
+
+</td>
+<td>
+<span class='addrow'>
+Click to add more...
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="span-6 last">
+<a href="#" class="button"><span class="add">Upload photos</span></a>
+</div>
+<hr class='space'/>
+
+<a href="#" class="button"><span class="add">Publish</span></a> <a href="#" class="button"><span class="add">Preview</span></a>
 
 {% endblock %}
 {% block addition_include_script %}
@@ -100,16 +141,16 @@ function attachEvents()
 {
 $('textarea').elastic();
 $('.movedown').click(function() {
-	row = $(this).parents('li')
+	row = $(this).parents('tr')
 	row.hide()
-	row.insertAfter(row.next()).show('fast')
+	row.insertAfter(row.next()).show()
 	row.show()
 })
 
 $('.moveup').click(function() {
-	row = $(this).parents('li')
+	row = $(this).parents('tr')
 	row.hide()
-	row.insertBefore(row.prev()).show('fast')
+	row.insertBefore(row.prev()).show()
 	row.show()
 })
 }
@@ -119,8 +160,9 @@ $('.moveup').click(function() {
 
 attachEvents()
 
-$('button.add').click(function() {
-	$('#tmpl').clone().appendTo('#cc').show('fast')
-	attachEvents();
+$('span.addrow').click(function() {
+	row = $(this).parents('tr')
+	$('#template-row').clone().insertBefore(row).show()
+	//attachEvents();
 });
 {% endblock %}
