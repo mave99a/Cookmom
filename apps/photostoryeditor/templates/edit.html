@@ -47,10 +47,19 @@ Click to add more...
 
 </div>
 <div class="span-6 last">
-<a href="#" class="button"><span class="add">Upload photos</span></a>
-	<div class="swfupload-control">
-		<input type="button" class="uploadbutton" />
-	</div>
+<style>
+.swfupload {
+ position: absolute;
+ z-index: 1;
+} 
+</style>
+<span id="spanButtonPlaceholder" ></span> 
+<a href="#" class="button" id="upload"><span class="add">Upload photos</span></a>
+<div class="swfupload-control">
+<noscript class="error">
+ We're sorry. SWFUpload could not load. You must have JavaScript enabled to enjoy SWFUpload.
+</noscript> 
+</div>
 </div>
 
 {% endblock %}
@@ -58,10 +67,8 @@ Click to add more...
 <script src="http://sandbox.unwrongest.com/forms/js/jquery.elastic.js" type="text/javascript" charset="utf-8"></script>
 <script>
 // start the queue if the queue is already disabled
-$('.swfupload-control input[name=disabled]').click(function(){
-	if (!this.checked) {
-		$(this).parents('.swfupload-control').swfupload('startUpload');
-	}
+$('#upload').click(function(){
+	$('.swfupload-control').swfupload('startUpload');
 });
 
 $(function(){
@@ -72,17 +79,18 @@ $(function(){
 			file_types_description : "All Files",
 			file_upload_limit : "0",
 			flash_url : "{{ MEDIA_URL }}swfupload/swfupload.swf",
-			button_image_url : '{{ MEDIA_URL }}swfupload/XPButtonUploadText_61x22.png',
-			button_width : 61,
-			button_height : 22,
-			button_placeholder : $('.uploadbutton', this)[0],
-			debug: true
+			button_image_url : '{{ MEDIA_URL }}swfupload/uploadbutton.png',
+			button_width : 100,
+			button_height : 20,
+			button_placeholder : $('#spanButtonPlaceholder', this)[0],
+			button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+			button_cursor: SWFUpload.CURSOR.HAND, 
+			//debug: true
 		});
 
     // assign our event handlers
     $('.swfupload-control')
         .bind('fileQueued', function(event, file){
-        	alert(file.name)
             // start the upload once a file is queued
             $(this).swfupload('startUpload');
         })
