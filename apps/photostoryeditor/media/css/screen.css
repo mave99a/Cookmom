@@ -101,3 +101,17 @@ ul.actions li {
 	float: left;
 	width:200px; 
 }
+
+ul.imagelist {
+	padding: 0;
+	margin:0;
+}
+
+ul.imagelist li {
+	float:left;
+	padding:0; 
+	margin:0;
+	width: 75px;
+	height: 75px;
+}
+
