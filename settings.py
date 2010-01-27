@@ -137,7 +137,8 @@ INSTALLED_APPS = (
     'search',
     'image',
     'photostoryeditor',
-    
+    'swfupload',
+     
     # unit test tool app
     'gaeunit',
     

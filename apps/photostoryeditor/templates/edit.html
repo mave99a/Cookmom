@@ -5,17 +5,19 @@
 
 <h1>Share your cooking experience...</h1>
 <div class="span-18">
+<form action='/edit/'>
 <table id='editor' class="editor">
-<tr id='template-row'>
+<tr id='template-row' class='row'>
 <td class='image'>
 	<a class='imgeditor'>
+		<input type='hidden' class='imageslist' name='images[]'/>
 		<img src='{% imageurl 2 square%}' alt='Thumnail' title='Preview or change photo...'/>
 		<span class='moveup' title='Move this section up'>&uarr;</span>
 		<span class='movedown' title='Move this section down'>&darr;</span>
 	</a>
 </td>
 <td class='textedit'>
-	<textarea title='click to edit or add text here...'></textarea>
+	<textarea title='click to edit or add text here...' name='content[]'></textarea>
 </td>
 </tr>
 <tr>
@@ -29,54 +31,77 @@ Click to add more...
 </td>
 </tr>
 </table>
-
+<button type='submit'>test</button>
+</form>
 <ul class='actions'>
 <li>
- <a href="#" class="button"><span class="add">Save</span></a>
+ <a href="#" class="button" id='save'><span class="add">Save</span></a>
 </li>
 <li>
- <a href="#" class="button"><span class="add">Preview</span></a>
+ <a href="#" class="button" id='preview'><span class="add">Preview</span></a>
 </li>
 <li>
-<a href="#" class="button"><span class="add">Publish</span></a>
+<a href="#" class="button" id='publish'><span class="add">Publish</span></a>
 </li>
 </ul>
 
 </div>
 <div class="span-6 last">
 <a href="#" class="button"><span class="add">Upload photos</span></a>
+	<div class="swfupload-control">
+		<input type="button" class="uploadbutton" />
+	</div>
 </div>
 
 {% endblock %}
 {% block addition_include_script %}
 <script src="http://sandbox.unwrongest.com/forms/js/jquery.elastic.js" type="text/javascript" charset="utf-8"></script>
 <script>
-function attachEvents()
-{
-$('textarea').elastic();
-$('.movedown').click(function() {
-	row = $(this).parents('tr')
-	row.hide()
-	row.insertAfter(row.next()).show()
-	row.show()
-})
+// start the queue if the queue is already disabled
+$('.swfupload-control input[name=disabled]').click(function(){
+	if (!this.checked) {
+		$(this).parents('.swfupload-control').swfupload('startUpload');
+	}
+});
 
-$('.moveup').click(function() {
-	row = $(this).parents('tr')
-	row.hide()
-	row.insertBefore(row.prev()).show()
-	row.show()
-})
-}
+$(function(){
+	$('.swfupload-control').swfupload({
+			upload_url: "/upload/",
+			file_size_limit : "10240",
+			file_types : "*.*",
+			file_types_description : "All Files",
+			file_upload_limit : "0",
+			flash_url : "{{ MEDIA_URL }}swfupload/swfupload.swf",
+			button_image_url : '{{ MEDIA_URL }}swfupload/XPButtonUploadText_61x22.png',
+			button_width : 61,
+			button_height : 22,
+			button_placeholder : $('.uploadbutton', this)[0],
+			debug: true
+		});
+
+    // assign our event handlers
+    $('.swfupload-control')
+        .bind('fileQueued', function(event, file){
+        	alert(file.name)
+            // start the upload once a file is queued
+            $(this).swfupload('startUpload');
+        })
+        .bind('uploadComplete', function(event, file){
+            alert('Upload completed - '+file.name+'!');
+            // start the upload (if more queued) once an upload is complete
+            $(this).swfupload('startUpload');
+        })
+        .bind('uploadError', function(event, file, errorCode, message){
+            alert(message);
+
+        });
+        
+	
+});
 </script>
 {% endblock %} 
 {% block doc_ready_script %}
 
-attachEvents()
+attachPhotoStoryEditorEvents();
 
-$('span.addrow').click(function() {
-	row = $(this).parents('tr')
-	$('#template-row').clone().insertBefore(row).show()
-	//attachEvents();
-});
 {% endblock %}
