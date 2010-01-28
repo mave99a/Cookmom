@@ -1,9 +1,10 @@
-#Sun Jan 24 20:49:45 PST 2010
+#Wed Jan 27 21:32:50 PST 2010
 eclipse.preferences.version=1
 encoding//apps/article/views.py=UTF-8
 encoding//apps/comment/views.py=UTF-8
 encoding//apps/gaeunit/urls.py=UTF-8
 encoding//apps/gaeunit/urlsauto.py=UTF-8
+encoding//apps/image/views.py=UTF-8
 encoding//apps/people/views.py=UTF-8
 encoding//apps/taggable/views.py=UTF-8
 encoding//common/appenginepatch/appenginepatcher/patch.py=UTF-8

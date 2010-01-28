@@ -135,10 +135,15 @@ INSTALLED_APPS = (
     'taggable', 
     'vote', 
     'search',
-    'image',
     'photostoryeditor',
-    'swfupload',
-     
+    
+    'swfupload',        # app for swfupload integration
+    'image',            # app to handle image upload and image url 
+    'flickr',           # app for supportting flickr backend and flickr's auth
+    
+    'twitter',          # app for twitter integration
+    'facebook',         # app for facebook integration
+    
     # unit test tool app
     'gaeunit',
     
