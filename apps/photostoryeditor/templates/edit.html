@@ -4,7 +4,10 @@
 {% block content %}
 
 <h1>Share your cooking experience...</h1>
+
 <div class="span-18">
+<img src='/image/view/' alt='image'/>
+
 <form action='/edit/'>
 <table id='editor' class="editor">
 <tr id='template-row' class='row'>
@@ -106,10 +109,9 @@ $(function(){
             $(this).swfupload('startUpload');
         })
         .bind('uploadError', function(event, file, errorCode, message){
-            alert(message);
+
         })
         .bind('uploadSuccess', function(event, file, serverData){
-            alert(file.name + ' upload succ, server response:' + serverData);
         });	
 });
 </script>
