@@ -102,12 +102,6 @@ LOGIN_URL = '/account/login/'
 LOGOUT_URL = '/account/logout/'
 #LOGIN_REDIRECT_URL = '/'
 
-GLOBALTAGS = (
-    'ragendja.templatetags.ragendjatags',
-    'ragendja.templatetags.googletags',    
-    'django.templatetags.i18n',
- )
-
 INSTALLED_APPS = (
     # Add jquery support (app is in "common" folder). This automatically
     # adds jquery to your COMBINE_MEDIA['combined-%(LANGUAGE_CODE)s.js']
@@ -162,6 +156,12 @@ INSTALLED_APPS = (
     'mediautils',
     'ragendja',
 )
+
+# register our tag as default, so we don't need to use "{%load ...%}" all the time
+from django.template import add_to_builtins
+add_to_builtins('rendertag.templatetags.render')
+add_to_builtins('image.templatetags.imageurl')
+
 
 # List apps which should be left out from app settings and urlsauto loading
 IGNORE_APP_SETTINGS = IGNORE_APP_URLSAUTO = (

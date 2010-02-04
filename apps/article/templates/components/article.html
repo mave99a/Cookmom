@@ -8,7 +8,6 @@
 {% render object.attachments.ingredients %}
 </div>
 {% endif %}
-{% load imageurl%}
 {% for img in object.images_list %}
 <img src='{% imageurl img medium %}' title='{{object.title}}'/>
 {% endfor %}
