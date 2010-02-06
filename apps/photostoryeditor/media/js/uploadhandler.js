@@ -10,7 +10,7 @@ $(function(){
 			file_types : "*.*",
 			file_types_description : "All Files",
 			file_upload_limit : "0",
-			flash_url : "{{ MEDIA_URL }}swfupload/swfupload.swf",
+			flash_url : $('.swfupload-control').attr('flashurl'),
 			button_width : 200,
 			button_height : 30,
 			button_placeholder : $('#spanButtonPlaceholder', this)[0],

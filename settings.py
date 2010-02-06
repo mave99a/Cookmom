@@ -155,7 +155,7 @@ INSTALLED_APPS = (
     'appenginepatcher',
     'mediautils',
     'ragendja',
-)
+) 
 
 # register our tag as default, so we don't need to use "{%load ...%}" all the time
 from django.template import add_to_builtins
