@@ -1,0 +1,66 @@
+/*
+* articles list
+*/
+
+table tr td {
+	vertical-align: top;
+	padding:0;
+	margin: 0;
+}
+table tr td.photo
+{
+	width:80px;
+	height: 50px;
+	overflow: hidden; 
+}
+
+table tr td.abstract {
+	padding: 0 10px;
+}
+
+.abstract h3{
+	 width: 100%; 
+	 background: #eee; 
+	 padding: 4px; 
+}
+
+.abstract h3 a {
+	text-decoration: none;
+}
+
+table tr td.author {
+	width:60px;
+}
+
+/*
+* articles
+*/
+.article h1 {
+  border-left: solid 6px #ccc;
+  padding-left: 10px;
+}
+
+.byauthor {
+	font: italic 1.1em Times, serif; letter-spacing: 1px; 
+	margin: 0 0 1.5em;
+}
+
+.byauthor a:link, .byauthor a:visited {
+	font: bold 0.85em Verdana, sans-serif;
+	text-transform: uppercase; letter-spacing: 2px;
+	margin-left: 0.25em;
+	text-decoration: none;
+}
+
+.byauthor a:hover {
+	border-bottom-width: 1px;
+}
+
+
+.mini_recipe {
+	float: right; 
+	margin-left: 10px; 
+	padding: 10px; 
+	width: 200px; 
+	border: 1px solid #ccc;
+}
