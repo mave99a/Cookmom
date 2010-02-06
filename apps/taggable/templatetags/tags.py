@@ -14,7 +14,7 @@ class ShowTagsNode(template.Node):
         obj = self.obj_ref.resolve(context)
         if obj is not None: 
             taggable = Taggable.get_taggable(obj)        
-            return render_to_string('taggable/tags.html', {'taggable': taggable, 'target':obj})
+            return render_to_string('taggable/tags.html', {'taggable': taggable, 'target':obj}, context)
         return ''
 
 def do_show_tags(parser, token):

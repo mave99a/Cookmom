@@ -13,7 +13,7 @@ def list_article(request):
     return object_list(request, Article.all(), paginate_by = 10)
 
 def show_article(request, slug):
-    return object_detail(request, Article.all(), slug=slug)
+    return object_detail(request, Article.all(), slug=slug, extra_context={'isowner': True})
 
 @login_required
 def new_article(request):
