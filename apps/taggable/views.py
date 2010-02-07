@@ -20,7 +20,7 @@ def add_tags(request):
     tags = request.REQUEST["tags"].split(',')
     obj = db.get(key)
     Taggable.add_tags(obj, tags)
-    return HttpResponse('ok')
+    return HttpResponse('[]')
 
 @login_required
 def remove_tags(request):

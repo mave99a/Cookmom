@@ -28,6 +28,9 @@ COMBINE_MEDIA = {
         # Integrate morecode.js from "media" under project root folder
         'global/js/cufon-yui.js',
         'global/js/Edwardian_Script_ITC_400.font.js',
+        
+        # plugin for jquery
+        'global/js/jquery.form.js', 
     ),
     # Create a combined CSS file which is called "combined-ltr.css" for
     # left-to-right text direction
