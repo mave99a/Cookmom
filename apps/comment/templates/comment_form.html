@@ -1,8 +1,7 @@
-<form action="{% url comment.views.new_comment key=target.key%}" method="post" enctype="multipart/form-data">
+<form action="{% url comment.views.new_comment key=target.key%}" method="post" class='comment'>
 {{ form.as_p }}
 <p>
 <input type="submit"
-    value="{% if object %}Apply changes{% else %}Create{% endif %}" />
+    value="{% if object %}Apply changes{% else %}Post comment{% endif %}" />
 </p>
 </form>
-

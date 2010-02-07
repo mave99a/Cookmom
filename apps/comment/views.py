@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from google.appengine.ext import db
 
+from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import delete_object, update_object
@@ -13,11 +14,16 @@ def list_comment(request):
 
 def new_comment(request, key):
     target = db.get(key)
-    return create_object(request, 
-                         form_class=CommentForm, 
-                         extra_fields = {'author': User.get_current_user(), 'target': target},
-                         extra_context = locals()
-                        )
+    response = create_object(request, 
+                 form_class=CommentForm, 
+                 extra_fields = {'author': User.get_current_user(), 'target': target},
+                 extra_context = locals()
+                )
+    
+    if request.method == 'POST':
+        return HttpResponse('[1,2,3,4]')
+    else:
+        return response
     
 def show_comment(request, key):
     return object_detail(request, Comment.all(), key)
