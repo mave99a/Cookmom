@@ -15,9 +15,11 @@ $(document).ready(function() {
 	}) 		
 	
 	$('.tags form').ajaxForm({
-			dataType:  'json', 
+			dataType:  'json',
+			resetForm: true, 
 			success: function(data) {
 			  $.each(data, function(i, tag) {
+			  	// add the new tags to display
 			  			
 			  	})
 			}

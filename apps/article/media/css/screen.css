@@ -2,19 +2,19 @@
 * articles list
 */
 
-table tr td {
+.articles_list table tr td {
 	vertical-align: top;
 	padding:0;
 	margin: 0;
 }
-table tr td.photo
+.articles_list table tr td.photo
 {
 	width:80px;
 	height: 50px;
 	overflow: hidden; 
 }
 
-table tr td.abstract {
+.articles_list table tr td.abstract {
 	padding: 0 10px;
 }
 

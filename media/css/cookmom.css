@@ -239,10 +239,7 @@ padding: 0; margin: 0;
 padding-top: 5px;
 }
 
-.arrow
-{
-width:9px;padding: 0; margin: 0;
-}
+
 
 .b1f, .b2f, .b3f, .b4f{font-size:1px; overflow:hidden; display:block; }
 .b1f {height:1px; background:#eee; margin:0 5px;}
@@ -251,17 +248,6 @@ width:9px;padding: 0; margin: 0;
 .b4f {height:2px; background:#eee; margin:0 1px;}
 .contentf {background: #eee; padding: 10px;}
 
-.uparrow {display:block; width:0; height:0; color:#d8d8ee; overflow:hidden; border-bottom:12px solid #eee; border-left:12px dotted transparent; border-right:12px dotted transparent; margin-left:50px;}
-/* hack for IE5.5 */
-* html .uparrow {width:24px; height:12px; w\idth:0; hei\ght:0;}
-
-.downarrow {display:block; width:0; height:0; color:#d8d8ee; overflow:hidden; border-top:12px solid #eee; border-left:12px dotted transparent; border-right:12px dotted transparent; margin-left:50px;}
-/* hack for IE5.5 */
-* html .downarrow {width:24px; height:12px; w\idth:0; hei\ght:0;}
-
-.leftarrow {display:block; width:0; height:0; color:#d8d8ee; overflow:hidden; border-right:12px solid #eee; border-top:12px dotted transparent; border-bottom:12px dotted transparent; margin-top: 4px;}
-/* hack for IE5.5 */
-* html .leftarrow {width:24px; height:12px; w\idth:0; hei\ght:0;}
 
 /*
 * comment list table

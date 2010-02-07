@@ -2,6 +2,8 @@
 {% block main %}
 {% load paginator %}
 {% paginator %}
+<div class='comments_list'>
 {% render object_list%}
+</div>
 {% paginator %}
 {% endblock %}
