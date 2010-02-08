@@ -3,6 +3,7 @@
 
 <form action="" method="post" enctype="multipart/form-data">
 {{ form.as_p }}
+<input type='hidden' name='image_list' value='1 2 4' />
 <p><input type="submit"
     value="{% if object %}Apply changes{% else %}Create{% endif %}" /></p>
 </form>

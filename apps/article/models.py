@@ -51,4 +51,4 @@ class Article(db.Model):
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
-        exclude = ('author', 'ctime', 'mtime', 'lang', 'published')        
+        exclude = ('author', 'ctime', 'mtime', 'lang', 'published', 'read_count', 'comment_count')        
