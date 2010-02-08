@@ -14,16 +14,17 @@ def list_comment(request):
 
 def new_comment(request, key):
     target = db.get(key)
-    response = create_object(request, 
+    try: 
+        returnurl = request.REQUEST['returnurl']
+    except: 
+        returnurl = None
+        
+    return create_object(request, 
                  form_class=CommentForm, 
                  extra_fields = {'author': User.get_current_user(), 'target': target},
-                 extra_context = locals()
-                )
-    
-    if request.method == 'POST':
-        return HttpResponse('[1,2,3,4]')
-    else:
-        return response
+                 extra_context = locals(),
+                 post_save_redirect = returnurl
+                )   
     
 def show_comment(request, key):
     return object_detail(request, Comment.all(), key)
