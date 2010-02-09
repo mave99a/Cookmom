@@ -15,9 +15,13 @@ def list_comment(request):
 def new_comment(request, key):
     target = db.get(key)
     try: 
-        returnurl = request.REQUEST['returnurl']
-    except: 
+        isAjax = request.REQUEST['isAjax']
         returnurl = None
+    except: 
+        try: 
+            returnurl = request.REQUEST['returnurl']
+        except: 
+            returnurl = None
         
     return create_object(request, 
                  form_class=CommentForm, 
