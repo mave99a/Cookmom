@@ -6,14 +6,10 @@
 {% load comments%}
 {% comment_form for object %}
 
-{% if object.Comments %}
 <h4>Comments</h4>
 <div class='comments_list'>
 {% render object.Comments %}
 </div>
-{% else %}
-No comment.
-{% endif %}
 
 {% if False%}
 <ul>
