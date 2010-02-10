@@ -5,7 +5,9 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list_detail import object_list, object_detail
 from django.http import HttpResponse
+from django.utils import simplejson
 from models import *
+
 
 def tagcloud(request):
     return object_list(request, Tag.cloud(100))
@@ -19,16 +21,24 @@ def add_tags(request):
     key = request.REQUEST["target"]
     tags = request.REQUEST["tags"].split(',')
     obj = db.get(key)
-    Taggable.add_tags(obj, tags)
-    return HttpResponse('[]')
+    taggable = Taggable.add_tags(obj, tags)
+    if taggable is not None:
+        json = simplejson.dumps(taggable.tags)
+    else:
+        json='[]'
+    return HttpResponse(json)
 
 @login_required
 def remove_tags(request):
     key = request.REQUEST["target"]
     tags = request.REQUEST["tags"].split(',')
     obj = db.get(key)
-    Taggable.remove_tags(obj, tags)
-    return HttpResponse('ok')
+    taggable = Taggable.remove_tags(obj, tags)
+    if taggable is not None:
+        json = simplejson.dumps(taggable.tags)
+    else:
+        json='[]'
+    return HttpResponse(json)
 
 
 @login_required

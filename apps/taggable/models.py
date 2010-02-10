@@ -1,9 +1,14 @@
 from google.appengine.ext import db
+
+def cleanup(tags):
+    ''' cleanup: remove duplicate, strip spaces, and remove empty'''
+    cleanedtags = filter(lambda tag: tag!='', list(set([tag.strip() for tag in tags])))    
+    return cleanedtags
     
 class Taggable(db.Model):
     target = db.ReferenceProperty(db.Model)
     tags = db.StringListProperty()
-
+        
     @classmethod
     def get_taggable(cls, obj):
         try: 
@@ -13,6 +18,7 @@ class Taggable(db.Model):
     
     @classmethod
     def get_by_tag(cls, tag):
+       tag = tag.strip()
        return Taggable.all().filter('tags =', tag) 
    
     @classmethod
@@ -22,19 +28,12 @@ class Taggable(db.Model):
         if taggable is not None: 
             Tag.removeset(taggable.tags) #decrease counter for all tags
             taggable.delete()
-            
-    @classmethod 
-    def set_tags(cls, obj, tags):
-        taggable = Taggable.get_taggable(obj)
-        if taggable is None:
-            taggable = Taggable(target = obj, tags = tags)  
-        else:
-            taggable.tags = tags
-        taggable.put()
-        Tag.addset(tags)
+                    
+        return taggable
         
     @classmethod
     def add_tags(cls, obj, tags):
+        tags = cleanup(tags)
         taggable = Taggable.get_taggable(obj)
         if taggable is None: 
           taggable = Taggable(target = obj, tags = tags)
@@ -45,9 +44,11 @@ class Taggable(db.Model):
                    taggable.tags.append(tag)
                    Tag.add(tag) #increase the counter
         taggable.put()
+        return taggable
        
     @classmethod
     def remove_tags(cls, obj, tags):
+        tags = cleanup(tags)
         taggable = Taggable.get_taggable(obj)
         if taggable is not None: 
             for tag in tags: 
@@ -59,7 +60,8 @@ class Taggable(db.Model):
                 taggable.delete()
             else:
                 taggable.put()
-
+        return taggable
+    
    
 class Tag(db.Model):
     name = db.StringProperty(required = True)      
