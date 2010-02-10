@@ -1,8 +1,8 @@
 /*
 *  Initialize
 */
-$(document).ready(function() {
-  if (typeof(_JS_MODULE_TAG) != 'undefined') {
+function attach_tags_handlers()
+{
   	$('a.tag span.remove').click(function() {
   				$(this).parent().addClass('deletedtag').removeClass('tag').blur();
   				$.get($(this).attr('href'));
@@ -12,16 +12,22 @@ $(document).ready(function() {
   				$(this).parent().addClass('tag').removeClass('deletedtag').blur();
   				$.get($(this).attr('href'));
 				return false; // cancel event 
-	}) 		
+	}) 	
+}
+
+$(document).ready(function() {
+  if (typeof(_JS_MODULE_TAG) != 'undefined') {
+	
+	attach_tags_handlers()
 	
 	$('.tags form').ajaxForm({
-			dataType:  'json',
-			resetForm: true, 
+            beforeSubmit: function(formData, jqForm, options) {
+                formData.push({ name: 'isAjax', value: '1' })    
+            }, 	
+            resetForm: true,
 			success: function(data) {
-			  $.each(data, function(i, tag) {
-			  	// add the new tags to display
-			  			
-			  	})
+				$('span.tagscontainer').html(data)
+				attach_tags_handlers()
 			}
 		}
 	)		   
