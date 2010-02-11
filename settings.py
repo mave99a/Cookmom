@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     # tags
     'rendertag', 
     'paginatortag', 
+    'objectlisttag', 
     
     # app modules
     'cookmom',
@@ -164,6 +165,7 @@ INSTALLED_APPS = (
 from django.template import add_to_builtins
 add_to_builtins('rendertag.templatetags.render')
 add_to_builtins('image.templatetags.imageurl')
+add_to_builtins('objectlisttag.templatetags.makeobjectlist')
 
 
 # List apps which should be left out from app settings and urlsauto loading

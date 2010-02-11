@@ -7,7 +7,8 @@
 {% if object.article_set %}
 <h4>Articles by {{object.name}}</h4>
 <div class="articles_list">
-{% render object.article_set templatetype=listitem_self%}
+{% makeobjectlist object.article_set as article_list%}
+{% render article_list templatetype=listitem_self%}
 </div>
 {% else %}
 {{object.name}} not yet write any article
@@ -16,7 +17,8 @@
 {% if object.comment_set %}
 <h4>Comments by {{object.name}}</h4>
 <div class='comments_list'>
-{% render object.comment_set templatetype=target%}
+{% makeobjectlist object.comment_set as comment_list%}
+{% render comment_list templatetype=target%}
 </div>
 {% else %}
 {{object.name}} not yet write any comment
