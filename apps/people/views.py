@@ -17,7 +17,11 @@ def list_user(request):
     return object_list(request, User.all(), paginate_by=10)
 
 def show_user(request, key):
-    return object_detail(request, User.all(), key)
+    return object_detail(request, User.all(), key, )
+
+def show_user_detail(request, key, obj):
+    template='people/user_detail_' + obj + '.html'
+    return object_detail(request, User.all(), key, template_name=template)
 
 def new_user(request):
     return create_object(request, form_class=UserForm,

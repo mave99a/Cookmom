@@ -1,0 +1,19 @@
+{% extends "people/base.html" %}
+{% block title %}{{object.name}} - Cookmom{% endblock %}
+{% block main %}
+
+{% if object.article_set %}
+<h1>Comments by {{object.name}}</h1>
+{% makeobjectlist object.article_set addtion_filter=order('-mtime') paginate_by=10 as article_list%}
+{% load paginator %}
+{% paginator %}
+<div class='articles_list'>
+{% render article_list templatetype=listitem_self%}
+</div>
+{% paginator %}
+{% else %}
+{{object.name}} not yet write any article
+{% endif %}
+
+
+{% endblock %}
