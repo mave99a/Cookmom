@@ -49,20 +49,6 @@ h1 {
 	  
 }
 
-a#joinbutton {
-  background: #74CA00;
-  color: white; 
-  text-decoration: none; 
-  padding: 5px 10px 5px 10px;
-  font-size: 1em;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
-
-a#joinbutton:hover {
-	background: #8CF500;
-}
-
 #headbanner{
 	clear:both;
 	position:relative;
@@ -488,9 +474,12 @@ div.pagination span.disabled {
 /*
 * awesome button
 */
+input.awesome {
+	border:none; padding:2px;
+}
 
 .awesome, .awesome:visited {
-	background: #222 url(images/alert-overlay.png) repeat-x; 
+	background: #222 url(img/alert-overlay.png) repeat-x; 
 	display: inline-block; 
 	padding: 5px 10px 6px; 
 	color: #fff; 

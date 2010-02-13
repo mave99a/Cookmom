@@ -3,7 +3,7 @@
 <p>
 <input type='hidden' name='returnurl' value='{{request.path_info}}'/>
 <input type='hidden' name='target' value='{{target.key}}'/>
-<input type="submit"
-    value="{% if object %}Apply changes{% else %}Post comment{% endif %}" />
+<input type="submit" class="awesome orange medium"
+    value="{% if object %}Apply changes{% else %}Post comment...{% endif %}" />
 </p>
 </form>
