@@ -128,39 +128,32 @@ ul.tab, li {border:0; margin:0; padding:0; list-style:none;}
 ul.tab {border-bottom:solid 1px #DEDEDE; height:29px; padding-left:20px;}
 ul.tab li{float:left; margin-right:2px;}
 .tab a:link, .tab a:visited{
-	background:url(img/tab-round.png) right 60px;
+	border: 1px solid  #DEDEDE;
+	background: #eee;
 	color:#666666;
 	display:block;
 	font-weight:bold;
-	height:30px;
+	height:28px;
 	line-height:30px;
+	padding-left: 13px;
+	padding-right:13px;
 	text-decoration:none;
 	outline: none;
-}
-.tab a span{
-	background:url(img/tab-round.png) left 60px;
-	display:block;
-	height:30px;
-	margin-right:14px;
-	padding-left:14px;
-}
-.tab a:hover{
-	background:url(img/tab-round.png) right 30px;
-	display:block;
-}
-.tab a:hover span{
-	background:url(img/tab-round.png) left 30px;
-	display:block;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
 }
 
-/* -------------------------------- */
-/* 	ACTIVE ELEMENTS					*/
-.active a:link, .active a:visited, .active a:visited, .active a:hover{
-	background:url(img/tab-round.png) right 0 no-repeat;
-} 
-.active a span, .active a:hover span{
-	background:url(img/tab-round.png) left 0 no-repeat;
+.tab a:hover{
+	display:block;
+	background: #ccc;
 }
+
+.active a:link, .active a:visited, .active a:visited, .active a:hover{
+	background: #fff;
+	border-bottom: 1px solid  #fff;
+} 
 
 	#search {
 		float:right;
@@ -185,21 +178,6 @@ ul.tab li{float:left; margin-right:2px;}
 			width: 60px;
 		}
                     
-
-/*
-*  Activities list
-*/
-.activities ul, ul.comments, ul.articles {
-	list-style: none;
-}		
-
-.activities ul li{
-	margin: 0; 
-	padding: 0;
-	padding-top: 5px;
-	border-top: 1px dashed #ccc;
-}
-
 
 /*
 * author description
@@ -229,34 +207,8 @@ ul.tab li{float:left; margin-right:2px;}
 	padding: 0;
 	border: solid 3px white;
 }
-/*
-http://blog.yosle.com/2007/09/20/css-round-corners/
-*/
-
-.bubble
-{
-padding: 0; margin: 0;
-padding-top: 5px;
-}
 
 
-
-.b1f, .b2f, .b3f, .b4f{font-size:1px; overflow:hidden; display:block; }
-.b1f {height:1px; background:#eee; margin:0 5px;}
-.b2f {height:1px; background:#eee; margin:0 3px;}
-.b3f {height:1px; background:#eee; margin:0 2px;}
-.b4f {height:2px; background:#eee; margin:0 1px;}
-.contentf {background: #eee; padding: 10px;}
-
-
-/*
-* comment list table
-*/
-
-table.comment tr td.author
-{
-  width: 64px;
-}
 
 /*
 *  comments header
@@ -462,29 +414,31 @@ a:hover.button{
 {
 	padding-top:10px;
 }
-.section h2{ margin:0px;
+.section h2{ 
+	margin:0px;
 	padding:0px;
 	border:0px;
-}
-.section h2{	color:#FFFFFF; 
+	color:#FFFFFF; 
+	padding:5px 10px; 
 	font-size:13px; 
 	display:block; 
-	background:url(img/h2_bg.gif) top left no-repeat #9A9A9A;
-}
-.section h2 span{
-	padding:5px 10px; 
-	background:url(img/h2_span_bg.gif) top right no-repeat; 
-	display:block;
+	background:#9A9A9A;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius:5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius:5px;
 }
 
 .section div{
-	background:url(img/section_bg_left.png) bottom left  no-repeat #EEEEEE; 
+	background:#EEEEEE; 
 	font-size:12px;
-}
-.section div div{
-background:url(img/section_bg_right.png) right bottom no-repeat; 
 	padding:10px; 
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius:5px;
 }
+
 
 /*
 *  digg alike pagination
@@ -530,3 +484,44 @@ div.pagination span.disabled {
  form p label {
  	display: block; 
  }
+ 
+/*
+* awesome button
+*/
+
+.awesome, .awesome:visited {
+	background: #222 url(images/alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+
+.awesome:hover							{ background-color: #111; color: #fff; }
+.awesome:active							{ top: 1px; }
+.small.awesome, .small.awesome:visited 			{ font-size: 11px; padding: ; }
+.awesome, .awesome:visited,
+.medium.awesome, .medium.awesome:visited 		{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+.large.awesome, .large.awesome:visited 			{ font-size: 14px; padding: 8px 14px 9px; }
+
+.green.awesome, .green.awesome:visited		{ background-color: #91bd09; }
+.green.awesome:hover						{ background-color: #749a02; }
+.blue.awesome, .blue.awesome:visited		{ background-color: #2daebf; }
+.blue.awesome:hover							{ background-color: #007d9a; }
+.red.awesome, .red.awesome:visited			{ background-color: #e33100; }
+.red.awesome:hover							{ background-color: #872300; }
+.magenta.awesome, .magenta.awesome:visited		{ background-color: #a9014b; }
+.magenta.awesome:hover							{ background-color: #630030; }
+.orange.awesome, .orange.awesome:visited		{ background-color: #ff5c00; }
+.orange.awesome:hover							{ background-color: #d45500; }
+.yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
+.yellow.awesome:hover							{ background-color: #fc9200; }
+
