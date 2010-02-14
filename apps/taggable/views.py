@@ -8,10 +8,26 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import simplejson
 from renderblock.renderblock import direct_block_to_template
 from models import *
-
+from sys import maxint
 
 def tagcloud(request):
-    return object_list(request, Tag.cloud(100))
+    object_list = Tag.cloud(100).fetch(100)
+    min = 1
+    max = maxint
+    
+    # find out the max and min of the tag count
+    for item in object_list:
+        if item.count > max:
+            max = item.count 
+        if item.count < min:
+            min = item.count
+    
+    step = (max - min)/5
+    # calculate the size
+    for item in object_list:
+        item.cloudsize = (item.count - min) % step
+        
+    return render_to_response('taggable/tag_list.html', locals(), context_instance=RequestContext(request) )
     
 def show_by_tag(request, tag):
     return object_list(request, Taggable.get_by_tag(tag), paginate_by = 10, 

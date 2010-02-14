@@ -109,7 +109,7 @@ class Tag(db.Model):
             
     @classmethod
     def cloud(cls, n):
-       return Tag.all().order('count')
+       return Tag.all().order('name')
     
 class UserTag(Tag):
     pass
