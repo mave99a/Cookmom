@@ -80,6 +80,7 @@
   text-decoration: none;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+	display: inline-block;
 }
 
 .tagCloud a:hover
@@ -108,4 +109,8 @@
 .tagCloud a.cloud4
 { 
   font-size:20pt;
+}
+.tagCloud a.cloud5
+{ 
+  font-size:24pt;
 }

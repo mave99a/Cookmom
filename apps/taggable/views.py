@@ -22,7 +22,7 @@ def tagcloud(request):
         if item.count < min:
             min = item.count
     
-    step = (max - min)/5
+    step = (max - min)/6
     # calculate the size
     for item in object_list:
         item.cloudsize = (item.count - min) % step
