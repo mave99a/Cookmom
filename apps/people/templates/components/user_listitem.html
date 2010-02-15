@@ -1,5 +1,5 @@
 <td class='vcard'>
-<a href="{% url people.views.show_user key=object.key%}" class="url" title="{{object.name}}">
+<a href="{% url people.views.show_user id=object.id%}" class="url" title="{{object.name}}">
 	<img alt="{{object.name}}" class="photo fn" src="{% imageurl object.img square %}">
 </a>
 </td>

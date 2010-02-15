@@ -1,5 +1,5 @@
 <h1>{{object.title}}</h1>
-<h4 class="byauthor">By <a href="{% url people.views.show_user key=object.author.key%}" title='{{object.author.name}}'>{{object.author.name}}</a> on {{object.ctime|date}}</h4>
+<h4 class="byauthor">By <a href="{% url people.views.show_user id=object.author.id%}" title='{{object.author.name}}'>{{object.author.name}}</a> on {{object.ctime|date}}</h4>
 {% load tags%}
 <div class='tags'>{% show_tags object %}</div>
 {% if object.attachments.ingredients %}

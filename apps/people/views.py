@@ -16,21 +16,19 @@ UserForm = FormWithSets(UserForm)
 def list_user(request):
     return object_list(request, User.all(), paginate_by=10)
 
-def show_user(request, key):
-    return object_detail(request, User.all(), key, )
+def show_user(request, id):
+    return object_detail(request, User.all(), object_id=id )
 
-def show_user_detail(request, key, obj):
+def show_user_detail(request, id, obj):
     template='people/user_detail_' + obj + '.html'
-    return object_detail(request, User.all(), key, template_name=template)
+    return object_detail(request, User.all(), object_id=id, template_name=template)
 
 def new_user(request):
-    return create_object(request, form_class=UserForm,
-        post_save_redirect=reverse(show_user,
-                                   kwargs=dict(key='%(key)s')))
-def edit_user(request, key):
-    return update_object(request, object_id=key, form_class=UserForm,
-        post_save_redirect=reverse(show_user,
-                                   kwargs=dict(key='%(key)s')))
-def delete_user(request, key):
-    return delete_object(request, User, object_id=key,
+    return create_object(request, form_class=UserForm)
+
+def edit_user(request, id):
+    return update_object(request, object_id=id, form_class=UserForm)
+
+def delete_user(request, id):
+    return delete_object(request, User, object_id=id,
         post_delete_redirect=reverse(list_user))    

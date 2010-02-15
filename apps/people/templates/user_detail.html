@@ -10,7 +10,7 @@
 {% makeobjectlist object.article_set addtion_filter=order('-mtime') paginate_by=3 as article_list%}
 {% render article_list templatetype=listitem_self%}
 </div>
-<a href="{%url people.views.show_user_detail key=object.key obj='article' %}" />More...</a>
+<a href="{%url people.views.show_user_detail id=object.id obj='article' %}" />More...</a>
 {% else %}
 {{object.name}} not yet write any article
 {% endif %}
@@ -21,7 +21,7 @@
 {% makeobjectlist object.comment_set addtion_filter=order('-mtime') paginate_by=3 as comment_list%}
 {% render comment_list templatetype=target%}
 </div>
-<a href="{%url people.views.show_user_detail key=object.key obj='comment' %}" />More...</a>
+<a href="{%url people.views.show_user_detail id=object.id obj='comment' %}" />More...</a>
 {% else %}
 {{object.name}} not yet write any comment
 {% endif %}
