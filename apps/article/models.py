@@ -37,7 +37,7 @@ class Article(db.Model):
         
     @models.permalink
     def get_absolute_url(self):
-        return ('article.views.show_article', [self.id()])
+        return ('article.views.show_article', [self.id(), self.title])
         
     @classmethod
     def get_featured(cls):
