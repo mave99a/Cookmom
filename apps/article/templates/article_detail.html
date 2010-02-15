@@ -13,8 +13,8 @@
 
 {% if False%}
 <ul>
-<li><a href='{% url article.views.edit_article slug=object.slug %}'>edit...</a></li>
-<li><a href='{% url article.views.delete_article slug=object.slug %}'>del...</a></li>
+<li><a href='{% url article.views.edit_article id=object.id %}'>edit...</a></li>
+<li><a href='{% url article.views.delete_article id=object.id %}'>del...</a></li>
 </ul>
 {% endif %}
 {% endblock %}

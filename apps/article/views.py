@@ -12,8 +12,8 @@ from people.models import User
 def list_article(request):
     return object_list(request, Article.all(), paginate_by = 10)
 
-def show_article(request, slug):
-    return object_detail(request, Article.all(), slug=slug, extra_context={'isowner': True})
+def show_article(request, id, title):
+    return object_detail(request, Article.all(), object_id=id, extra_context={'isowner': True})
 
 @login_required
 def new_article(request):
@@ -21,10 +21,10 @@ def new_article(request):
         extra_fields = {'author': User.get_current_user()})
 
 @login_required
-def edit_article(request, slug):
-    return update_object(request, slug=slug, form_class=ArticleForm)
+def edit_article(request, id):
+    return update_object(request, object_id=id, form_class=ArticleForm)
 
 @login_required
-def delete_article(request, slug):
-    return delete_object(request, Article, slug=slug,
+def delete_article(request, id):
+    return delete_object(request, Article, object_id=id,
         post_delete_redirect=reverse(list_article))    

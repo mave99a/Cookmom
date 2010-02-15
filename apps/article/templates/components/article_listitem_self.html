@@ -1,11 +1,11 @@
 <td class='photo'>
-	<a href='{% url article.views.show_article slug=object.slug %}' title="{{object.title}}">
+	<a href='{% url article.views.show_article id=object.id title=object.title%}' title="{{object.title}}">
 	<img src="{%imageurl object.image square %}" alt="{{object.title}}" />
 	</a>
 </td>
 <td class='abstract'>
 <h3>
-<a href="{% url article.views.show_article slug=object.slug %}" title="{{object.title}}">{{object.title}}</a></h3>
+<a href="{% url article.views.show_article id=object.id title=object.title%}" title="{{object.title}}">{{object.title}}</a></h3>
 <p>
 10 comments, 10 pictures, 20 similar, 4 stars
 </p>

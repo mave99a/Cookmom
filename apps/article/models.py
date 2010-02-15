@@ -18,14 +18,15 @@ class Article(db.Model):
     lang = db.StringProperty(required=True, default='en')
     
     published = db.BooleanProperty(default=False, required=True)
-    
-    slug = db.StringProperty(required=True)
-    
+        
     # some cached properties for performance improving
     read_count = db.IntegerProperty(default=0)
     comment_count = db.IntegerProperty(default=0)
     
     images_list = db.StringListProperty()
+    
+    def id(self):
+        return self.key().id()
     
     def image(self):
         '''return the main image of this article'''
@@ -36,7 +37,7 @@ class Article(db.Model):
         
     @models.permalink
     def get_absolute_url(self):
-        return ('article.views.show_article', [self.slug])
+        return ('article.views.show_article', [self.id()])
         
     @classmethod
     def get_featured(cls):
