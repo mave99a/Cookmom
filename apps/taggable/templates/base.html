@@ -1,6 +1,6 @@
 {% extends "base_content.html" %}
 {% block title %}Cookmom{% endblock %}
-
+{% block breadcrumb %}{{ block.super }} &raquo; <a href='/tag/'>Tags</a>{% endblock %}
 {% block main %}
 <div class="article">
 {% render article %}

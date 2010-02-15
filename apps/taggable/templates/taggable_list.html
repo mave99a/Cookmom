@@ -1,7 +1,8 @@
 {% extends "taggable/base.html" %}
 {% block title %}{{tag}} - Cookmom{% endblock %}
+{% block breadcrumb %}{{ block.super }} &raquo; <span>{{tag}}</span>{% endblock %}
 {% block main %}
-<h1><a href='{%url taggable.views.tagcloud%}'>All tags</a> / {{tag}}</h1>
+<h1>All tagged with "{{tag}}"</h1>
 {% load paginator %}
 {% paginator %}
 {% render object_list %}
