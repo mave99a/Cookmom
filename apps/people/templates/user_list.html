@@ -1,4 +1,5 @@
 {% extends "people/base.html" %}
+{% block breadcrumb %}{{ block.super }} &raquo; <span>All</span>{% endblock %}
 {% block main %}
 {% load paginator %}
 {% paginator %}

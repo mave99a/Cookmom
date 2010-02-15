@@ -1,7 +1,7 @@
 {% extends "base_content.html" %}
 {% block tabPeople %}active{% endblock %}
 {% block title %}Cookmom{% endblock %}
-
+{% block breadcrumb %}{{ block.super }} &raquo; <a href='/people/'>People</a>{% endblock %}
 {% block main %}
 <div class="article">
 {% render article %}

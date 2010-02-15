@@ -1,5 +1,6 @@
 {% extends "people/base.html" %}
 {% block title %}{{object.name}} - Cookmom{% endblock %}
+{% block breadcrumb %}{{ block.super }} &raquo; <a href='{% url people.views.show_user id=object.id%}'>{{object.name}}</a> &raquo; <span>Article</span>{% endblock %}
 {% block main %}
 
 {% if object.article_set %}

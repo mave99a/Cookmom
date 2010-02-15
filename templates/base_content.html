@@ -4,6 +4,9 @@
 <div id="headbanner">
 {% include "ad/leaderboard.html" %}
 </div>
+<div id="breadcrumbs">
+   {% block breadcrumb %}<a href="/">Home</a>{% endblock %}
+</div>
 {%endblock%}
 <div id="maincontent" class="span-17 ">
 {% block main %}{%endblock%}

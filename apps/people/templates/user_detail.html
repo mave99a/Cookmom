@@ -1,7 +1,7 @@
 {% extends "people/base.html" %}
 {% block title %}{{object.name}} - Cookmom{% endblock %}
+{% block breadcrumb %}{{ block.super }} &raquo; <span>{{object.name}}</span>{% endblock %}
 {% block main %}
-
 {% render object templatetype=details %}
 
 {% if object.article_set %}

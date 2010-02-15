@@ -514,3 +514,22 @@ input.awesome {
 .yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
 .yellow.awesome:hover							{ background-color: #fc9200; }
 
+/*
+*  breadcrumbs
+*/
+
+#breadcrumbs {
+  color: #f00;
+  font-size: 10px;
+}
+
+#breadcrumbs a, #breadcrumbs a:visited, #breadcrumbs span {
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+	color: #000;
+}
+
+#breadcrumbs a:hover{
+	background: #00f;
+	color: #fff;
+}
