@@ -96,8 +96,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 # Google authentication
-#AUTH_USER_MODULE = 'ragendja.auth.google_models'
-#AUTH_ADMIN_MODULE = 'ragendja.auth.google_admin'
+AUTH_USER_MODULE = 'ragendja.auth.google_models'
+AUTH_ADMIN_MODULE = 'ragendja.auth.google_admin'
 # Hybrid Django/Google authentication
 #AUTH_USER_MODULE = 'ragendja.auth.hybrid_models'
 
@@ -115,8 +115,6 @@ INSTALLED_APPS = (
     # 'jquerylib',    # we will use Google's CDN,  so won't include this app here. 
     'blueprintcss',
     'lightbox', 
-    
-    'registration',
           
     # tags
     'rendertag', 

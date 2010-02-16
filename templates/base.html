@@ -22,18 +22,14 @@
 		<h2 ><a href="/" title="Cookmom"><span>Cookmom</span></a></h2>
 	</div>
 	{% load googletags %}
-	{% if user.is_authenticated %}
 	<div class="login">
+	{% if user.is_authenticated %}
 	{% render currentuser %}
 	Welcome! {{user.email}} <a href="/my/">My home</a> | <a href='{% google_logout_url %}'>Logout</a>
-	</div>
 	{% else %}
-	<div class="span-9 last">
-		<div id="signin">
-			<a href="{% google_login_url request.get_full_path %}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
-		</div>	
-	</div>
+	<a href="{% google_login_url request.get_full_path %}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
 	{% endif %}
+	</div>
 	<br class="clearboth"/>
 	<!-- navi menu -->
 	<div id="navbar">
