@@ -147,13 +147,6 @@ INSTALLED_APPS = (
     
     #standard apps
     'django.contrib.auth',
-    'django.contrib.sessions',
-    'django.contrib.admin',
-    'django.contrib.webdesign',
-    'django.contrib.flatpages',
-    'django.contrib.redirects',
-    'django.contrib.sites',
-    'django.contrib.webdesign', # app for generate 'lorem ipsum' 
         
     # app engine patch    
     'appenginepatcher',
