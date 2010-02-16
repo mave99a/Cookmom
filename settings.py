@@ -77,9 +77,9 @@ MIDDLEWARE_CLASSES = (
     'ragendja.middleware.ErrorMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # Django authentication
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #'django.contrib.auth.middleware.AuthenticationMiddleware',
     # Google authentication
-    #'ragendja.auth.middleware.GoogleAuthenticationMiddleware',
+    'ragendja.auth.middleware.GoogleAuthenticationMiddleware',
     # Hybrid Django/Google authentication
     #'ragendja.auth.middleware.HybridAuthenticationMiddleware',
     
@@ -144,9 +144,6 @@ INSTALLED_APPS = (
      
     # unit test tool app
     'gaeunit',
-    
-    #standard apps
-    'django.contrib.auth',
         
     # app engine patch    
     'appenginepatcher',

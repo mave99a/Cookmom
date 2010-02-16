@@ -11,6 +11,7 @@
 <!--[if IE]><link rel="stylesheet" href="{{ MEDIA_URL }}blueprintcss/ie.css" type="text/css" media="screen, projection"><![endif]-->
 <link rel="alternate" type="application/rss+xml" title="RSS Feed of {{blogtitle|safe}}" href="/feeds/latest/" />
 <link REL="SHORTCUT ICON" HREF="/favicon.ico">
+<link rel="canonical" href="{% block canonicalurl %}{{request.get_full_path}}{% endblock %}" />
 </head>
 <body>
 <div class="container" id="wrapper">
@@ -24,12 +25,12 @@
 	{% if user.is_authenticated %}
 	<div class="login">
 	{% render currentuser %}
-	Welcome! {{user.email}} <a href="/my/">My home</a> | <a href='{% url django.contrib.auth.views.logout %}?redirect_to={{ request.get_full_path|urlencode }}'>Logout</a>
+	Welcome! {{user.email}} <a href="/my/">My home</a> | <a href='{% google_logout_url %}'>Logout</a>
 	</div>
 	{% else %}
 	<div class="span-9 last">
 		<div id="signin">
-			<a href="{% url django.contrib.auth.views.login %}?redirect_to={{ request.get_full_path|urlencode }}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='/account/register/' title="Sign Up and Register a New User.">Join</a>
+			<a href="{% google_login_url request.get_full_path %}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
 		</div>	
 	</div>
 	{% endif %}
