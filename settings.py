@@ -87,9 +87,9 @@ MIDDLEWARE_CLASSES = (
     
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'ragendja.sites.dynamicsite.DynamicSiteIDMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+#    'ragendja.sites.dynamicsite.DynamicSiteIDMiddleware',
+#    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+#    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     
     # firepython for debug 
     #'firepython.middleware.FirePythonDjango',
