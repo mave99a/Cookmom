@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from ragendja.settings_pre import *
+from facebooksettings import *
+from flickrsettings import * 
 
 import os
 import sys
@@ -93,6 +95,7 @@ MIDDLEWARE_CLASSES = (
     
     # firepython for debug 
     #'firepython.middleware.FirePythonDjango',
+    'facebook.djangofb.FacebookMiddleware',
 )
 
 # Google authentication
