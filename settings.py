@@ -3,13 +3,13 @@ from ragendja.settings_pre import *
 
 import os
 import sys
+import flickrsettings
 
 #  add 'libs' and 'apps' to python path. 
 currentpath = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(currentpath, "libs"))
 sys.path.insert(0, os.path.join(currentpath, "apps"))
-
-
+ 
 # Increase this when you update your media on the production site, so users
 # don't have to refresh their cache. By setting this your MEDIA_URL
 # automatically becomes /media/MEDIA_VERSION/

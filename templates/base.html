@@ -27,6 +27,10 @@
 	{% render currentuser %}
 	Welcome! {{user.email}} <a href="/my/">My home</a> | <a href='{% google_logout_url %}'>Logout</a>
 	{% else %}
+	<a href='/home/'>
+	<fb:profile-pic uid="loggedinuser" width="32" height="32" facebook-logo="false" linked='false'></fb:profile-pic>
+	</a>
+	<fb:login-button v="2" size="small" onlogin="window.location.reload(true);">Login with Facebook</fb:login-button>
 	<a href="{% google_login_url request.get_full_path %}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
 	{% endif %}
 	</div>
@@ -117,6 +121,8 @@ $(document).ready(function(){
 
 
 </script>
-
+<!-- facebook connect javascript-->
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript"></script>
+<script type="text/javascript">FB.init("ca8697863e336b20a9b5d67b81859f10", "/fbconnect/xd_receiver.htm");</script>
 </body>
 </html>

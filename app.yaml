@@ -13,6 +13,9 @@ handlers:
 #  expiration: "365d"
   static_dir: _generated_media
 
+- url: /fbconnect
+  static_dir: media/fbconnect
+  
 - url: /favicon.ico
   expiration: "365d"
   static_files: static/favicon.ico
