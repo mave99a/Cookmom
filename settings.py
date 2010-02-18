@@ -76,37 +76,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 MIDDLEWARE_CLASSES = (
     'appstats.recording.AppStatsDjangoMiddleware',  # appstats
-    'ragendja.middleware.ErrorMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    # Django authentication
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # Google authentication
-    'ragendja.auth.middleware.GoogleAuthenticationMiddleware',
-    # Hybrid Django/Google authentication
-    #'ragendja.auth.middleware.HybridAuthenticationMiddleware',
-    
-    'ragendja.middleware.LoginRequiredMiddleware',
-    
+
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-#    'ragendja.sites.dynamicsite.DynamicSiteIDMiddleware',
-#    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-#    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
-    
+    'django.contrib.sessions.middleware.SessionMiddleware',
+
     # firepython for debug 
     #'firepython.middleware.FirePythonDjango',
     'facebook.djangofb.FacebookMiddleware',
 )
-
-# Google authentication
-AUTH_USER_MODULE = 'ragendja.auth.google_models'
-AUTH_ADMIN_MODULE = 'ragendja.auth.google_admin'
-# Hybrid Django/Google authentication
-#AUTH_USER_MODULE = 'ragendja.auth.hybrid_models'
-
-LOGIN_URL = '/account/login/'
-LOGOUT_URL = '/account/logout/'
-#LOGIN_REDIRECT_URL = '/'
 
 INSTALLED_APPS = (
     # Add jquery support (app is in "common" folder). This automatically
@@ -139,10 +116,7 @@ INSTALLED_APPS = (
     'swfupload',        # app for swfupload integration
     'image',            # app to handle image upload and image url 
     'flickr',           # app for supportting flickr backend and flickr's auth
-    
-    'twitter',          # app for twitter integration
-    'facebook',         # app for facebook integration
-     
+         
     # unit test tool app
     'gaeunit',
         
@@ -173,7 +147,7 @@ DATABASE_OPTIONS = {
     # Override remoteapi handler's path (default: '/remote_api').
     # This is a good idea, so you make it not too easy for hackers. ;)
     # Don't forget to also update your app.yaml!
-    #'remote_url': '/remote-secret-url',
+    #'remote_url': '/cookmom_remote_api_private-secret-url',
 
     # !!!Normally, the following settings should not be used!!!
 
@@ -182,10 +156,10 @@ DATABASE_OPTIONS = {
 
     # Change appid for remote connection (by default it's the same as in
     # your app.yaml)
-    #'remote_id': 'otherappid',
+    #'remote_id': 'cookmom-app',
 
     # Change domain (default: <remoteid>.appspot.com)
-    #'remote_host': 'bla.com',
+    #'remote_host': 'beta.cookmom.com',
 }
 
 from ragendja.settings_post import *

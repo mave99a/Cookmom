@@ -21,17 +21,16 @@
 	<div class="span-13"> 
 		<h2 ><a href="/" title="Cookmom"><span>Cookmom</span></a></h2>
 	</div>
-	{% load googletags %}
 	<div class="login">
 	{% if user.is_authenticated %}
 	{% render currentuser %}
-	Welcome! {{user.email}} <a href="/my/">My home</a> | <a href='{% google_logout_url %}'>Logout</a>
+	Welcome! {{user.email}} <a href="/my/">My home</a> | <a href='#'>Logout</a>
 	{% else %}
 	<a href='/home/'>
 	<fb:profile-pic uid="loggedinuser" width="32" height="32" facebook-logo="false" linked='false'></fb:profile-pic>
 	</a>
 	<fb:login-button v="2" size="small" onlogin="window.location.reload(true);">Login with Facebook</fb:login-button>
-	<a href="{% google_login_url request.get_full_path %}"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
+	<a href="#"   title="Sign In Using Cookmom Account.">Login</a> | <a href='#' title="Sign Up and Register a New User.">Join</a>
 	{% endif %}
 	</div>
 	<br class="clearboth"/>
