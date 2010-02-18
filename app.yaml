@@ -5,7 +5,7 @@ api_version: 1
 #default_expiration: "30d"
 
 handlers:
-- url: /secret_remote_api
+- url: /cookmom_remote_api_private
   script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
   login: admin
 
