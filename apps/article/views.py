@@ -14,9 +14,12 @@ def list_article(request):
 def show_article(request, id, title):
     return object_detail(request, Article.all(), object_id=id, extra_context={'isowner': True})
 
+#@requirelogin
+#@requireFullProfile
+#@requireAccess
 def new_article(request):
     return create_object(request, form_class=ArticleForm,
-        extra_fields = {'author': User.get_current_user()})
+        extra_fields = {'author': request.user})
 
 def edit_article(request, id):
     return update_object(request, object_id=id, form_class=ArticleForm)

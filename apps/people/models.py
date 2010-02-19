@@ -3,7 +3,6 @@ from django.db import models
 
 class User(db.Model):
     name = db.StringProperty(required=True)
-    slug = db.StringProperty()
     img = db.StringProperty()
     
     def id(self):
@@ -13,10 +12,11 @@ class User(db.Model):
     def get_absolute_url(self):
         return ('people.views.show_user', [self.id()])
     
-    @classmethod 
-    def get_current_user(cls):
-        user = User.all().filter("name =", "Cookmom").get()
-        if user is None :
-            user = User(name="Cookmom", img="1")
-            user.put()
+    @classmethod
+    def create(cls, name):
+        user = User(name=name, img='2')
+        user.put()
         return user
+    
+def create_new_user_profile(name):
+    return User.create(name)

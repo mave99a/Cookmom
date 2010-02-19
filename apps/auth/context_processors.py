@@ -1,5 +1,6 @@
 from user import get_current_user
 
 def auth(request):
-    return {'user': request.user}
+    if hasattr(request, 'authuser'):
+        return {'authuser': request.authuser, 'user': request.authuser.user}
     
