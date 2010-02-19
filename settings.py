@@ -68,10 +68,10 @@ LANGUAGES = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
+    'auth.context_processors.auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -79,10 +79,12 @@ MIDDLEWARE_CLASSES = (
 
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-
+    
+    'facebook.djangofb.FacebookMiddleware',
+    'auth.middleware.AuthMiddleware',
     # firepython for debug 
     #'firepython.middleware.FirePythonDjango',
-    'facebook.djangofb.FacebookMiddleware',
+
 )
 
 INSTALLED_APPS = (
