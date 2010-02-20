@@ -5,6 +5,7 @@ class User(db.Model):
     name = db.StringProperty(required=True)
     img = db.StringProperty()
     brief = db.StringProperty()
+    geopt = db.GeoPtProperty()
     city = db.StringProperty()
     
     def id(self):
