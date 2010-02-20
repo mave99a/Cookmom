@@ -4,7 +4,8 @@
 {% block breadcrumb %}{{ block.super }} &raquo; <span>{{object.title}}</span>{% endblock %}
 {% block main %}
 {% render object%}
-{% render object.author %}
+<h4>About the author</h4>
+{% render object.author templatetype=authorbox %}
 {% load comments%}
 {% comment_form for object %}
 

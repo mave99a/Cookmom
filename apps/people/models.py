@@ -7,7 +7,13 @@ class User(db.Model):
     brief = db.StringProperty()
     geopt = db.GeoPtProperty()
     city = db.StringProperty()
-    
+    # create time
+    ctime = db.DateTimeProperty(auto_now_add=True)   
+    #last update time
+    mtime = db.DateTimeProperty(auto_now=True)    
+    # language, for filtering and automatic translation support
+    lang = db.StringProperty(required=True, default='en')
+        
     def id(self):
         return self.key().id()
     

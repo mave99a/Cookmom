@@ -47,6 +47,8 @@ COMBINE_MEDIA = {
 if on_production_server:
     DEFAULT_FROM_EMAIL = 'bla@bla.com'
     SERVER_EMAIL = DEFAULT_FROM_EMAIL
+    
+DEBUG= False
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '1234567890'
