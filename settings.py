@@ -45,13 +45,12 @@ COMBINE_MEDIA = {
 
 # Change your email settings
 if on_production_server:
-    DEFAULT_FROM_EMAIL = 'bla@bla.com'
+    DEFAULT_FROM_EMAIL = 'contact@cookmom.com'
     SERVER_EMAIL = DEFAULT_FROM_EMAIL
+    DEBUG = True
     
-DEBUG= False
-
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '1234567890'
+SECRET_KEY = '4254425101'
 
 #ENABLE_PROFILER = True
 #ONLY_FORCED_PROFILE = True
