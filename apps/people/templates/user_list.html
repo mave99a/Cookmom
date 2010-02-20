@@ -1,6 +1,9 @@
 {% extends "people/base.html" %}
 {% block breadcrumb %}{{ block.super }} &raquo; <span>All</span>{% endblock %}
 {% block main %}
+<form>
+<input type='edit' /><input type='submit' value='Search by name'/>
+</form>
 {% load paginator %}
 {% paginator %}
 {% render object_list template=components/user_listitem.html%}

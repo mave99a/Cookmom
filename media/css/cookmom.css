@@ -532,4 +532,6 @@ input.awesome {
 #breadcrumbs a:hover{
 	background: #00f;
 	color: #fff;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 }

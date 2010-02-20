@@ -4,6 +4,8 @@ from django.db import models
 class User(db.Model):
     name = db.StringProperty(required=True)
     img = db.StringProperty()
+    brief = db.StringProperty()
+    city = db.StringProperty()
     
     def id(self):
         return self.key().id()

@@ -11,16 +11,13 @@ class CommentFormNode(template.Node):
         self.target_ref = template.Variable(target_ref)
     
     def render(self, context):
+        target = self.target_ref.resolve(context)
         try: 
-            target = self.target_ref.resolve(context)
-            try: 
-                request = context['request']
-            except: 
-                request = HttpRequest()
-            return new_comment(request, target.key()).content
-        except:
-            logging.error('Can not find (%s) in the context.'%self.target_ref)     
-            return ''
+            request = context['request']
+        except: 
+            request = HttpRequest()
+        return new_comment(request, target.key()).content
+
     
 
 def do_comment_form(parser, token):

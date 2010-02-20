@@ -2,9 +2,10 @@
 from django import forms
 from ragendja.forms import FormWithSets, FormSetField
 from django.core.urlresolvers import reverse
-
 from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import create_object, delete_object, update_object
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from models import User
 
 class UserForm(forms.ModelForm):    
@@ -23,12 +24,14 @@ def show_user_detail(request, id, obj):
     template='people/user_detail_' + obj + '.html'
     return object_detail(request, User.all(), object_id=id, template_name=template)
 
-def new_user(request):
-    return create_object(request, form_class=UserForm)
+def show_myhome(request):
+    return render_to_response('people/my.html',
+                              {'object': request.user},
+                              context_instance=RequestContext(request))
 
-def edit_user(request, id):
-    return update_object(request, object_id=id, form_class=UserForm)
+def edit(request):
+    return update_object(request, object_id=request.user.id(), form_class=UserForm)
 
-def delete_user(request, id):
-    return delete_object(request, User, object_id=id,
-        post_delete_redirect=reverse(list_user))    
+#def delete_user(request, id):
+#    return delete_object(request, User, object_id=id,
+#        post_delete_redirect=reverse(list_user))    

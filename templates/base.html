@@ -23,8 +23,7 @@
 	</div>
 	<div class="login">
 	{% if authuser.is_authenticated %}
-	{% render user.profile %}
-	Welcome! {{authuser.email}} <a href="/my/">My home</a> | <a href='{{authuser.logouturl}}'>Logout</a>
+	Welcome! {{user.name}} <a href="/people/me/">My home</a> | <a href='{{authuser.logouturl}}'>Logout</a>
 	{% else %}
 	<a href='/home/'>
 	<fb:profile-pic uid="loggedinuser" width="32" height="32" facebook-logo="false" linked='false'></fb:profile-pic>
