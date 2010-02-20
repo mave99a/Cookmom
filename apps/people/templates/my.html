@@ -1,0 +1,40 @@
+{% extends "people/base.html" %}
+{% block title %}{{object.name}} - Cookmom{% endblock %}
+{% block breadcrumb %}{{ block.super }} &raquo; <span>My home</span>{% endblock %}
+{% block main %}
+{% render object templatetype=details %}
+
+{% if object.article_set %}
+<h4>Articles by {{object.name}}</h4>
+<div class="articles_list">
+{% makeobjectlist object.article_set addtion_filter=order('-mtime') paginate_by=3 as article_list%}
+{% render article_list templatetype=listitem_self%}
+</div>
+<a href="{%url people.views.show_user_detail id=object.id obj='article' %}" />More...</a>
+{% else %}
+{{object.name}} not yet write any article
+{% endif %}
+
+{% if object.comment_set %}
+<h4>Comments by {{object.name}}</h4>
+<div class='comments_list'>
+{% makeobjectlist object.comment_set addtion_filter=order('-mtime') paginate_by=3 as comment_list%}
+{% render comment_list templatetype=target%}
+</div>
+<a href="{%url people.views.show_user_detail id=object.id obj='comment' %}" />More...</a>
+{% else %}
+{{object.name}} not yet write any comment
+{% endif %}
+
+{% load comments%}
+
+{% if object.Comments %}
+<h4>Comments</h4>
+<div class='comments_list'>
+{% render object.Comments %}
+</div>
+{% else %}
+No comment.
+{% endif %}
+
+{% endblock %}
