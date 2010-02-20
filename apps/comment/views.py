@@ -8,10 +8,12 @@ from django.views.generic.create_update import delete_object, update_object
 from generic_view_patch.create_update import create_object
 from models import Comment, CommentForm
 from people.models import User
+from auth.decorators import login_required
 
 def list_comment(request):
     return object_list(request, Comment.all(), paginate_by = 10)
 
+@login_required
 def new_comment(request, key):
     target = db.get(key)
     try: 

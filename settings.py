@@ -42,6 +42,8 @@ COMBINE_MEDIA = {
     ),
 }
 
+LOGIN_URL = '/'
+
 
 # Change your email settings
 if on_production_server:
