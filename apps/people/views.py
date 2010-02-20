@@ -27,11 +27,11 @@ def show_user_detail(request, id, obj):
 
 def show_myhome(request):
     return render_to_response('people/my.html',
-                              {'object': request.user},
+                              {'object': request.current_user},
                               context_instance=RequestContext(request))
 
 def edit(request):
-    return update_object(request, object_id=request.user.id(), form_class=UserForm)
+    return update_object(request, object_id=request.current_user.id(), form_class=UserForm)
 
 #def delete_user(request, id):
 #    return delete_object(request, User, object_id=id,

@@ -25,7 +25,7 @@ def new_comment(request, key):
         
     return create_object(request, 
                  form_class=CommentForm, 
-                 extra_fields = {'author': request.user, 'target': target},
+                 extra_fields = {'author': request.current_user, 'target': target},
                  extra_context = locals(),
                  post_save_redirect = returnurl
                 )   

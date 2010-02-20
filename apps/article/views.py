@@ -19,7 +19,7 @@ def show_article(request, id, title):
 #@requireAccess
 def new_article(request):
     return create_object(request, form_class=ArticleForm,
-        extra_fields = {'author': request.user})
+        extra_fields = {'author': request.current_user})
 
 def edit_article(request, id):
     return update_object(request, object_id=id, form_class=ArticleForm)
