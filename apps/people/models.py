@@ -22,10 +22,10 @@ class User(db.Model):
         return ('people.views.show_user', [self.id()])
     
     @classmethod
-    def create(cls, name):
-        user = User(name=name, img='2')
+    def create(cls, name, imgjson):
+        user = User(name=name, img=imgjson)
         user.put()
         return user
     
-def create_new_user_profile(name):
-    return User.create(name)
+def create_new_user_profile(name, imgjson):
+    return User.create(name, imgjson)

@@ -1,5 +1,5 @@
 <h1>{{object.name}}</h1>
 <p>{{object.brief}}</p>
 <span class='vcard'>
-	<img alt="{{object.name}}" class="photo fn" src="{% imageurl object.img small %}">
+{% load userimage %}{% userimage object.img %}
 </span>

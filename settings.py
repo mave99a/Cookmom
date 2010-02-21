@@ -60,7 +60,7 @@ SECRET_KEY = '4254425101'
 
 # Enable I18N and set default language to 'en'
 USE_I18N = True
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'en' 
 
 # Restrict supported languages (and JS media generation)
 LANGUAGES = (

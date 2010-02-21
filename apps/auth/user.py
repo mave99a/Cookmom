@@ -1,6 +1,7 @@
 from google.appengine.api import users
 from google.appengine.ext import db
 from people.models import create_new_user_profile
+from django.utils import simplejson
 
 class AnonymousUser: 
     def is_authenticated(self):   
@@ -37,7 +38,7 @@ class GoogleUser(db.Model):
         if googleuser:
             result = GoogleUser.all().filter('googleuser =', googleuser).get()
             if result is None:
-                newuser = create_new_user_profile(googleuser.nickname())
+                newuser = create_new_user_profile(googleuser.nickname(), simplejson.dumps({'type':'gravatar', 'email': googleuser.email()}))
                 result = GoogleUser(user=newuser, googleuser = googleuser)
                 result.put()
             return result    
@@ -68,8 +69,8 @@ class FacebookUser(db.Model):
             fb = request.facebook
             if fb.check_session(request):                        
                 result = FacebookUser.all().filter('fbuid =', fb.uid).get()
-                if result is None:
-                    newuser = create_new_user_profile(fb.uid)
+                if result is None:                  
+                    newuser = create_new_user_profile(fb.uid, simplejson.dumps({'type':'facebook', 'fbuid': fb.uid}))
                     result = FacebookUser(user=newuser, fbuid = fb.uid)
                     result.put()
                 return result   
