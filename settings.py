@@ -40,10 +40,7 @@ COMBINE_MEDIA = {
         # Load layout for the correct text direction
         'global/css/cookmom.css',
     ),
-}
-
-LOGIN_URL = '/'
-
+} 
 
 # Change your email settings
 if on_production_server:
@@ -106,6 +103,9 @@ INSTALLED_APPS = (
     'paginatortag', 
     'objectlisttag', 
     
+    # auth
+    'auth',
+     
     # app modules
     'cookmom',
     
