@@ -1,14 +1,10 @@
 from google.appengine.api import users
 from google.appengine.ext import db
 from people.models import create_new_user_profile
+
 class AnonymousUser: 
     def is_authenticated(self):   
         return False
-    def loginurl(self):
-        return users.create_login_url('/')
-    
-    def logouturl(self):
-        return users.create_logout_url('/')
     
     def user(self):        
         return None
@@ -28,6 +24,14 @@ class GoogleUser(db.Model):
         return True
     
     @classmethod
+    def login_html(cls):
+        return '<a href="%s">Google User Signin</a>' % users.create_login_url("/")
+    
+    @classmethod
+    def logout_html(cls):
+        return '<a href="%s">Logout</a>' % users.create_logout_url("/")
+    
+    @classmethod
     def getUser(cls, request):
         googleuser = users.get_current_user() 
         if googleuser:
@@ -40,12 +44,6 @@ class GoogleUser(db.Model):
         else:
             return None
     
-    def loginurl(self):
-        return users.create_login_url('/')
-    
-    def logouturl(self):
-        return users.create_logout_url('/')
-    
     def name(self):
         return self.googleuser.nickname()
     
@@ -56,6 +54,14 @@ class FacebookUser(db.Model):
     user = db.ReferenceProperty(db.Model, required=True)
     fbuid = db.StringProperty(required=True)
         
+    @classmethod
+    def login_html(cls):
+        return '<fb:login-button v="2" size="small" onlogin="window.location=returnURL">Login with Facebook</fb:login-button>'
+ 
+    @classmethod
+    def logout_html(cls):
+        #return '<fb:login-button v="2" size="large" autologoutlink="true" onlogin="window.location=returnURL">Login with Facebook</fb:login-button>'
+        return    '<fb:login-button size="small" background="white" length="long" autologoutlink="true"></fb:login-button>'
     @classmethod
     def getUser(cls, request):
         if getattr(request, 'facebook', None):
@@ -71,12 +77,6 @@ class FacebookUser(db.Model):
         
     def is_authenticated(self):   
         return True
-             
-    def loginurl(self):
-        pass
-    
-    def logouturl(self):
-        pass
 
     def name(self):
         return self.fbuid
