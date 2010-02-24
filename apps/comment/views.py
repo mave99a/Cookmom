@@ -16,15 +16,14 @@ def list_comment(request):
 @login_required
 def new_comment(request, key):
     target = db.get(key)
-    try: 
-        isAjax = request.REQUEST['isAjax']
+    if request.is_ajax(): 
         returnurl = None
-    except: 
+    else: 
         try: 
             returnurl = request.REQUEST['returnurl']
         except: 
-            returnurl = None
-        
+            returnurl = None;
+            
     return create_object(request, 
                  form_class=CommentForm, 
                  extra_fields = {'author': request.current_user, 'target': target},
