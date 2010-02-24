@@ -3,9 +3,11 @@
 {% block canonicalurl %}{% url article.views.show_article id=object.id title=object.title%}{%endblock%}
 {% block breadcrumb %}{{ block.super }} &raquo; <span>{{object.title}}</span>{% endblock %}
 {% block main %}
+{% block article %}
 {% render object%}
 <h4>About the author</h4>
 {% render object.author templatetype=authorbox %}
+{% endblock %}
 {% load comments%}
 {% comment_form for object %}
 

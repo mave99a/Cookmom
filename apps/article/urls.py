@@ -9,4 +9,6 @@ urlpatterns = patterns('',
     (r'^(?P<id>\d+)/edit/$', edit_article),
     (r'^(?P<id>\d+)/dele/$', delete_article), 
     (r'^(?P<id>\d+)/(?P<title>.+)/$', show_article),
+    (r'^ajax/preview/(?P<id>\d+)/$', ajax_preview),
+    (r'^ajax/save/(?P<id>\d+)/$', ajax_save),
 )

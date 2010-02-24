@@ -10,7 +10,7 @@ form#post p {
 
 form#post textarea {
 	width: 95%;
-	height: 50px;
+	height: 200px;
 }
 
 form#post input#title {

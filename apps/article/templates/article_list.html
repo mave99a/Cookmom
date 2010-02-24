@@ -1,6 +1,7 @@
 {% extends "article/base.html" %}
 {% block title %}Articles - Cookmom{% endblock %}
 {% block breadcrumb %}{{ block.super }}  &raquo; <span>All</span>{% endblock %}
+{% block topad %}<!-- no top ad in article list pages -->{%endblock%}
 {% block main %}
 {% load paginator %}
 {% paginator %}

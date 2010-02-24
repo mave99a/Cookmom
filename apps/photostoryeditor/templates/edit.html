@@ -9,8 +9,8 @@
 	 
 	</div>
 	<ul class="tab">
-		<li class="active"><a href="#">Editor</a></li>
-    	<li class=""><a href="#">Preview</a></li>
+		<li class="active"><a href="#" id='editor' title='Switch to editor'>Editor</a></li>
+    	<li class=""><a href="#" id='preview' title='Switch to preview'>Preview</a></li>
     	<li class=''>
     		<div style='padding-left: 20px; padding-top:5px;'>
     			<input type='button' title='Publish this post...' href="#" class="small awesome green" value='Publish'/>&nbsp;
@@ -21,7 +21,7 @@
     </ul>			
 </div>
 
-<div id='editpanel'>
+<div id='editor-panel'>
 <div class="span-18">
 
 <form id='post' action='/edit/'>
@@ -63,9 +63,13 @@ Last auto saved: 3 min ago.
 </ul>
 
 </div>
+</div>
 
 <div id='preview-panel'>
-	Preview here...
+<h1 id='preview-title'></h1>
+<div id='preview-content'>
+
+</div>
 </div>
 
 {% endblock %}
