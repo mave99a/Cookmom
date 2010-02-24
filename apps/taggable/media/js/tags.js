@@ -21,9 +21,6 @@ $(document).ready(function() {
 	attach_tags_handlers()
 	
 	$('.tags form').ajaxForm({
-            beforeSubmit: function(formData, jqForm, options) {
-                formData.push({ name: 'isAjax', value: '1' })    
-            }, 	
             resetForm: true,
 			success: function(data) {
 				$('span.tagscontainer').html(data)

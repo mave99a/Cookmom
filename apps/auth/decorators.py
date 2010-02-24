@@ -3,6 +3,7 @@ from functools import update_wrapper, wraps
 from django.utils.http import urlquote
 from django.http import Http404
 from django.core.urlresolvers import reverse
+from django.utils import simplejson
 from views import login
 
 def login_required(view_function):
@@ -33,4 +34,15 @@ def superuser_required(view_function):
         
     return wraps(view_function)(superuser_required_wrapper)    
     
-    
+def ajax_login_required(view_function): 
+    """
+    Decorator for ajax view that checks that the user is logged in, it will just return JSON failed data
+    """
+    def login_required_wrapper(request, *args, **kw):
+        if request.authuser.is_authenticated():
+            return view_function(request, *args, **kw)
+        
+        json = simplejson.dumps({ 'success': False, 'not_authenticated': True })
+        return HttpResponse(json, mimetype='application/json')
+            
+    return wraps(view_function)(login_required_wrapper)   
