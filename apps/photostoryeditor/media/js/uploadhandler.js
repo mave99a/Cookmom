@@ -16,7 +16,7 @@ $(function(){
 			button_placeholder : $('#spanButtonPlaceholder', this)[0],
 			button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
 			button_cursor: SWFUpload.CURSOR.HAND, 
-			debug: true
+			debug: false,
 		});
 
     // assign our event handlers

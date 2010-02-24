@@ -19,7 +19,7 @@
 <!-- header -->
 <div id="header">
 	<div class="span-13"> 
-		<h2 ><a href="/" title="Cookmom"><span>Cookmom</span></a></h2>
+		<h2 ><a href="/" title="Cookmom home page"><span>Cookmom</span></a></h2>
 	</div>
 	<div class="login">
 	{% load authtags%}
@@ -27,6 +27,7 @@
 	</div>
 	<br class="clearboth"/>
 	<!-- navi menu -->
+	{% block navimenu %}	
 	<div id="navbar">
 		<div id="search">
 				<form action="/search/" name="SearchForm" method="get" id="searchform_main">
@@ -40,12 +41,14 @@
 	    	<li class="{%block tabPeople%}{%endblock%}"><a href="/people/">People</a></li>
 	    </ul>			
 	</div>		
+	{% endblock %}
 </div>
 <hr class="space clearboth" />
 <!-- main content -->
 {% block content %}{% endblock %}
 <!-- footer -->
 <div id="footer">
+	{% block footer %}
 	<div class="span-6">
 		<h3>About CookMom...</h3>
 		<ul>
@@ -80,6 +83,7 @@
 		<a href='#' title='What is this? click for explain.'><img src='http://chart.apis.google.com/chart?cht=qr&chs=96&chld=Q|0&choe=UTF-8&chl=http://m.cookmom.com{{request.get_full_path}}'/></a>
 		</p>
 	</div>	
+	{% endblock %}
 	<hr/>
 	All original content is available as  <a href="http://creativecommons.org/licenses/by-sa/2.5/" id="contentLicense" class="navLink">Creative Commons Attribution-ShareAlike</a><br/>
 	Copyright &copy; 2010, CookMom.com, powered by Google App Engine.

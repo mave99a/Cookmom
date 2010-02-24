@@ -1,56 +1,49 @@
 {% extends "base.html" %}
 {% load imageurl %}
 {% block title %}Write a new article - Cookmom{% endblock %}
+{% block navimenu %}{%endblock%}
+{% block footer %}{%endblock%}
 {% block content %}
+<div id="navbar">
+	<div style='float:right;'>
+	 
+	</div>
+	<ul class="tab">
+		<li class="active"><a href="#">Editor</a></li>
+    	<li class=""><a href="#">Preview</a></li>
+    	<li class=''>
+    		<div style='padding-left: 20px; padding-top:5px;'>
+    			<input type='button' title='Publish this post...' href="#" class="small awesome green" value='Publish'/>&nbsp;
+    			<input type='button' title='Save this post...' href="#" class="small awesome red" value='Save'/>&nbsp;
+    			<input type='button' title='Back to previous page...' href="#" class="small awesome black" value='Back'/>
+      		</div>
+    	</li>
+    </ul>			
+</div>
 
-<h1>Share your cooking experience...</h1>
-
+<div id='editpanel'>
 <div class="span-18">
-<form action='/edit/'>
-<table id='editor' class="editor">
-<tr id='template-row' class='row'>
-<td class='image'>
-	<a class='imgeditor'>
-		<input type='hidden' class='imageslist' name='images[]'/>
-		<img src='{% imageurl 2 square%}' alt='Thumnail' title='Preview or change photo...'/>
-		<span class='moveup' title='Move this section up'>&uarr;</span>
-		<span class='movedown' title='Move this section down'>&darr;</span>
-	</a>
-</td>
-<td class='textedit'>
-	<textarea title='click to edit or add text here...' name='content[]'></textarea>
-</td>
-</tr>
-<tr>
-<td>
 
-</td>
-<td>
-<span class='addrow'>
-Click to add more...
-</span>
-</td>
-</tr>
-</table>
-<button type='submit'>test</button>
+<form id='post' action='/edit/'>
+	<p>
+	<input type='edit' name='title' id='title' title='Enter the title here...' value='Share your cooking experience...'/>
+	</p>
+	<p>
+	<textarea title='Write your article here...' name='content'></textarea>
+	</p>
+	<p>
+	<input type='submit' title='Publish this post...' href="#" class=" awesome green" value='Publish'/>
+	</p>
 </form>
-<ul class='actions'>
-<li>
- <a href="#" class="button" id='save'><span class="add">Save</span></a>
-</li>
-<li>
- <a href="#" class="button" id='preview'><span class="add">Preview</span></a>
-</li>
-<li>
-<a href="#" class="button" id='publish'><span class="add">Publish</span></a>
-</li>
-</ul>
 
 </div>
 <div class="span-6 last">
-
+<div class=''>
+Last auto saved: 3 min ago.
+</div>
+<a href="#" class="awesome black" id="upload">Select photos</a>
 <span id="spanButtonPlaceholder" ></span> 
-<a href="#" class="button" id="upload"><span class="add">Upload photos</span></a>
+<a href="#" class="awesome black" id="upload">Upload photos</a>
 <div class="swfupload-control" flashurl="{{ MEDIA_URL }}swfupload/swfupload.swf">
 <noscript class="error">
  We're sorry. SWFUpload could not load. You must have JavaScript enabled to enjoy SWFUpload.
@@ -68,14 +61,16 @@ Click to add more...
 <li><img src='{% imageurl 8 square%}' alt='Thumnail' title='click jump to section'/></li>
 <li><img src='{% imageurl 9 square%}' alt='Thumnail' title='click jump to section'/></li>
 </ul>
-<a href='#'>More...</a>
+
+</div>
+
+<div id='preview-panel'>
+	Preview here...
 </div>
 
 {% endblock %}
 {% block addition_include_script %}
 {% endblock %} 
 {% block doc_ready_script %}
-
-attachPhotoStoryEditorEvents();
-
+$('textarea').elastic();
 {% endblock %}
