@@ -1,0 +1,17 @@
+<td class='photo'>
+	<a href='{% url article.views.show_article id=object.id title=object.title%}' title="{{object.title}}">
+	<img src="{%imageurl object.image square %}" alt="{{object.title}}" />
+	</a>
+</td>
+<td class='abstract'>
+<a href="{% url article.views.show_article id=object.id title=object.title%}" title="{{object.title}}">{{object.title}}</a>
+</td>
+<td>
+{% if object.published %}
+<a href='#' class='small awesome red'>make draft</a>
+{% else %}
+<a href='#' class='small awesome green'>Publish</a>
+{% endif %}
+<a href='#' class='small awesome red'>Delete</a>
+<a href='#' class='small awesome blue'>Edit</a>
+</td>

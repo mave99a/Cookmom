@@ -4,7 +4,9 @@
 {% block topad %}{%endblock%}
 {% block main %}
 {% render object templatetype=details %}
+<h2>My drafts</h2>
+{% render article.widgets.manage_draft templatetype=listitem_manage %}
 
-{% render article.widgets.test templatetype=listitem_self %}
-
+<h2>My published articles</h2>
+{% render article.widgets.manage_published templatetype=listitem_manage %}
 {% endblock %}
