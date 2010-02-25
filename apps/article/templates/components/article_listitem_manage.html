@@ -8,9 +8,9 @@
 </td>
 <td>
 {% if object.published %}
-<a href='{% url article.views.unpublish id=object.id %}' class='small awesome red'>make draft</a>
+<a href='{% url article.views.unpublish id=object.id %}' class='small awesome red ajax_action'>make draft</a>
 {% else %}
-<a href='{% url article.views.publish id=object.id %}' class='small awesome green'>Publish</a>
+<a href='{% url article.views.publish id=object.id %}' class='small awesome green ajax_action'>Publish</a>
 {% endif %}
 <a href='{% url article.views.delete_article id=object.id %}' class='small awesome red'>Delete</a>
 <a href='/edit/' class='small awesome blue'>Edit</a>

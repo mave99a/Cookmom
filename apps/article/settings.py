@@ -4,6 +4,6 @@ settings.add_app_media('combined-%(LANGUAGE_DIR)s.css',
     'article/css/screen.css'
 )
 
-#settings.add_app_media('combined-%(LANGUAGE_CODE)s.js',
-#    'taggable/js/tags.js',
-#)
+settings.add_app_media('combined-%(LANGUAGE_CODE)s.js',
+    'article/js/article.js',
+)

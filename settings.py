@@ -5,7 +5,7 @@ from flickrsettings import *
 
 import os
 import sys
-import flickrsettings
+import flickrsettings 
 
 #  add 'libs' and 'apps' to python path. 
 currentpath = os.path.abspath(os.path.dirname(__file__))
@@ -99,7 +99,7 @@ INSTALLED_APPS = (
     'lightbox', 
           
     # tags
-    'rendertag', 
+    'renderhelpers', 
     'paginatortag', 
     'objectlisttag', 
     
@@ -133,7 +133,7 @@ INSTALLED_APPS = (
 
 # register our tag as default, so we don't need to use "{%load ...%}" all the time
 from django.template import add_to_builtins
-add_to_builtins('rendertag.templatetags.render')
+add_to_builtins('renderhelpers.templatetags.render')
 add_to_builtins('image.templatetags.imageurl')
 add_to_builtins('objectlisttag.templatetags.makeobjectlist')
 

@@ -1,7 +1,6 @@
-from django.http import HttpResponseRedirect
 from functools import update_wrapper, wraps
 from django.utils.http import urlquote
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils import simplejson
 from views import login
