@@ -8,10 +8,11 @@
 </td>
 <td>
 {% if object.published %}
-<a href='#' class='small awesome red'>make draft</a>
+<a href='{% url article.views.unpublish id=object.id %}' class='small awesome red'>make draft</a>
 {% else %}
-<a href='#' class='small awesome green'>Publish</a>
+<a href='{% url article.views.publish id=object.id %}' class='small awesome green'>Publish</a>
 {% endif %}
-<a href='#' class='small awesome red'>Delete</a>
-<a href='#' class='small awesome blue'>Edit</a>
+<a href='{% url article.views.delete_article id=object.id %}' class='small awesome red'>Delete</a>
+<a href='/edit/' class='small awesome blue'>Edit</a>
+<a href='/edit/' class='small awesome blue'>Manage comments</a>
 </td>

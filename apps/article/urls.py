@@ -11,4 +11,6 @@ urlpatterns = patterns('',
     (r'^(?P<id>\d+)/(?P<title>.+)/$', show_article),
     (r'^ajax/preview/(?P<id>\d+)/$', ajax_preview),
     (r'^ajax/save/(?P<id>\d+)/$', ajax_save),
+    (r'^publish/(?P<id>\d+)/$', publish),
+    (r'^unpublish/(?P<id>\d+)/$', unpublish),
 )

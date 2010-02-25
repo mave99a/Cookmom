@@ -5,7 +5,7 @@ from django.template import RequestContext
 from django.views.generic.list_detail import object_list, object_detail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import simplejson
-from auth.decorators import login_required, ajax_login_required
+from auth.decorators import login_required
 from renderblock.renderblock import direct_block_to_template
 from models import *
 from sys import maxint
@@ -33,7 +33,7 @@ def show_by_tag(request, tag):
     return object_list(request, Taggable.get_by_tag(tag), paginate_by = 10, 
                        extra_context={'tag':tag})
 
-@ajax_login_required
+@login_required
 def add_tags(request):
     key = request.REQUEST["target"]
     tags = request.REQUEST["tags"].split(',')
@@ -58,7 +58,7 @@ def add_tags_form(request):
         returnurl = request.REQUEST['returnurl']
         return HttpResponseRedirect(returnurl)
  
-@ajax_login_required
+@login_required
 def remove_tags(request):
     key = request.REQUEST["target"]
     tags = request.REQUEST["tags"].split(',')

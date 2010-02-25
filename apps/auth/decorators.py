@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from functools import update_wrapper, wraps
 from django.utils.http import urlquote
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.core.urlresolvers import reverse
 from django.utils import simplejson
 from views import login
@@ -10,11 +10,17 @@ def login_required(view_function):
     """
     Decorator for views that checks that the user is logged in, redirecting
     to the log-in page if necessary.
+    if the view is called from an AJAX request, it will not redirect, and only 
+    return JSON error data
     """
     def login_required_wrapper(request, *args, **kw):
         if request.authuser.is_authenticated():
             return view_function(request, *args, **kw)
         else:
+            if request.is_ajax(): 
+                json = simplejson.dumps({ 'success': False, 'not_authenticated': True })
+                return HttpResponse(json, mimetype='application/json')  
+                          
             login_url = reverse(login)
             path = urlquote(request.get_full_path())
             return HttpResponseRedirect('%s?returnpath=%s' % (login_url, path))
@@ -33,16 +39,3 @@ def superuser_required(view_function):
             raise Http404('Page not found!')
         
     return wraps(view_function)(superuser_required_wrapper)    
-    
-def ajax_login_required(view_function): 
-    """
-    Decorator for ajax view that checks that the user is logged in, it will just return JSON failed data
-    """
-    def login_required_wrapper(request, *args, **kw):
-        if request.authuser.is_authenticated():
-            return view_function(request, *args, **kw)
-        
-        json = simplejson.dumps({ 'success': False, 'not_authenticated': True })
-        return HttpResponse(json, mimetype='application/json')
-            
-    return wraps(view_function)(login_required_wrapper)   

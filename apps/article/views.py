@@ -6,7 +6,7 @@ from django.views.generic.create_update import delete_object, update_object
 from generic_view_patch.create_update import create_object
 from renderblock.renderblock import direct_block_to_template
 from models import Article, ArticleForm
-from auth.decorators import login_required, ajax_login_required
+from auth.decorators import login_required
 from people.models import User
 
 
@@ -34,18 +34,25 @@ def delete_article(request, id):
     return delete_object(request, Article, object_id=id,
         post_delete_redirect=reverse(list_article)) 
     
-@ajax_login_required
+@login_required
 def ajax_save(request, id):
     return update_object(request, object_id=id, form_class=ArticleForm)
 
-@ajax_login_required
-def ajax_publish(request, id):
+@login_required
+def publish(request, id):
     object = Article.get_by_id(int(id))
     object.published = True
     object.put()
     return HttpResponse('OK')
+
+@login_required
+def unpublish(request, id):
+    object = Article.get_by_id(int(id))
+    object.published = False
+    object.put()
+    return HttpResponse('OK')
     
-@ajax_login_required
+@login_required
 def ajax_preview(request, id):
     object = Article.get_by_id(int(id))
     return direct_block_to_template(request, 'article/article_detail.html', 'article', {'object': object})   
