@@ -22,10 +22,16 @@ $(document).ready(function() {
 	
 	$('.tags form').ajaxForm({
             resetForm: true,
+            dataType: 'json',
 			success: function(data) {
-				$('span.tagscontainer').html(data)
-				attach_tags_handlers()
-			}
+								if (data.success) {
+									$('span.tagscontainer').html(data.html)
+									attach_tags_handlers()
+								}
+								else {
+									// error 
+								}
+					}
 		}
 	)		   
   }

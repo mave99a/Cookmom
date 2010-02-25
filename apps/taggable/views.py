@@ -4,12 +4,14 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.generic.list_detail import object_list, object_detail
 from django.http import HttpResponse, HttpResponseRedirect
-from django.utils import simplejson
 from auth.decorators import login_required
-from renderblock.renderblock import direct_block_to_template
+from renderblock.renderblock import render_block_to_string
+from renderhelpers.decorators import AutoResponse
+
 from models import *
 from sys import maxint
 
+@AutoResponse(template='taggable/tag_list.html', autoAjax=False, redirectBack=False)
 def tagcloud(request):
     object_list = Tag.cloud(100).fetch(100)
     min = 1
@@ -27,25 +29,26 @@ def tagcloud(request):
     for item in object_list:
         item.cloudsize = (item.count - min) % step
         
-    return render_to_response('taggable/tag_list.html', locals(), context_instance=RequestContext(request) )
+    return locals()
     
 def show_by_tag(request, tag):
     return object_list(request, Taggable.get_by_tag(tag), paginate_by = 10, 
                        extra_context={'tag':tag})
 
 @login_required
+@AutoResponse(autoAjax=True, redirectBack=True)
 def add_tags(request):
     key = request.REQUEST["target"]
     tags = request.REQUEST["tags"].split(',')
     obj = db.get(key)
     taggable = Taggable.add_tags(obj, tags)
     if taggable is not None:
-        json = simplejson.dumps(taggable.tags)
+        return taggable.tags
     else:
-        json= simplejson.dumps([])
-    return HttpResponse(json)
+        return []
 
 @login_required
+@AutoResponse(autoAjax=True, redirectBack=True)
 def add_tags_form(request):
     key = request.REQUEST["target"]
     tags = request.REQUEST["tags"].split(',')
@@ -53,22 +56,21 @@ def add_tags_form(request):
     taggable = Taggable.add_tags(obj, tags)
     
     if request.is_ajax(): 
-        return direct_block_to_template(request, 'taggable/tags.html', 'tags', {'taggable': taggable, 'isowner': True})
-    else: 
-        returnurl = request.REQUEST['returnurl']
-        return HttpResponseRedirect(returnurl)
+        result = render_block_to_string('taggable/tags.html', 'tags', {'taggable': taggable, 'isowner': True})
+        return {'success': True, 'html': result}
+
  
 @login_required
+@AutoResponse(autoAjax=True, redirectBack=True)
 def remove_tags(request):
     key = request.REQUEST["target"]
     tags = request.REQUEST["tags"].split(',')
     obj = db.get(key)
     taggable = Taggable.remove_tags(obj, tags)
     if taggable is not None:
-        json = simplejson.dumps(taggable.tags)
+        return taggable.tags
     else:
-        json=simplejson.dumps([])
-    return HttpResponse(json)
+        return []
 
 
 @login_required
