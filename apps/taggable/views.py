@@ -5,7 +5,7 @@ from django.template import RequestContext
 from django.views.generic.list_detail import object_list, object_detail
 from django.http import HttpResponse, HttpResponseRedirect
 from auth.decorators import login_required
-from renderblock.renderblock import render_block_to_string
+from renderhelpers.renderblock import render_block_to_string
 from renderhelpers.decorators import AutoResponse
 
 from models import *

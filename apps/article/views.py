@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import delete_object, update_object
 from generic_view_patch.create_update import create_object
-from renderblock.renderblock import direct_block_to_template
+from renderhelpers.renderblock import direct_block_to_template
 from renderhelpers.decorators import AutoResponse
 
 from models import Article, ArticleForm
