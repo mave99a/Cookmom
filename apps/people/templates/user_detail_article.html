@@ -1,10 +1,10 @@
-{% extends "people/base.html" %}
-{% block title %}{{object.name}} - Cookmom{% endblock %}
-{% block breadcrumb %}{{ block.super }} &raquo; <a href='{% url people.views.show_user id=object.id%}'>{{object.name}}</a> &raquo; <span>Article</span>{% endblock %}
-{% block main %}
+{% extends "people/base_user.html" %}
+{%block tab_user_article%}active{%endblock%}
+{% block breadcrumb %}{{ block.super }} &raquo; <span>Article</span>{% endblock %}
+{% block detail %}
 
 {% if object.article_set %}
-<h1>Comments by {{object.name}}</h1>
+<h1>Articles by {{object.name}}</h1>
 {% makeobjectlist object.article_set addtion_filter=order('-mtime') paginate_by=10 as article_list%}
 {% load paginator %}
 {% paginator %}

@@ -1,40 +1,6 @@
-{% extends "people/base.html" %}
-{% block title %}{{object.name}} - Cookmom{% endblock %}
-{% block breadcrumb %}{{ block.super }} &raquo; <span>{{object.name}}</span>{% endblock %}
-{% block main %}
-<div >
-<a href='#' class='awesome' style='float:right;'>+ Follow</a>
-<h1>{{object.name}}</h1>
-</div>
-<ul class='tab'>
-<li ><a href='#' >Wall</a></li>
-<li class='active'><a href='#'>Articles</a></li>
-<li ><a href='#'>Favorites</a></li>
-<li><a href='#'>Commented</a></li>
-</ul>
-
-{% if object.article_set %}
-<h4>Articles by {{object.name}}</h4>
-<div class="articles_list">
-{% makeobjectlist object.article_set addtion_filter=order('-mtime') paginate_by=3 as article_list%}
-{% render article_list templatetype=listitem_self%}
-</div>
-<a href="{%url people.views.show_user_detail id=object.id obj='article' %}" />More...</a>
-{% else %}
-{{object.name}} not yet write any article
-{% endif %}
-
-{% if object.comment_set %}
-<h4>Comments by {{object.name}}</h4>
-<div class='comments_list'>
-{% makeobjectlist object.comment_set addtion_filter=order('-mtime') paginate_by=3 as comment_list%}
-{% render comment_list templatetype=target%}
-</div>
-<a href="{%url people.views.show_user_detail id=object.id obj='comment' %}" />More...</a>
-{% else %}
-{{object.name}} not yet write any comment
-{% endif %}
-
+{% extends "people/base_user.html" %}
+{%block tab_user_wall%}active{%endblock%}
+{% block detail %}
 {% load comments%}
 {% comment_form for object %}
 
@@ -46,54 +12,5 @@
 {% else %}
 No comment.
 {% endif %}
-
-{% endblock %}
-
-{% block side %}
-{% render object templatetype=details %}
-
-<style>
-ul.stat {
-  list-style: none; 
-  display: inline;
-}
-
-ul.stat li{
-  display: block;
-  float: left;
-  height: 55px;
-  width: 62px;
-  margin-right:4px;
-  background: #eeeeee;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  font-size:22px;
-  text-align: center;
-}
-
-ul.stat li span {
-  font-size:11px;
-  display: block;
-  padding: 0;
-  margin: 0;
-}
-</style>
-<hr class='space'/>
-<ul class='stat'>
-<li>10<span>people</span></li>
-<li>20<span>Favirotes</span></li>
-<li>10<span>Followers</span></li>
-<li>10<span>people</span></li>
-</ul>
-<hr class='space'/>
-<h3>Badges</h3>
-<img src='http://www.web20badges.com/generator/badge19.jpg' />
-<img src='http://www.web20badges.com/generator/badge20.jpg' />
-<h3>Following</h3>
-{%render people.widgets.following %}
-
-<h3>Followed by</h3>
-{%render people.widgets.followedby %}
-
 
 {% endblock %}

@@ -1,7 +1,7 @@
-{% extends "people/base.html" %}
-{% block title %}{{object.name}} - Cookmom{% endblock %}
-{% block breadcrumb %}{{ block.super }} &raquo; <a href='{% url people.views.show_user id=object.id%}'>{{object.name}}</a> &raquo; <span>Comments</span>{% endblock %}
-{% block main %}
+{% extends "people/base_user.html" %}
+{%block tab_user_comment%}active{%endblock%}
+{% block breadcrumb %}{{ block.super }} &raquo; <span>Comments</span>{% endblock %}
+{% block detail %}
 
 {% if object.comment_set %}
 <h1>Comments by {{object.name}}</h1>
