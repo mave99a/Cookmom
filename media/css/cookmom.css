@@ -87,8 +87,9 @@ h1 {
 		color: #000; 
 		text-decoration: none; 
 		display: block;
-		height: 36px;
-		width: 210px;
+		height: 45px;
+		width: 140px;
+		margin-left: 10px;
 		background:url(img/logo.png);
 	}
 	
