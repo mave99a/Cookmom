@@ -3,10 +3,25 @@
 {% block breadcrumb %}{{ block.super }}  &raquo; <span>All</span>{% endblock %}
 {% block topad %}<!-- no top ad in article list pages -->{%endblock%}
 {% block main %}
+<ul class='tab'>
+<li class='active'><a href='#' >Latest</a></li>
+<li><a href='#'>Most discussed</a></li>
+<li><a href='#'>Most favorited</a></li>
+</ul>
+<hr class='space'/>
 {% load paginator %}
 {% paginator %}
 <div class='articles_list'>
 {% render object_list templatetype=listitem%}
 </div>
 {% paginator %}
+{% endblock %}
+
+{% block side %}
+<h3>All time top foodie</h3>
+{% render people.widgets.alltop %}
+
+<h3>This week's top foodie</h3>
+{% render people.widgets.weeklytop %}
+
 {% endblock %}

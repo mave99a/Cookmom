@@ -6,3 +6,6 @@ def manage_draft(request):
 def manage_published(request):
     drafts = request.current_user.article_set.filter('published =', True)
     return drafts
+
+def similar(request):
+    return Article.all().fetch(5)

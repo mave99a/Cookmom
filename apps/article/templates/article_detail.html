@@ -24,3 +24,17 @@
 {% endif %}
 {% endblock %}
 
+{% block side%}
+
+<a href='#' class='awesome green'>+ Favorite</a>
+
+<h3>Similar experiences</h3>
+{%render article.widgets.similar templatetype=listitem_self %}
+
+<h3>People like this also like </h3>
+{%render article.widgets.similar templatetype=listitem_self %}
+
+<h3>More from the author </h3>
+{%render article.widgets.similar templatetype=listitem_self %}
+{% endblock %}
+
