@@ -4,7 +4,6 @@
 {% block detail %}
 
 {% if object.article_set %}
-<h1>Articles by {{object.name}}</h1>
 {% makeobjectlist object.article_set addtion_filter=order('-mtime') paginate_by=10 as article_list%}
 {% load paginator %}
 {% paginator %}

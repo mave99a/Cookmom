@@ -20,8 +20,8 @@
 
 .abstract h3{
 	 width: 100%; 
-	 background: #eee; 
 	 padding: 4px; 
+	 border-bottom: 1px dotted #ccc;
 }
 
 .abstract h3 a {
