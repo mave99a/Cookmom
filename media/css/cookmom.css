@@ -256,7 +256,7 @@ ul.tab li{float:left; margin-right:2px;}
 
 .tab a:hover{
 	display:block;
-	background: #ccc;
+	background: #F8F8FF;
 }
 
 .active a:link, .active a:visited, .active a:visited, .active a:hover{
