@@ -3,16 +3,13 @@
 {% load userimage %}{% userimage object.img %}
 </a>
 </td>
-<td>
-<h4><a href='{% url people.views.show_user id=object.id%}' title='{{object.name}}'>{{object.name}}</a> | {{object.city}}</h4>
-<p>
-{{object.brief}}
-</p>
-<p>
+<td class='user_brief'>
+<h4><a href='{% url people.views.show_user id=object.id%}' title='{{object.name}}'>{{object.name}}<span class='location'>({{object.city}})</span></a></h4>
+<p class='stat'>
 10 stories | 20 comments | 10 badges
 </p>
 <p>
-<strong>Lastest:</strong> comment on <a href='#'>Blah...</a> (3 minutes ago)
+<span class='label'>Lastest:</span> comment on <a href='#'>Blah...</a> <span class='since'>(3 minutes ago)</span>
 </p>
 </td>
 <td>

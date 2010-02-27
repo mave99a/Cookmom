@@ -6,8 +6,11 @@
 <td class='abstract'>
 <h3>
 <a href="{% url article.views.show_article id=object.id title=object.title%}" title="{{object.title}}">{{object.title}}</a></h3>
-<p>
+<p class='stat'>
 10 comments | 10 pictures | 4 stars
+</p>
+<p>
+<span class='label'>Lastest:</span> comment on <a href='#'>Blah...</a> <span class='since'>(3 minutes ago)</span>
 </p>
 </td>
 <td class='author'>

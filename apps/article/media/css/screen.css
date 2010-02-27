@@ -16,16 +16,35 @@
 
 .articles_list table tr td.abstract {
 	padding: 0 10px;
+	 border-bottom: 1px dotted #ccc;
 }
 
 .abstract h3{
 	 width: 100%; 
 	 padding: 4px; 
-	 border-bottom: 1px dotted #ccc;
+	 margin: 0;
 }
 
 .abstract h3 a {
 	text-decoration: none;
+	color: #000;
+}
+.abstract p {
+	margin: 0;
+}
+
+.abstract .stat, .abstract .since {
+	font-style: italic; 
+	color: #999;
+	font-size: 10px;
+}
+
+.abstract .label {
+	color: #fff; 
+	padding: 0 5px 0 5px;
+	background: #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 
 table tr td.author {
