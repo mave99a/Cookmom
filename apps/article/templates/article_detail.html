@@ -2,6 +2,7 @@
 {% block title %}{{object.title}} - Cookmom{% endblock %}
 {% block canonicalurl %}{% url article.views.show_article id=object.id title=object.title%}{%endblock%}
 {% block breadcrumb %}{{ block.super }} &raquo; <span>{{object.title}}</span>{% endblock %}
+{% block h1%}{{object.title}}{%endblock%}
 {% block main %}
 {% block article %}
 {% render object%}

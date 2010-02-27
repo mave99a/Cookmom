@@ -1,17 +1,18 @@
 {% extends "people/base.html" %}
 {% block breadcrumb %}{{ block.super }} &raquo; <span>Latest</span>{% endblock %}
+{% block h1%}
+<!--
+<form style='float:right; margin:0;' action='/people/search/'>
+<input type='edit' value='searh by name or email'/><input type='submit' value='Search'/>
+</form>-->
+People
+{%endblock%}
 {% block main %}
-
 <ul class='tab'>
 <li class='active'><a href='#' >Latest</a></li>
 <li><a href='#'>Most Active</a></li>
 </ul>
-<div>
-<form style='float:right; margin-top:5px;' action='/people/search/'>
-<input type='edit' value='searh by name or email'/><input type='submit' value='Search'/>
-</form>
-<h1>People</h1>
-</div>
+
 {% load paginator %}
 {% paginator %}
 {% render object_list template=components/user_listitem.html%}
