@@ -14,6 +14,7 @@
 <link rel="canonical" href="{% block canonicalurl %}{{request.get_full_path}}{% endblock %}" />
 </head>
 <body>
+
 <div class="container" id="wrapper">
 
 <!-- header -->
@@ -43,8 +44,10 @@
 	    </ul>			
 	</div>		
 	{% endblock %}
+	<div id="breadcrumbs">
+	   {% block breadcrumb %}&nbsp;{% endblock %}
+	</div>
 </div>
-<hr class="space clearboth" />
 <!-- main content -->
 {% block content %}{% endblock %}
 <!-- footer -->

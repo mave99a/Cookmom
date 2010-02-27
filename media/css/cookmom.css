@@ -113,7 +113,7 @@ h1 {
 * navigation bar
 */	
 ul.navi, li {
-	border: 0; 
+	border: none; 
 	margin: 0; 
 	padding: 0; 
 	list-style: none;
@@ -122,8 +122,10 @@ ul.navi, li {
 
 ul.navi {
 	 background: #eee;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;	
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
 	 height:30px;
 	 padding-left: 10px;
 }
@@ -180,8 +182,37 @@ ul.navi li {
 		#home_search_button {
 			width: 60px;
 		}
-                   
 
+/*
+*  breadcrumbs
+*/
+
+#breadcrumbs {
+  color: #f00;
+  margin: 0;
+  font-size: 10px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  border-top: none;
+ 	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+
+#breadcrumbs a, #breadcrumbs a:visited, #breadcrumbs span {
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+	color: #000;
+}
+
+#breadcrumbs a:hover{
+	background: #00f;
+	color: #fff;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
 /*
 *  tab, implemented with CSS3
 */
@@ -502,24 +533,4 @@ input.awesome {
 .yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
 .yellow.awesome:hover							{ background-color: #fc9200; }
 
-/*
-*  breadcrumbs
-*/
 
-#breadcrumbs {
-  color: #f00;
-  font-size: 10px;
-}
-
-#breadcrumbs a, #breadcrumbs a:visited, #breadcrumbs span {
-	padding: 0 5px 0 5px;
-	text-decoration: none;
-	color: #000;
-}
-
-#breadcrumbs a:hover{
-	background: #00f;
-	color: #fff;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-}
