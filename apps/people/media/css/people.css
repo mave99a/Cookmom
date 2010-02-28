@@ -19,7 +19,7 @@
 }
 
 .user_brief h4 {
-	margin: 5px 0 0 0; 
+	margin: 0; 
 	padding: 0;
 }
 
@@ -49,4 +49,8 @@
 
 .user_brief p {
 	margin: 0;
+}
+
+td.vcard {
+	width: 50px;
 }
