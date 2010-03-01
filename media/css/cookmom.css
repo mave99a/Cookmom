@@ -306,7 +306,7 @@ ul.tab li{float:left; margin-right:2px;}
 
 #footer .box {
 	height: 150px;
-	padding: 5px; 
+	padding: 5px 10px 5px 10px; 
 	margin: 0 0 10px 0; 
 	border: 1px solid #eee;
 	background: #fff;
@@ -317,7 +317,6 @@ ul.tab li{float:left; margin-right:2px;}
 }
 
 #footnote {
-    padding-top: 25px;
 	text-align: center;
 	font-style: italic;
 	color: #888;
