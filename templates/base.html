@@ -54,8 +54,8 @@
 <div id="footer">
 	{% block footer %}
 	<div class="span-6">
-		<h3>About CookMom...</h3>
-		<ul>
+		<h5>About CookMom...</h5>
+		<ul class='box'>
 		<li><a href="/about/">About</a>
 		<li><a href="/blog/">Blog</a>
 		<li><a href="/contact/">Contact</a>
@@ -64,8 +64,8 @@
 		</ul>
 	</div>
 	<div class="span-6">
-		<h3>Need Help?</h3>
-		<ul>
+		<h5>Need Help?</h5>
+		<ul class='box'>
 		<li><a href="/faq/">FAQ</a>
 		<li><a href="http://www.facebook.com/pages/Cookmom/306987525097"  target='blank' class="icon facebook">Become a fans ...</a>
 		<li><a href="http://twitter.com/cookmomtweet/" target='blank'>Follow us on twitter...</a>
@@ -73,24 +73,26 @@
 		</ul>
 	</div>
 	<div class="span-6">
-		<h3>Leadersboard</h3>
-		<ul>
+		<h5>Leadersboard</h5>
+		<ul class='box'>
 		<li><a href="/toprecipes/">Top recips</a></li>
 		<li><a href="/topusers/">Top cookmoms</a></li>
 		<li><a href="/topusers/">Best of the week</a></li>
 		</ul>
 	</div>
 	<div class="span-6 last">
-		<h3>Cookmom Mobile</h3>
-		<p>
+		<h5>Cookmom Mobile</h5>
+		<p class='box'>
 		Point your mobile browser to <a href='http://m.cookmom.com{{request.get_full_path}}'>m.cookmom.com</a> or scan bar code to view mobile version of this page.<br/>
 		<a href='#' title='What is this? click for explain.'><img src='http://chart.apis.google.com/chart?cht=qr&chs=96&chld=Q|0&choe=UTF-8&chl=http://m.cookmom.com{{request.get_full_path}}'/></a>
 		</p>
 	</div>	
 	{% endblock %}
-	<hr/>
+	<br class='clear'>
+	<p id='footnote'>
 	All original content is available as  <a href="http://creativecommons.org/licenses/by-sa/2.5/" id="contentLicense" class="navLink">Creative Commons Attribution-ShareAlike</a><br/>
 	Copyright &copy; 2010, CookMom.com, powered by Google App Engine.
+	</p>
 </div>
 
 <!-- Load jQuery from Google's CDN service.  --> 
