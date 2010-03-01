@@ -63,17 +63,20 @@ ul.stat li span {
 </ul>
 <hr class='space'/>
 <h3>Badges</h3>
+<div>
 <img src='http://www.web20badges.com/generator/badge19.jpg' />
 <img src='http://www.web20badges.com/generator/badge20.jpg' />
+</div>
 <h3>Following</h3>
 <div class='usericonlist'>
 {%render people.widgets.following %}
+<hr class='clear space'/>
 </div>
-<hr class='space'/>
+
 <h3>Followed by</h3>
 <div class='usericonlist'> 
 {%render people.widgets.followedby %}
+<hr class='clear space'/>
 </div>
-<hr class='space'/>
 
 {% endblock %}

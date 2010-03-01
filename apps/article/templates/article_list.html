@@ -19,9 +19,11 @@
 
 {% block side %}
 <h3>All time top foodie</h3>
-{% render people.widgets.alltop %}
-
+<div>
+{% render people.widgets.alltop templatetype=listitem_simple%}
+</div>
 <h3>This week's top foodie</h3>
-{% render people.widgets.weeklytop %}
-
+<div>
+{% render people.widgets.weeklytop templatetype=listitem_simple%}
+</div>
 {% endblock %}
