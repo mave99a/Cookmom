@@ -24,7 +24,11 @@ def show_user(request, id):
     return show_user_detail(request, id)
 
 def show_user_detail(request, id, obj=None):
-    is_self = (int(id) == request.current_user.id())
+    try: 
+        is_self = (int(id) == request.current_user.id())
+    except: 
+        is_self = False;
+        
     if obj is not None: 
         template='people/user_detail_' + obj + '.html'
     else:
