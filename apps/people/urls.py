@@ -7,5 +7,5 @@ urlpatterns = patterns('',
     (r'^(?P<id>\d+)/$', show_user), 
     # my 
     (r'^me/$', show_myhome), 
-    (r'^me/edit/$', edit)
+    (r'^settings/$', show_settings),
 )

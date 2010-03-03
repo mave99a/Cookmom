@@ -40,7 +40,7 @@ def show_myhome(request):
     return HttpResponseRedirect(reverse(show_user, args =[request.current_user.id()]))
 
 @login_required
-def edit(request):
+def show_settings(request):
     return update_object(request, object_id=request.current_user.id(), form_class=UserForm)
 
 #def delete_user(request, id):

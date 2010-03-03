@@ -16,7 +16,6 @@
 <li class='{%block tab_user_comment%}{%endblock%}'><a href='{%url people.views.show_user_detail id=object.id obj='comment' %}'>Commented</a></li>
 {% if is_self %}
 <li class='{%block tab_user_draft%}{%endblock%}'><a href='{%url people.views.show_user_detail id=object.id obj='drafts' %}'>Draft</a></li>
-<li class='{%block tab_user_setting%}{%endblock%}'><a href='{%url people.views.edit %}'>Setting</a></li>
 {% endif %}
 </ul>
 {% block detail %}
