@@ -7,6 +7,7 @@ class User(db.Model):
     brief = db.StringProperty()
     geopt = db.GeoPtProperty()
     city = db.StringProperty()
+    show_my_location = db.BooleanProperty(default=True)
     # create time
     ctime = db.DateTimeProperty(auto_now_add=True)   
     #last update time

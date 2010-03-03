@@ -8,4 +8,6 @@ urlpatterns = patterns('',
     # my 
     (r'^me/$', show_myhome), 
     (r'^settings/$', show_settings),
-)
+    (r'^settings/image/$', show_settings_profileimage),
+    (r'^settings/services/$', show_settings_linkedservices),    
+    )

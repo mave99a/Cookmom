@@ -11,11 +11,6 @@ from django.http import HttpResponseRedirect
 from models import User
 from auth.decorators import login_required
 
-class UserForm(forms.ModelForm):    
-    class Meta:
-        model = User
-UserForm = FormWithSets(UserForm)
-
 
 def list_user(request):
     return object_list(request, User.all(), paginate_by=10)
@@ -39,10 +34,26 @@ def show_user_detail(request, id, obj=None):
 def show_myhome(request):
     return HttpResponseRedirect(reverse(show_user, args =[request.current_user.id()]))
 
+
+class UserFormAbout(forms.ModelForm):    
+    class Meta:
+        model = User
+        fields = ('name', 'brief', 'city', 'show_my_location')
+
+class UserFormImage(forms.ModelForm):    
+    class Meta:
+        model = User
+        fields = ('img', 'img')
+
 @login_required
 def show_settings(request):
-    return update_object(request, object_id=request.current_user.id(), form_class=UserForm)
+    return update_object(request, object_id=request.current_user.id(), form_class=UserFormAbout, template_name='people/settings/about.html')
 
-#def delete_user(request, id):
-#    return delete_object(request, User, object_id=id,
-#        post_delete_redirect=reverse(list_user))    
+@login_required
+def show_settings_profileimage(request):
+    return update_object(request, object_id=request.current_user.id(), form_class=UserFormImage, template_name='people/settings/profileimage.html')
+
+@login_required
+def show_settings_linkedservices(request):
+    return update_object(request, object_id=request.current_user.id(), form_class=UserFormImage, template_name='people/settings/linkedservices.html')
+    

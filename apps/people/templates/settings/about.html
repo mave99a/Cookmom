@@ -1,4 +1,4 @@
-{% extends "people/base_user_settings.html" %}
+{% extends "people/settings/base.html" %}
 {%block tab_user_about%}active{%endblock%}
 {% block breadcrumb %}{{ block.super }} &raquo; <a href='/people/me/'>My home</a> &raquo; <span>Change my details</span>{% endblock %}
 {% block detail %}
@@ -7,7 +7,7 @@
 {{ form.as_p }}
 <p>
 <input type="submit" class='awesome'
-    value="Apply changes" />
+    value="Save" />
 </p>
 </form>
 <script>
