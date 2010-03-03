@@ -3,7 +3,6 @@ from django.views.generic.simple import direct_to_template
 from views import *
 
 urlpatterns = patterns('',
-    (r'^$', list_article), 
     (r'^new/$', new_article), 
     (r'^edit/', direct_to_template, {'template': 'article/edit.html'}),
     (r'^(?P<id>\d+)/edit/$', edit_article),
@@ -13,4 +12,6 @@ urlpatterns = patterns('',
     (r'^ajax/save/(?P<id>\d+)/$', ajax_save),
     (r'^publish/(?P<id>\d+)/$', publish),
     (r'^unpublish/(?P<id>\d+)/$', unpublish),
-)
+    (r'^$', list_article), 
+    (r'^(?P<order>\w+)/$', list_article), 
+    )

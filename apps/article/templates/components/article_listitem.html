@@ -6,7 +6,7 @@
 <td class='abstract'>
 <h2><a href="{% url article.views.show_article id=object.id title=object.title%}" title="{{object.title}}">{{object.title}}</a></h2>
 <p class='stat'>
-10 comments | 10 pictures | 4 stars
+{{object.comment_count}} comments | {{object.image_count}} pictures | {{object.favorite_count}} favorites
 </p>
 </td>
 <td class='author'>

@@ -16,6 +16,39 @@ indexes:
   - name: mtime
     direction: desc
 
+- kind: article_article
+  properties:
+  - name: published
+  - name: comment_count
+
+- kind: article_article
+  properties:
+  - name: published
+  - name: comment_count
+    direction: desc
+
+- kind: article_article
+  properties:
+  - name: published
+  - name: favorite_count
+
+- kind: article_article
+  properties:
+  - name: published
+  - name: favorite_count
+    direction: desc
+
+- kind: article_article
+  properties:
+  - name: published
+  - name: mtime
+
+- kind: article_article
+  properties:
+  - name: published
+  - name: mtime
+    direction: desc
+
 - kind: comment_comment
   properties:
   - name: author

@@ -22,6 +22,8 @@ class Article(db.Model):
     # some cached properties for performance improving
     read_count = db.IntegerProperty(default=0)
     comment_count = db.IntegerProperty(default=0)
+    favorite_count = db.IntegerProperty(default=0)
+    image_count = db.IntegerProperty(default=0)
     
     images_list = db.StringListProperty()
     
@@ -40,15 +42,32 @@ class Article(db.Model):
         return ('article.views.show_article', [self.id(), self.title])
         
     @classmethod
+    def allpublished(cls):
+        return Article.all().filter('published =', True)
+ 
+
+    @classmethod
+    def get_most_discussed(cls):
+        return Article.allpublished().order('-comment_count')
+
+    @classmethod
+    def get_most_favorited(cls):
+        return Article.allpublished().order('-favorite_count')
+            
+    @classmethod
     def get_featured(cls):
-        featured = Article.all().fetch(1)
-        return featured
-    
+        return  Article.get_most_discussed().fetch(1)
+ 
     @classmethod
     def get_top(cls):
-        top = Article.all().fetch(6)
-        return top
-    
+        return Article.get_most_favorited().fetch(6)
+            
+    @classmethod
+    def get_latest(cls):
+        return Article.allpublished().order('-mtime')
+
+
+
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.core.urlresolvers import reverse
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import delete_object, update_object
 from generic_view_patch.create_update import create_object
@@ -12,8 +12,19 @@ from auth.decorators import login_required
 from people.models import User
 
 
-def list_article(request):
-    return object_list(request, Article.all(), paginate_by = 10)
+def list_article(request, order=None):
+    if order is None: 
+        queryset = Article.get_latest()
+        extracontext = {'latest':True}
+    elif order == 'discuss':
+        queryset = Article.get_most_discussed()
+        extracontext = {'discuss':True}
+    elif order == 'favorite':
+        queryset = Article.get_most_favorited()
+        extracontext = {'favorite':True}
+    else:
+       raise Http404('Sort order not found: %s' % order) 
+    return object_list(request, queryset, paginate_by = 10, extra_context= extracontext)
 
 def show_article(request, id, title):
     return object_detail(request, Article.all(), object_id=id, extra_context={'isowner': True})

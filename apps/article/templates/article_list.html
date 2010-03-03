@@ -4,9 +4,9 @@
 {% block h1%}Articles{%endblock%}
 {% block main %}
 <ul class='tab'>
-<li class='active'><a href='#' >Latest</a></li>
-<li><a href='#'>Most discussed</a></li>
-<li><a href='#'>Most favorited</a></li>
+<li class='{%if latest%}active{% endif %}'><a href='{%url article.views.list_article%}' >Latest</a></li>
+<li class='{%if discuss%}active{% endif %}'><a href='{%url article.views.list_article order='discuss'%}'>Most discussed</a></li>
+<li class='{%if favorite%}active{% endif %}'><a href='{%url article.views.list_article order='favorite'%}'>Most favorited</a></li>
 </ul>
 <hr class='space'/>
 {% load paginator %}
