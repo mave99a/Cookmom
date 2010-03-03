@@ -4,7 +4,7 @@
 {% block content %}
 <div id="welcome">
   <div class="span-13" id='main_receipes'>
-  	{% render feature_articles template=components/mainrecipe.html %}
+  	{% render article.widgets.featured template=components/mainrecipe.html %}
   </div>
   <div class="span-11 last" id="intro">
 	<h2>Share your cooking experiences...</h2>
@@ -21,8 +21,7 @@
 	<div class="span-13" >
 		<h2>Hot receipes</h2>
 		<div class='recipes_list'>
-		{# latest 6 recipe as hotrecipes #}
-		{% render hotrecipes template=components/hotrecipe.html%}
+		{% render article.widgets.top template=components/hotrecipe.html%}
 		</div>
 	</div>
 	<div class="span-11 last">

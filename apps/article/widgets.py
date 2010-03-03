@@ -9,3 +9,9 @@ def manage_published(request):
 
 def similar(request):
     return Article.all().fetch(5)
+
+def featured(request):
+    return Article.get_featured()
+
+def top(request):
+    return Article.get_top()
