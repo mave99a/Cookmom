@@ -44,7 +44,6 @@ class Article(db.Model):
     @classmethod
     def allpublished(cls):
         return Article.all().filter('published =', True)
- 
 
     @classmethod
     def get_most_discussed(cls):

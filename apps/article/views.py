@@ -26,8 +26,11 @@ def list_article(request, order=None):
        raise Http404('Sort order not found: %s' % order) 
     return object_list(request, queryset, paginate_by = 10, extra_context= extracontext)
 
+
+@AutoResponse(template='article/article_detail.html', autoAjax=False, redirectBack=False)
 def show_article(request, id, title):
-    return object_detail(request, Article.all(), object_id=id, extra_context={'isowner': True})
+    object = Article.get_by_id(int(id))
+    return locals()
 
 #@requirelogin
 #@requireFullProfile
