@@ -23,8 +23,12 @@ def show_article(request, id, title):
 #@requireAccess
 @login_required
 def new_article(request):
-    return create_object(request, form_class=ArticleForm,
-        extra_fields = {'author': request.current_user})
+    drafts_count = Article.all().filter('author =', request.current_user).filter('published =', False).count()
+    MAX_ALLOW_DRAFTS = 5
+    if drafts_count < MAX_ALLOW_DRAFTS : 
+        new_draft = Article(published=False, author=request.current_user)
+        new_draft.put()
+        return edit_article(request, new_draft.id())
 
 @login_required
 def edit_article(request, id):

@@ -6,9 +6,9 @@ from django.core.urlresolvers import reverse
 from django.db import models
     
 class Article(db.Model):
-    title = db.StringProperty(required=True)
-    content = db.TextProperty(required=True)
-    author = db.ReferenceProperty(User)
+    title = db.StringProperty()
+    content = db.TextProperty()
+    author = db.ReferenceProperty(User, required=True)
     
     # create time
     ctime = db.DateTimeProperty(auto_now_add=True)   
