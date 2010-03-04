@@ -50,7 +50,7 @@ h1 {
 	  overflow: hidden;
 }
 
-#headbanner{
+.adbanner{
 	clear:both;
 	position:relative;
 	text-align:center; 

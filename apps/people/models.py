@@ -14,6 +14,12 @@ class User(db.Model):
     mtime = db.DateTimeProperty(auto_now=True)    
     # language, for filtering and automatic translation support
     lang = db.StringProperty(required=True, default='en')
+    
+    # cached properties
+    articles_count = db.IntegerProperty(default=0)
+    followers_count = db.IntegerProperty(default=0)
+    following_count = db.IntegerProperty(default=0)
+    badges_count = db.IntegerProperty(default=0)
         
     def id(self):
         return self.key().id()

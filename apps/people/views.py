@@ -12,8 +12,13 @@ from models import User
 from auth.decorators import login_required
 
 
-def list_user(request):
-    return object_list(request, User.all(), paginate_by=10)
+def list_user(request, filter=None):
+    query = User.all()
+    if filter == 'top':
+        context = {'top': True}
+    else:
+        context = {'recent': True}
+    return object_list(request, query, paginate_by=10, extra_context = context)
 
 def show_user(request, id, obj=None):
     try: 

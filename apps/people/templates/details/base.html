@@ -28,37 +28,14 @@
 {% render object templatetype=details %}
 
 <style>
-ul.stat {
-  list-style: none; 
-  display: inline;
-}
 
-ul.stat li{
-  display: block;
-  float: left;
-  height: 55px;
-  width: 62px;
-  margin-right:4px;
-  background: #eeeeee;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  font-size:22px;
-  text-align: center;
-}
-
-ul.stat li span {
-  font-size:11px;
-  display: block;
-  padding: 0;
-  margin: 0;
-}
 </style>
 <hr class='space'/>
 <ul class='stat'>
-<li>10<span>people</span></li>
-<li>20<span>Favirotes</span></li>
-<li>10<span>Followers</span></li>
-<li>10<span>people</span></li>
+<li>{{object.following_count}}<span>Following</span></li>
+<li>{{object.followers_count}}<span>Followers</span></li>
+<li>{{object.articles_count}}<span>Stories</span></li>
+<li>{{object.badges_count}}<span>Badges</span></li>
 </ul>
 <hr class='space'/>
 <h3>Badges</h3>

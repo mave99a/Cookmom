@@ -54,3 +54,32 @@
 td.vcard {
 	width: 50px;
 }
+
+/*
+* user stat
+*/
+
+ul.stat {
+  list-style: none; 
+  display: inline;
+}
+
+ul.stat li{
+  display: block;
+  float: left;
+  height: 55px;
+  width: 62px;
+  margin-right:4px;
+  background: #eeeeee;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-size:22px;
+  text-align: center;
+}
+
+ul.stat li span {
+  font-size:11px;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
