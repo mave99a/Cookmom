@@ -15,19 +15,17 @@ from auth.decorators import login_required
 def list_user(request):
     return object_list(request, User.all(), paginate_by=10)
 
-def show_user(request, id):
-    return show_user_detail(request, id)
-
-def show_user_detail(request, id, obj=None):
+def show_user(request, id, obj=None):
     try: 
         is_self = (int(id) == request.current_user.id())
     except: 
         is_self = False;
         
-    if obj is not None: 
-        template='people/user_detail_' + obj + '.html'
-    else:
-        template = None;
+    if obj is None: 
+        obj = 'wall'
+        
+    template='people/details/' + obj + '.html'
+
     return object_detail(request, User.all(), object_id=id, template_name=template, extra_context={'is_self': is_self})
 
 @login_required

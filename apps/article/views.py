@@ -32,9 +32,6 @@ def show_article(request, id, title):
     object = Article.get_by_id(int(id))
     return locals()
 
-#@requirelogin
-#@requireFullProfile
-#@requireAccess
 @login_required
 def new_article(request):
     drafts_count = Article.all().filter('author =', request.current_user).filter('published =', False).count()

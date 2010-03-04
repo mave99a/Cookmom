@@ -11,11 +11,11 @@
 </div>
 <ul class='tab'>
 <li class='{%block tab_user_wall%}{%endblock%}'><a href='{%url people.views.show_user id=object.id%}' >Wall</a></li>
-<li class='{%block tab_user_article%}{%endblock%}'><a href='{%url people.views.show_user_detail id=object.id obj='article' %}'>Articles(10)</a></li>
+<li class='{%block tab_user_article%}{%endblock%}'><a href='{%url people.views.show_user id=object.id obj='article' %}'>Articles(10)</a></li>
 <li class='{%block tab_user_favorite%}{%endblock%}'><a href='#'>Favorites</a></li>
-<li class='{%block tab_user_comment%}{%endblock%}'><a href='{%url people.views.show_user_detail id=object.id obj='comment' %}'>Commented</a></li>
+<li class='{%block tab_user_comment%}{%endblock%}'><a href='{%url people.views.show_user id=object.id obj='comment' %}'>Commented</a></li>
 {% if is_self %}
-<li class='{%block tab_user_draft%}{%endblock%}'><a href='{%url people.views.show_user_detail id=object.id obj='drafts' %}'>Draft</a></li>
+<li class='{%block tab_user_draft%}{%endblock%}'><a href='{%url people.views.show_user id=object.id obj='drafts' %}'>Draft</a></li>
 {% endif %}
 </ul>
 {% block detail %}
