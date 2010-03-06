@@ -28,7 +28,7 @@ def list_article(request, order=None):
 
 
 @AutoResponse(template='article/article_detail.html', autoAjax=False, redirectBack=False)
-def show_article(request, id, title):
+def show_article(request, id, title=None):
     object = Article.get_by_id(int(id))
     return locals()
 

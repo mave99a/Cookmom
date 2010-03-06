@@ -34,34 +34,44 @@ function attach_image_handles()
 	})
 }
 
+var pageDirty = true;
+var msg = 'you have not yet save it!'
+	
 $(document).ready(function() {
+	if (typeof(EDITOR_PAGE) != 'undefined') {
 
-	$('#editor').click(function() {
-		$('#editor-panel').show();
-		$('#preview-panel').hide();
-		$('#editor').parent('li').addClass('active')
-		$('#preview').parent('li').removeClass('active')
-	}); 
-	
-	$('#preview').click(function() {
-		$('#editor-panel').hide();
-		$('#preview-panel').show();	
-		$('#preview').parent('li').addClass('active')
-		$('#editor').parent('li').removeClass('active')
-		$('#preview-panel').html('Saving...')
+		$('#editor').click(function() {
+			$('#editor-panel').show();
+			$('#preview-panel').hide();
+			$('#editor').parent('li').addClass('active')
+			$('#preview').parent('li').removeClass('active')
+		}); 
 		
-		$('#preview-panel').html('Loading...')
-		$('#preview-panel').load('/article/ajax/preview/11/', 
-			function() {
-		        if (typeof(FB) != 'undefined') {
-		            // make sure newly added FBML get displayed correctly
-		            FB.XFBML.Host.parseDomElement($('#preview-panel').get(0));
-		        }
-		    }
-		)
+		$('#preview').click(function() {
+			$('#editor-panel').hide();
+			$('#preview-panel').show();	
+			$('#preview').parent('li').addClass('active')
+			$('#editor').parent('li').removeClass('active')
+			$('#preview-panel').html('Saving...')
+			
+			$('#preview-panel').html('Loading...')
+			$('#preview-panel').load('/article/ajax/preview/11/', 
+				function() {
+			        if (typeof(FB) != 'undefined') {
+			            // make sure newly added FBML get displayed correctly
+			            FB.XFBML.Host.parseDomElement($('#preview-panel').get(0));
+			        }
+			    }
+			)
+			
+		});
 		
-	});
-	
-	attach_image_handles();
-
+		attach_image_handles();
+		
+	    window.onbeforeunload = function(){
+	        if(pageDirty){
+	            return msg;
+	        }
+	    };
+	}
 });
