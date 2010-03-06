@@ -7,5 +7,5 @@
 {% render object.attachments.ingredients %}
 </div>
 {% endif %}
-<p>{% load content %} {{object.content|article_content}}</p>
+<p>{% load content %} {{object.content|article_content|linebreaksbr|urlize}}</p>
 <hr class='space'/>
