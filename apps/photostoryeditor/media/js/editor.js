@@ -16,7 +16,15 @@ $(document).ready(function() {
 		$('#preview-panel').html('Saving...')
 		
 		$('#preview-panel').html('Loading...')
-		$('#preview-panel').load('/article/ajax/preview/11/')
+		$('#preview-panel').load('/article/ajax/preview/11/', 
+			function() {
+		        if (typeof(FB) != 'undefined') {
+		            // make sure newly added FBML get displayed correctly
+		            FB.XFBML.Host.parseDomElement($('#preview-panel').get(0));
+		        }
+		    }
+		)
+		
 	});
 
 });
