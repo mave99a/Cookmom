@@ -10,12 +10,15 @@
 		<li class="active"><a href="#" id='editor' title='Switch to editor'>Editor</a></li>
     	<li class=""><a href="#" id='preview' title='Switch to preview'>Preview</a></li>
     	<li class=''>
-    		<div style='padding-left: 20px; padding-top:5px;'>
+    		<div style='padding-left: 40px; padding-top:2px;'>
     			<input type='button' title='Publish this post...' href="#" class="small awesome green" value='Publish'/>&nbsp;
     			<input type='button' title='Save this post...' href="#" class="small awesome red" value='Save'/>&nbsp;
     			<input type='button' title='Back to previous page...' href="#" class="small awesome black" value='Back'/>
       		</div>
     	</li>
+    	<li style='float:right; padding-top:2px;'>
+			Last auto saved: 3 min ago.
+		</li>
     </ul>			
 </div>
 
@@ -27,7 +30,7 @@
 	<input type='edit' name='title' id='title' title='Enter the title here...' value='Share your cooking experience...'/>
 	</p>
 	<p>
-	<textarea title='Write your article here...' name='content'></textarea>
+	<textarea id='editor' title='Write your article here...' name='content'></textarea>
 	</p>
 	<p>
 	<input type='submit' title='Publish this post...' href="#" class=" awesome green" value='Publish'/>
@@ -36,12 +39,12 @@
 
 </div>
 <div class="span-6 last">
-<div class=''>
-Last auto saved: 3 min ago.
+<div class='solid-yellow'>
+You can upload up to 20 photos for this post.
 </div>
-<a href="#" class="awesome black" id="upload">Select photos</a>
+<br/>
 <span id="spanButtonPlaceholder" ></span> 
-<a href="#" class="awesome black" id="upload">Upload photos</a>
+<a href="#" class="awesome black" id="upload">Upload photos for this post...</a>
 <div class="swfupload-control" flashurl="{{ MEDIA_URL }}swfupload/swfupload.swf">
 <noscript class="error">
  We're sorry. SWFUpload could not load. You must have JavaScript enabled to enjoy SWFUpload.
@@ -49,16 +52,12 @@ Last auto saved: 3 min ago.
 </div>
 
 <ul class="imagelist">
-<li><img src='{% imageurl 1 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 2 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 3 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 4 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 5 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 6 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 7 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 8 square%}' alt='Thumnail' title='click jump to section'/></li>
-<li><img src='{% imageurl 9 square%}' alt='Thumnail' title='click jump to section'/></li>
+<li><img src='{% imageurl 1 square%}' alt='Thumnail' id='photo 1' class='image_handle' title='click insert this image to the post'/></li>
+
+
 </ul>
+<br class='clear'/>
+<span>Total: 20 photos</span>
 
 </div>
 </div>

@@ -1,3 +1,38 @@
+//  Insert a text to the current cursor location of a textarea
+//  code borrowed from: http://alexking.org/blog/2004/06/03/js-quicktags-under-lgpl
+function edInsertContent(myField, myValue) {
+	//IE support
+	if (document.selection) {
+		myField.focus();
+		sel = document.selection.createRange();
+		sel.text = myValue;
+		myField.focus();
+	}
+	//MOZILLA/NETSCAPE support
+	else if (myField.selectionStart || myField.selectionStart == '0') {
+		var startPos = myField.selectionStart;
+		var endPos = myField.selectionEnd;
+		var scrollTop = myField.scrollTop;
+		myField.value = myField.value.substring(0, startPos)
+		              + myValue 
+                      + myField.value.substring(endPos, myField.value.length);
+		myField.focus();
+		myField.selectionStart = startPos + myValue.length;
+		myField.selectionEnd = startPos + myValue.length;
+		myField.scrollTop = scrollTop;
+	} else {
+		myField.value += myValue;
+		myField.focus();
+	}
+}
+
+function attach_image_handles()
+{
+	$('img.image_handle').click(function() {
+		editor = $('textarea#editor').get(0)
+		edInsertContent(editor, '[' + $(this).attr('id')+ ']')
+	})
+}
 
 $(document).ready(function() {
 
@@ -26,5 +61,7 @@ $(document).ready(function() {
 		)
 		
 	});
+	
+	attach_image_handles();
 
 });
