@@ -34,7 +34,7 @@ function attach_image_handles()
 	})
 }
 
-var pageDirty = true;
+var pageDirty = false;
 var msg = 'you have not yet save it!'
 	
 $(document).ready(function() {

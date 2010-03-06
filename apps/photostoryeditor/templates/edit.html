@@ -12,8 +12,7 @@
     	<li class=""><a href="#" id='preview' title='Switch to preview'>Preview</a></li>
     	<li class=''>
     		<div style='padding-left: 40px; padding-top:2px;'>
-    			<input type='button' title='Publish this post...' href="#" class="small awesome green" value='Publish'/>&nbsp;
-    			<input type='button' title='Save this post...' href="#" class="small awesome red" value='Save'/>&nbsp;
+    			<input type='button' title='Save this post...' href="#" class="small awesome blue" value='Save'/>&nbsp;
     			<input type='button' title='Back to previous page...' href="#" class="small awesome black" value='Back'/>
       		</div>
     	</li>
@@ -27,6 +26,7 @@
 <div class="span-18">
 
 <form id='post' method='POST' action='{% url article.views.edit_article id=11%}'>
+	<input type='hidden' name='images_list' value='1&#10;2&#10;3' />
 	<p>
 	<input type='edit' name='title' id='title' title='Enter the title here...' value='Share your cooking experience...'/>
 	</p>
@@ -34,7 +34,7 @@
 	<textarea id='editor' title='Write your article here...' name='content'></textarea>
 	</p>
 	<p>
-	<input type='submit' title='Publish this post...' href="#" class=" awesome green" value='Publish'/>
+	<input type='submit' title='Publish this post...' href="#" class=" awesome green large" value='Publish this post...'/>
 	</p>
 </form>
 

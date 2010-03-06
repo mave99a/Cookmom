@@ -7,8 +7,5 @@
 {% render object.attachments.ingredients %}
 </div>
 {% endif %}
-{% for img in object.images_list %}
-<img src='{% imageurl img medium %}' title='{{object.title}}'/>
-{% endfor %}
-</p>{{object.content|safe}}<p>
+<p>{% load content %} {{object.content|article_content}}</p>
 <hr class='space'/>
