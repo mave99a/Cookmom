@@ -33,6 +33,7 @@ COMBINE_MEDIA = {
         
         # plugin for jquery
         'global/js/jquery.form.js', 
+        'global/js/jquery.elastic.source.js',    #  from http://www.unwrongest.com/projects/elastic/
     ),
     # Create a combined CSS file which is called "combined-ltr.css" for
     # left-to-right text direction
@@ -116,7 +117,6 @@ INSTALLED_APPS = (
     'taggable', 
     'vote', 
     'search',
-    'photostoryeditor',
     
     'swfupload',        # app for swfupload integration
     'image',            # app to handle image upload and image url 

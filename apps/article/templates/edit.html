@@ -28,10 +28,10 @@
 <form id='post' method='POST' action='{% url article.views.edit_article id=11%}'>
 	<input type='hidden' name='images_list' value='1&#10;2&#10;3' />
 	<p>
-	<input type='edit' name='title' id='title' title='Enter the title here...' value='Share your cooking experience...'/>
+	<input type='edit' name='title' id='title' title='Enter the title here...' value='{{object.title}}'/>
 	</p>
 	<p>
-	<textarea id='editor' title='Write your article here...' name='content'></textarea>
+	<textarea id='editor' title='Write your article here...' name='content'>{{object.content}}</textarea>
 	</p>
 	<p>
 	<input type='submit' title='Publish this post...' href="#" class=" awesome green large" value='Publish this post...'/>
@@ -53,17 +53,12 @@ You can upload up to 20 photos for this post.
 </div>
 
 <ul class="imagelist">
-<li><img src='{% imageurl 1 square%}' alt='Thumnail' id='photo 1' class='image_handle' title='click insert this image to the post'/></li>
-<li><img src='{% imageurl 2 square%}' alt='Thumnail' id='photo 2' class='image_handle' title='click insert this image to the post'/></li>
-<li><img src='{% imageurl 3 square%}' alt='Thumnail' id='photo 3' class='image_handle' title='click insert this image to the post'/></li>
-<li><img src='{% imageurl 4 square%}' alt='Thumnail' id='photo 4' class='image_handle' title='click insert this image to the post'/></li>
-<li><img src='{% imageurl 5 square%}' alt='Thumnail' id='photo 5' class='image_handle' title='click insert this image to the post'/></li>
-<li><img src='{% imageurl 6 square%}' alt='Thumnail' id='photo 6' class='image_handle' title='click insert this image to the post'/></li>
-
-
+{% for imgid in object.images_list %}
+<li><img src='{% imageurl imgid square%}' alt='Thumnail' id='photo 1' class='image_handle' title='click insert this image to the post'/></li>
+{% endfor %}
 </ul>
 <br class='clear'/>
-<span>Total: 20 photos</span>
+<span>Total: {{object.images_list|length}} photo(s)</span>
 
 </div>
 </div>

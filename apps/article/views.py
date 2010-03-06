@@ -43,7 +43,7 @@ def new_article(request):
 
 @login_required
 def edit_article(request, id):
-    return update_object(request, object_id=id, form_class=ArticleForm)
+    return update_object(request, object_id=id, form_class=ArticleForm, template_name='article/edit.html')
 
 @login_required
 def delete_article(request, id):
