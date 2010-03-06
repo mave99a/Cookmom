@@ -55,7 +55,8 @@ $(document).ready(function() {
 			$('#preview-panel').html('Saving...')
 			
 			$('#preview-panel').html('Loading...')
-			$('#preview-panel').load('/article/ajax/preview/11/', 
+			preview_url = $('#preview').attr('href')
+			$('#preview-panel').load(preview_url, 
 				function() {
 			        if (typeof(FB) != 'undefined') {
 			            // make sure newly added FBML get displayed correctly
