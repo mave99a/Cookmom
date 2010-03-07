@@ -65,6 +65,7 @@ $(document).ready(function() {
 			    }
 			)
 			
+			return false;
 		});
 		
 		attach_image_handles();
