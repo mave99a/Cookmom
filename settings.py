@@ -75,6 +75,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'auth.context_processors.auth',
 )
 
+AUTHENTICATION_BACKENDS = None
+
 MIDDLEWARE_CLASSES = (
     'appstats.recording.AppStatsDjangoMiddleware',  # appstats
 

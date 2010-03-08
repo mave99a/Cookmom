@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load imageurl %}
-{% block title %}Write a new article - Cookmom{% endblock %}
+{% block title %}Editing "{{object.title}}" - Cookmom{% endblock %}
 {% block content %}
 <script>var EDITOR_PAGE=true;</script>
 <div id="navbar">
@@ -54,7 +54,7 @@ You can upload up to 20 photos for this post.
 
 <ul class="imagelist">
 {% for imgid in object.images_list %}
-<li><img src='{% imageurl imgid square%}' alt='Thumnail' id='photo 1' class='image_handle' title='click insert this image to the post'/></li>
+<li><img src='{% imageurl imgid square%}' alt='Thumnail' id='photo {{imgid}}' class='image_handle' title='click insert this image to the post'/></li>
 {% endfor %}
 </ul>
 <br class='clear'/>
