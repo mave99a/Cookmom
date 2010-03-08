@@ -135,6 +135,7 @@ INSTALLED_APPS = (
 
 # register our tag as default, so we don't need to use "{%load ...%}" all the time
 from django.template import add_to_builtins
+add_to_builtins('auth.templatetags.authtags')
 add_to_builtins('renderhelpers.templatetags.render')
 add_to_builtins('image.templatetags.imageurl')
 add_to_builtins('objectlisttag.templatetags.makeobjectlist')

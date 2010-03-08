@@ -21,15 +21,15 @@
 {% endif %}
 </div>
 
-{% if False%}
+{% endblock %}
+
+{% block side%}
+{% check_access object.author %}
 <ul>
 <li><a href='{% url article.views.edit_article id=object.id %}'>edit...</a></li>
 <li><a href='{% url article.views.delete_article id=object.id %}'>del...</a></li>
 </ul>
-{% endif %}
-{% endblock %}
-
-{% block side%}
+{% endcheck_access %}
 
 <a href='#' class='awesome green'>+ Favorite</a>
 

@@ -13,6 +13,6 @@
 <a href='{% url article.views.publish id=object.id %}' class='small awesome green ajax_action'>Publish</a>
 {% endif %}
 <a href='{% url article.views.delete_article id=object.id %}' class='small awesome red'>Delete</a>
-<a href='/edit/' class='small awesome blue'>Edit</a>
+<a href='{% url article.views.edit_article id=object.id %}' class='small awesome blue'>Edit</a>
 <a href='/edit/' class='small awesome blue'>Manage comments</a>
 </td>

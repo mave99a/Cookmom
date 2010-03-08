@@ -15,7 +15,9 @@ People
 
 {% load paginator %}
 {% paginator %}
+<div class='users_list'>
 {% render object_list templatetype=listitem%}
+</div>
 {% paginator %}
 {% endblock %}
 

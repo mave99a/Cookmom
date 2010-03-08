@@ -3,7 +3,7 @@
 {% block tags %}
 {% for tag in taggable.tags %}
 <a class='tag' href='{%url taggable.views.show_by_tag tag=tag%}' title='{{tag}}'><span class='tagtext'>{{tag}}</span>
-{% if isowner %}
+{% if editable %}
 <span class='remove' href='{%url taggable.views.remove_tags%}?tags={{tag}}&target={{taggable.target.key}}' title='Click to remove tag: {{tag}}'>&nbsp;</span>
 <span class='undo' href='{%url taggable.views.add_tags%}?tags={{tag}}&target={{taggable.target.key}}' title='Undo remove tag: {{tag}}'>&nbsp;</span>
 {% endif %}
@@ -12,7 +12,7 @@
 {% endblock %}
 </span>
 
-{% if isowner %}
+{% if editable %}
 <form id='addtags' action='{%url taggable.views.add_tags_form%}'>
 <input type='input' name='tags'/>
 <input type='hidden' name='target' value='{{target.key}}'/>

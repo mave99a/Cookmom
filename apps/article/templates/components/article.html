@@ -1,6 +1,13 @@
 <h4 class="byauthor">By <a href="{% url people.views.show_user id=object.author.id%}" title='{{object.author.name}}'>{{object.author.name}}</a> on {{object.ctime|date}}</h4>
 {% load tags%}
-<div class='tags'>{% show_tags object %}</div>
+<div class='tags'>
+{% check_access object.author %}
+{% show_tags_editable object %}
+{% else %}
+{% show_tags object %}
+{% endcheck_access %}
+
+</div>
 {% if object.attachments.ingredients %}
 <div class="mini_recipe ">
 <h3>Ingredients</h2>

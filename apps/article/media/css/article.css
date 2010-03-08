@@ -7,6 +7,11 @@
 	padding:0;
 	margin: 0;
 }
+
+.articles_list table tr:hover {
+	background: #F8F8FF; 
+} 
+
 .articles_list table tr td.photo
 {
 	width:80px;

@@ -1,4 +1,11 @@
 /*
+* user list style
+*/
+.users_list table tr:hover {
+	background: #F8F8FF; 
+} 
+
+/*
 * user list style when only display each user as an icon
 */
 
