@@ -56,7 +56,7 @@ def add_tags_form(request):
     taggable = Taggable.add_tags(obj, tags)
     
     if request.is_ajax(): 
-        result = render_block_to_string('taggable/tags.html', 'tags', {'taggable': taggable, 'isowner': True})
+        result = render_block_to_string('taggable/tags.html', 'tags', {'taggable': taggable, 'editable': True})
         return {'success': True, 'html': result}
 
  

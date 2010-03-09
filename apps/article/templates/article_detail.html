@@ -24,14 +24,19 @@
 {% endblock %}
 
 {% block side%}
-{% check_access object.author %}
+<h3>You can...</h3>
+<div>
 <ul>
-<li><a href='{% url article.views.edit_article id=object.id %}'>edit...</a></li>
-<li><a href='{% url article.views.delete_article id=object.id %}'>del...</a></li>
-</ul>
+{% check_access object.author %}
+<li><a class='awesome green' href='{% url article.views.edit_article id=object.id %}'>Edit this post</a></li>
+<li><a class='awesome red' href='{% url article.views.delete_article id=object.id %}'>Unpublish this post</a></li>
+{% else %}
+<a href='#' class='awesome green'>+ Add to the favorite</a><br/>
+<a href='#' class='awesome red'>Flag</a>
 {% endcheck_access %}
-
-<a href='#' class='awesome green'>+ Favorite</a>
+<li><a class='awesome' href='#'>Write a followup post</a></li>
+</ul>
+</div>
 
 <h3>Similar experiences</h3>
 <div>
