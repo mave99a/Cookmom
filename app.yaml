@@ -28,6 +28,6 @@ handlers:
   script: appstats/ui.py
 
 - url: /.*
-  script: main.py
+  script: bootstrap.py
   
 

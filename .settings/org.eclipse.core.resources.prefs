@@ -1,4 +1,4 @@
-#Sat Feb 20 15:48:30 PST 2010
+#Thu Mar 18 00:12:22 PDT 2010
 eclipse.preferences.version=1
 encoding//apps/article/views.py=UTF-8
 encoding//apps/auth/views.py=UTF-8
@@ -16,7 +16,10 @@ encoding//common/appenginepatch/ragendja/auth/urls.py=UTF-8
 encoding//common/appenginepatch/ragendja/auth/views.py=UTF-8
 encoding//common/appenginepatch/ragendja/dbutils.py=UTF-8
 encoding//common/appenginepatch/ragendja/middleware.py=UTF-8
+encoding//common/appenginepatch/ragendja/settings_post.py=UTF-8
+encoding//common/appenginepatch/ragendja/settings_pre.py=UTF-8
 encoding//common/appenginepatch/ragendja/template.py=UTF-8
+encoding//common/appenginepatch/ragendja/urlsauto.py=UTF-8
 encoding//libs/flickrapi/__init__.py=UTF-8
 encoding//libs/flickrapi/multipart.py=UTF-8
 encoding/flickrsettings.py=UTF-8

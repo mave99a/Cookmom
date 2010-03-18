@@ -1,22 +1,33 @@
 # -*- coding: utf-8 -*-
-from ragendja.settings_pre import *
+
 from facebooksettings import *
 from flickrsettings import * 
 
 import os
 import sys
 import flickrsettings 
+import datetime
 
 #  add 'libs' and 'apps' to python path. 
 currentpath = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(currentpath, "libs"))
 sys.path.insert(0, os.path.join(currentpath, "apps"))
+sys.path.insert(0, os.path.join(currentpath, "common/appenginepatch"))
+ROOT_URLCONF = 'urls'
+
+RUNNING_APP_ENGINE_LOCAL_SERVER = os.environ.get('SERVER_SOFTWARE', 'Dev').startswith('Dev') # set this to TRUE to get debug output
+
+DEBUG = RUNNING_APP_ENGINE_LOCAL_SERVER # For now
+
+TIME_HORIZON = datetime.timedelta(hours = 2)
+
+APPEND_SLASH = True
  
 # Increase this when you update your media on the production site, so users
 # don't have to refresh their cache. By setting this your MEDIA_URL
 # automatically becomes /media/MEDIA_VERSION/
 MEDIA_VERSION = 1
-
+DJANGO_STYLE_MODEL_KIND = False
 # By hosting media on a different domain we can get a speedup (more parallel
 # browser connections).
 #if on_production_server or not have_appserver:
@@ -44,10 +55,6 @@ COMBINE_MEDIA = {
 } 
 
 # Change your email settings
-if on_production_server:
-    DEFAULT_FROM_EMAIL = 'contact@cookmom.com'
-    SERVER_EMAIL = DEFAULT_FROM_EMAIL
-    DEBUG = True
     
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '4254425101'
@@ -73,6 +80,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
     'auth.context_processors.auth',
+)
+
+TEMPLATE_DEBUG = DEBUG
+
+TEMPLATE_DIRS = [os.path.join(os.path.dirname(__file__), 'templates')]
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.load_template_source',
+    'django.template.loaders.app_directories.load_template_source',
 )
 
 AUTHENTICATION_BACKENDS = None
@@ -128,7 +144,7 @@ INSTALLED_APPS = (
     'gaeunit',
         
     # app engine patch    
-    'appenginepatcher',
+    # 'appenginepatcher',
     'mediautils',
     'ragendja',
 )
@@ -140,34 +156,3 @@ add_to_builtins('renderhelpers.templatetags.render')
 add_to_builtins('image.templatetags.imageurl')
 add_to_builtins('objectlisttag.templatetags.makeobjectlist')
 
-
-# List apps which should be left out from app settings and urlsauto loading
-IGNORE_APP_SETTINGS = IGNORE_APP_URLSAUTO = (
-    # Example:
-    # 'django.contrib.admin',
-    # 'django.contrib.auth',
-    # 'yetanotherapp',
-)
-
-# Remote access to production server (e.g., via manage.py shell --remote)
-#
-DATABASE_OPTIONS = {
-    # Override remoteapi handler's path (default: '/remote_api').
-    # This is a good idea, so you make it not too easy for hackers. ;)
-    # Don't forget to also update your app.yaml!
-    #'remote_url': '/cookmom_remote_api_private-secret-url',
-
-    # !!!Normally, the following settings should not be used!!!
-
-    # Always use remoteapi (no need to add manage.py --remote option)
-    #'use_remote': True,
-
-    # Change appid for remote connection (by default it's the same as in
-    # your app.yaml)
-    #'remote_id': 'cookmom-app',
-
-    # Change domain (default: <remoteid>.appspot.com)
-    #'remote_host': 'beta.cookmom.com',
-}
-
-from ragendja.settings_post import *
