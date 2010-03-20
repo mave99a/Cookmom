@@ -11,7 +11,7 @@ from renderhelpers.decorators import AutoResponse
 from models import *
 from sys import maxint
 
-@AutoResponse(template='taggable/tag_list.html', autoAjax=False, redirectBack=False)
+@AutoResponse(template='tag_list.html', autoAjax=False, redirectBack=False)
 def tagcloud(request):
     object_list = Tag.cloud(100).fetch(100)
     min = 1

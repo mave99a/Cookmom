@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from ragendja.forms import FormWithSets, FormSetField
 from django.core.urlresolvers import reverse
 from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import delete_object
