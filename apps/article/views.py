@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, Http404
-from django.views.generic.list_detail import object_list, object_detail
 from django.views.generic.create_update import delete_object
 from generic_view_patch.create_update import create_object, update_object
 from renderhelpers.renderblock import direct_block_to_template
@@ -11,20 +10,41 @@ from models import Article, ArticleForm
 from auth.decorators import login_required
 from people.models import User
 
-
+@AutoResponse(template='article/article_list.html', autoAjax=False, redirectBack=False)
 def list_article(request, order=None):
     if order is None: 
         queryset = Article.get_latest()
-        extracontext = {'latest':True}
+        latest = True
     elif order == 'discuss':
         queryset = Article.get_most_discussed()
-        extracontext = {'discuss':True}
+        discuss = True
     elif order == 'favorite':
         queryset = Article.get_most_favorited()
-        extracontext = {'favorite':True}
+        favorite = True
     else:
        raise Http404('Sort order not found: %s' % order) 
-    return object_list(request, queryset, paginate_by = 10, extra_context= extracontext)
+   
+    from django.core.paginator  import Paginator, InvalidPage
+    
+    paginator = Paginator(queryset, 3,  allow_empty_first_page=True)
+    page = request.GET.get('page', 1)
+        
+    try:
+        page_number = int(page)
+    except ValueError:
+        if page == 'last':
+            page_number = paginator.num_pages
+        else:
+            # Page is not 'last', nor can it be converted to an int.
+            page_number = 1
+    try:
+        page_obj = paginator.page(page_number)
+    except InvalidPage:
+        page_obj = paginator.page(1)
+
+    object_list = page_obj.object_list
+    
+    return locals()
 
 
 @AutoResponse(template='article/article_detail.html', autoAjax=False, redirectBack=False)
