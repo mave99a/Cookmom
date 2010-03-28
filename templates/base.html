@@ -6,92 +6,89 @@
 <meta name="keywords" content="Mothers, cook, food, recipes,{% block metakey %}{% endblock %}" />
 <meta name="description" content="{% block metadesc %}CookMom.com provide free online tools such as personalized meal planner, shopping list and recipes book, which makes the users have a better experience to share recipes, cooking stories and beyond. {% endblock %}" />
 <link rel="stylesheet" type="text/css" media="screen, projection" href="{{ MEDIA_URL }}combined-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
-<!-- Framework CSS -->
-	<link rel="stylesheet" href="{{ MEDIA_URL }}blueprintcss/print.css" type="text/css" media="print">
-<!--[if IE]><link rel="stylesheet" href="{{ MEDIA_URL }}blueprintcss/ie.css" type="text/css" media="screen, projection"><![endif]-->
 <link rel="alternate" type="application/rss+xml" title="RSS Feed of {{blogtitle|safe}}" href="/feeds/latest/" />
 <link REL="SHORTCUT ICON" HREF="/favicon.ico">
 <link rel="canonical" href="{% block canonicalurl %}{{request.get_full_path}}{% endblock %}" />
 </head>
 <body>
-
-<div class="container" id="wrapper">
-
-<!-- header -->
-<div id="header">
-	<div class="span-13"> 
-		<h2 ><a href="/" title="Cookmom home page"><span>Cookmom</span></a></h2>
+<div id="main" class="container">
+	<div id="content">
+		<!-- main content -->
+		{% block content %}{% endblock %}
 	</div>
-	<div class="login">
-	{% authuserbox %}
+	
+	<!-- header -->
+	<div id="header">
+		<div class="span-13"> 
+			<h2 ><a href="/" title="Cookmom home page"><span>Cookmom</span></a></h2>
+		</div>
+		<div id="login">
+		{% authuserbox %}
+		</div>
+		<br class="clearboth"/>
+		<!-- navi menu -->
+		{% block navimenu %}	
+		<div id="navbar">
+			
+			<ul class="navi">
+		    	<li class="{%block tabHome%}{%endblock%}"><a href="/">Home</a></li>
+		    	<li class="{%block tabArticle%}{%endblock%}"><a href="/article/">Article</a></li>
+		    	<li class="{%block tabPeople%}{%endblock%}"><a href="/people/">People</a></li>
+		    	<li id="search">
+					<form action="/search/" name="SearchForm" method="get" id="searchform_main">
+					     <input name="q" id="home_search_input" type="text" value="recipes, ingredients,..."></input>
+						<input type="submit" class="awesome orange small" id="home_search_button"  value="search"></input>
+					</form>  	
+		    	</li>
+		    </ul>			
+		</div>		
+		{% endblock %}
+		<div id="breadcrumbs">
+		   {% block breadcrumb %}&nbsp;{% endblock %}
+		</div>
 	</div>
-	<br class="clearboth"/>
-	<!-- navi menu -->
-	{% block navimenu %}	
-	<div id="navbar">
-		
-		<ul class="navi">
-	    	<li class="{%block tabHome%}{%endblock%}"><a href="/">Home</a></li>
-	    	<li class="{%block tabArticle%}{%endblock%}"><a href="/article/">Article</a></li>
-	    	<li class="{%block tabPeople%}{%endblock%}"><a href="/people/">People</a></li>
-	    	<li id="search">
-				<form action="/search/" name="SearchForm" method="get" id="searchform_main">
-				     <input name="q" id="home_search_input" type="text" value="recipes, ingredients,..."></input>
-					<input type="submit" class="awesome orange small" id="home_search_button"  value="search"></input>
-				</form>  	
-	    	</li>
-	    </ul>			
-	</div>		
-	{% endblock %}
-	<div id="breadcrumbs">
-	   {% block breadcrumb %}&nbsp;{% endblock %}
+	<div id="sidecol">
+		{% block side %}{%endblock%}
 	</div>
+	<br class='clear'/>
 </div>
-<!-- main content -->
-{% block content %}{% endblock %}
 <!-- footer -->
-<div id="footer">
-	{% block footer %}
-	<div class="span-6">
-		<h5>About CookMom...</h5>
-		<ul class='box'>
-		<li><a href="/about/">About</a>
-		<li><a href="/blog/">Blog</a>
-		<li><a href="/contact/">Contact</a>
-		<li><a href="/tos/">Terms of Service</a>
-		<li><a href="/privacy/">Privacy</a>
-		</ul>
-	</div>
-	<div class="span-6">
-		<h5>Need Help?</h5>
-		<ul class='box'>
-		<li><a href="/faq/">FAQ</a>
-		<li><a href="http://www.facebook.com/pages/Cookmom/306987525097"  target='blank' class="icon facebook">Become a fans ...</a>
-		<li><a href="http://twitter.com/cookmomtweet/" target='blank'>Follow us on twitter...</a>
-		<li><a href="#" title="Subscribe to the RSS feed" class='icon feed'>Subscribe</a></li>
-		</ul>
-	</div>
-	<div class="span-6">
-		<h5>Leadersboard</h5>
-		<ul class='box'>
-		<li><a href="/toprecipes/">Top recips</a></li>
-		<li><a href="/topusers/">Top cookmoms</a></li>
-		<li><a href="/topusers/">Best of the week</a></li>
-		</ul>
-	</div>
-	<div class="span-6 last">
-		<h5>Cookmom Mobile</h5>
-		<p class='box'>
-		Point your mobile browser to <a href='http://m.cookmom.com{{request.get_full_path}}'>m.cookmom.com</a> or scan bar code to view mobile version of this page.<br/>
-		<a href='#' title='What is this? click for explain.'><img src='http://chart.apis.google.com/chart?cht=qr&chs=96&chld=Q|0&choe=UTF-8&chl=http://m.cookmom.com{{request.get_full_path}}'/></a>
+<div class="container">
+	<div id="footer">
+		{% block footer %}
+		<div class="col-1-3">
+			<h5>About CookMom...</h5>
+			<ul class='box'>
+			<li><a href="/about/">About</a>
+			<li><a href="/blog/">Blog</a>
+			<li><a href="/contact/">Contact</a>
+			<li><a href="/tos/">Terms of Service</a>
+			<li><a href="/privacy/">Privacy</a>
+			</ul>
+		</div>
+		<div class="col-1-3">
+			<h5>Need Help?</h5>
+			<ul class='box'>
+			<li><a href="/faq/">FAQ</a>
+			<li><a href="http://www.facebook.com/pages/Cookmom/306987525097"  target='blank' class="icon facebook">Become a fans ...</a>
+			<li><a href="http://twitter.com/cookmomtweet/" target='blank'>Follow us on twitter...</a>
+			<li><a href="#" title="Subscribe to the RSS feed" class='icon feed'>Subscribe</a></li>
+			</ul>
+		</div>
+		<div class="col-1-3">
+			<h5>Cookmom Mobile</h5>
+			<p class='box'>
+			Point your mobile browser to <a href='http://m.cookmom.com{{request.get_full_path}}'>m.cookmom.com</a> or scan bar code to view mobile version of this page.<br/>
+			<a href='#' title='What is this? click for explain.'><img src='http://chart.apis.google.com/chart?cht=qr&chs=96&chld=Q|0&choe=UTF-8&chl=http://m.cookmom.com{{request.get_full_path}}'/></a>
+			</p>
+		</div>	
+		{% endblock %}
+		<br class='clear'>
+		<p id='footnote'>
+		All original content is available as  <a href="http://creativecommons.org/licenses/by-sa/2.5/" id="contentLicense" class="navLink">Creative Commons Attribution-ShareAlike</a><br/>
+		Copyright &copy; 2010, CookMom.com, powered by Google App Engine.
 		</p>
-	</div>	
-	{% endblock %}
-	<br class='clear'>
-	<p id='footnote'>
-	All original content is available as  <a href="http://creativecommons.org/licenses/by-sa/2.5/" id="contentLicense" class="navLink">Creative Commons Attribution-ShareAlike</a><br/>
-	Copyright &copy; 2010, CookMom.com, powered by Google App Engine.
-	</p>
+	</div>
 </div>
 
 <!-- Load jQuery from Google's CDN service.  --> 

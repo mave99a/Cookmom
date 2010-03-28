@@ -98,7 +98,6 @@ INSTALLED_APPS = (
     # come first.
     # javascripts lib, css framework
     # 'jquerylib',    # we will use Google's CDN,  so won't include this app here. 
-    'blueprintcss',
     'lightbox', 
           
     # tags

@@ -1,10 +1,12 @@
-body {
-	padding: 10px;
-	background: #eee url(img/bg.gif);
-}
+/*-- http://www.sohtanaka.com/web-design/markup-hierarchy-advantages-seo/ --*/
 
-a {
-	outline: none;
+body {
+	margin: 0;
+	padding-top: 10px;
+	font-size: 10px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1.8em;
+	background: #ccc url(img/bg.gif);
 }
 
 .container
@@ -14,9 +16,157 @@ a {
   	-webkit-border-radius: 5px;
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-	
-  	padding: 10px;
 }
+
+/*--Global Property--------------------------------------------*/
+
+*{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5 { 
+	margin: 10px 0; 
+	padding: 10px 0; 
+	font-family: Georgia, "Times New Roman", Times, serif; 
+	font-weight: normal;
+	line-height: 120%;
+}
+h1 {font-size: 2.5em;}
+h2 {font-size: 2em;}
+h3 {font-size: 1.5em;}
+h4 {font-size: 1.2em;}
+h5 {font-size: 1em;}
+
+p {margin: 5px 0; padding: 5px 0;}
+a {
+	outline: none;
+	text-decoration: none;
+	border: none;
+}
+
+a img {
+	border: none;
+	}
+
+.clear {
+	clear: both;	
+}
+
+/*--Layout Property--------------------------------------------*/
+
+#main {
+	height: 100%;
+	min-height: 724px;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+}
+*html #main { height: 724px; overflow: visible;}
+.container {
+	margin: 0 auto;
+	width: 970px;
+	font-size: 1.2em;
+}
+
+/*--Header Property---------------*/
+#header {
+	width: 100%;
+	float: left;
+	height: 80px;
+	position: absolute;
+	background: #fff;
+	top: 0;
+	left: 0;
+	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+}
+
+	#header h2 {
+		margin: 0; 
+		padding: 0;
+	}
+	#header h2 a {
+		color: #000; 
+		text-decoration: none; 
+		display: block;
+		height: 55px;
+		width: 210px;
+		background:url(img/logo.png) no-repeat;
+		margin: 10px 0 0 15px;
+	}
+	
+	#header h2  span {
+		display: none; 
+	}
+	
+	#header p {
+		margin: 0 0 0 15px;
+		padding: 0;
+		color: #999;
+		font-size: 11px;
+	}
+	
+#header-bottom {
+	background: #fff;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+
+}
+
+#login{
+	height: 20px;
+	top: 0;
+	right: 0px;
+	padding: 3px 10px 3px 10px;
+	position: absolute;	
+}
+
+/*--Side Col Property---------------*/
+#sidecol {
+	float: right;
+	width: 300px;
+	position: absolute;
+	top: 80px;
+	left: 665px;
+	border-left: 1px dotted #eee;
+	padding: 10px;
+}
+
+/*--Content Property---------------*/
+#content {
+	float: left;
+	display: inline;
+	width: 620px;
+	margin: 80px 0 0 0;
+	padding: 0px 20px 10px 20px;
+}
+/*--Footer Property---------------*/
+#footer {
+	margin-top: 10px;
+	padding-top:10px;
+	width: 100%
+	background: #fff;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+.col-1-3 {
+	width: 30%;
+	float: left;
+	padding-left: 20px;
+}
+
+#footnote {
+	text-align: center;
+	font-style: italic;
+	}
+	
+/*------------------------------------------------------------------------------------------*/
+	
+a {
+	outline: none;
+}
+
+
 
 .clearboth
 {
@@ -74,42 +224,7 @@ h1 {
 	padding: 10px 0 0 10px;
 }
 
-/*
-*  Header part
-*/
 
-#header {
-	padding-top: 5px;
-}
-	#header h2 {
-		margin: 0; 
-		padding: 0;
-	}
-	#header h2 a {
-		color: #000; 
-		text-decoration: none; 
-		display: block;
-		height: 55px;
-		width: 210px;
-		background:url(img/logo.png);
-	}
-	
-	#header h2  span {
-		display: none; 
-	}
-	
-	.login {
-		text-align: right;
-		padding-right: 10px;
-		margin-top: 10px;
-	}
-	#header .vcard a img.photo {
-	  width: 16px;
-	  height: 16px;
-	  vertical-align:middle;
-	  border: 1px solid #eee;
-	  padding: 1px;
-	}
 	
 /*
 * navigation bar
@@ -124,10 +239,6 @@ ul.navi, li {
 
 ul.navi {
 	 background: #eee;
-	-moz-border-radius-topleft: 5px;
-	-moz-border-radius-topright: 5px;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
 	 height:30px;
 	 padding-left: 10px;
 }
@@ -195,12 +306,7 @@ ul.navi li {
   font-size: 10px;
   padding-left: 15px;
   margin-bottom: 10px;
-  border: 1px solid #eee;
-  border-top: none;
- 	-moz-border-radius-bottomleft: 5px;
-	-moz-border-radius-bottomright: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-webkit-border-bottom-right-radius: 5px;
+  border-bottom: 1px solid #eee;
 }
 
 #breadcrumbs a, #breadcrumbs a:visited, #breadcrumbs span {

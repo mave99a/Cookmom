@@ -15,9 +15,6 @@
 # Import default app urlpatterns, enable automatic url from apps
 from ragendja.urlsauto import urlpatterns
 from django.conf.urls.defaults import *
-from django.contrib import admin
-
-admin.autodiscover()
 
 urlpatterns = patterns('',   
 ) + urlpatterns
