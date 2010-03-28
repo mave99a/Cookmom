@@ -30,6 +30,8 @@ def list_article(request, order=None):
 @AutoResponse(template='article/article_detail.html', autoAjax=False, redirectBack=False)
 def show_article(request, id, title=None):
     object = Article.get_by_id(int(id))
+    if object is None: 
+        raise Http404('Post %s Not found.' % id) 
     return locals()
 
 @login_required
@@ -37,7 +39,7 @@ def new_article(request):
     drafts_count = Article.all().filter('author =', request.current_user).filter('published =', False).count()
     MAX_ALLOW_DRAFTS = 5
     if drafts_count < MAX_ALLOW_DRAFTS : 
-        new_draft = Article(published=False, author=request.current_user)
+        new_draft = Article(title='Untitled', content='', published=False, author=request.current_user)
         new_draft.put()
         return edit_article(request, new_draft.id())
 

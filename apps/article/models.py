@@ -1,9 +1,10 @@
 from google.appengine.ext import db
+from google.appengine.ext.db import djangoforms
 import datetime
 from people.models import User
-from django import forms
 from django.core.urlresolvers import reverse
 from django.db import models
+
     
 class Article(db.Model):
     title = db.StringProperty()
@@ -67,7 +68,7 @@ class Article(db.Model):
 
 
 
-class ArticleForm(forms.ModelForm):
+class ArticleForm(djangoforms.ModelForm):
     class Meta:
         model = Article
         exclude = ('author', 'ctime', 'mtime', 'lang', 'published', 'read_count', 'comment_count')        
