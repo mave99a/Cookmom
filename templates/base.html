@@ -11,6 +11,12 @@
 <link rel="canonical" href="{% block canonicalurl %}{{request.get_full_path}}{% endblock %}" />
 </head>
 <body>
+		{% block topad %}
+		<div class="adbanner">
+		{% include "ad/leaderboard.html" %}
+		</div>
+		{%endblock%}
+					
 <div id="main" class="container">
 	<div id="content">
 		<!-- main content -->
@@ -19,9 +25,8 @@
 	
 	<!-- header -->
 	<div id="header">
-		<div class="span-13"> 
-			<h2 ><a href="/" title="Cookmom home page"><span>Cookmom</span></a></h2>
-		</div>
+
+		<h2 ><a href="/" title="Cookmom home page"><span>Cookmom</span></a></h2>
 		<div id="login">
 		{% authuserbox %}
 		</div>
@@ -46,12 +51,6 @@
 		<div id="breadcrumbs">
 		   {% block breadcrumb %}&nbsp;{% endblock %}
 		</div>
-		
-		{% block topad %}
-		<div class="adbanner">
-		{% include "ad/leaderboard.html" %}
-		</div>
-		{%endblock%}
 
 	</div>
 	<div id="sidecol">
@@ -60,7 +59,7 @@
 	<br class='clear'/>
 </div>
 <!-- footer -->
-<div class="container">
+<div class="footcontainer">
 	<div id="footer">
 		<div class="adbanner">
 		{% include "ad/leaderboard.html" %}
