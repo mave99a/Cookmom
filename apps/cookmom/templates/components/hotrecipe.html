@@ -1,5 +1,5 @@
 <div class="recipes_photo_medium">
-	<a href='{% url article.views.show_article id=object.id title=object.title%}' title="{{object.title}}">
+	<a href='{% url article_detail id=object.id title=object.title%}' title="{{object.title}}">
 	{% load imageurl %}
 	<img src="{%imageurl object.image small %}" alt="{{object.title}}"/>
 	</a>

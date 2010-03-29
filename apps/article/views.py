@@ -30,10 +30,6 @@ class ArticleViews(GenericViews):
         
         return GenericViews.object_list(request, queryset)
 
-
-
-
-
 @login_required
 def new_article(request):
     drafts_count = Article.all().filter('author =', request.current_user).filter('published =', False).count()
