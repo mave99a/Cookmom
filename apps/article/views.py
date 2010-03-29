@@ -4,55 +4,68 @@ from django.http import HttpResponse, Http404
 from django.views.generic.create_update import delete_object
 from generic_view_patch.create_update import create_object, update_object
 from renderhelpers.renderblock import direct_block_to_template
-from renderhelpers.decorators import AutoResponse
+from renderhelpers.decorators import AutoResponse, AutoRendResponse
 
 from models import Article, ArticleForm
 from auth.decorators import login_required
 from people.models import User
 
-@AutoResponse(template='article/article_list.html', autoAjax=False, redirectBack=False)
-def list_article(request, order=None):
-    if order is None: 
-        queryset = Article.get_latest()
-        latest = True
-    elif order == 'discuss':
-        queryset = Article.get_most_discussed()
-        discuss = True
-    elif order == 'favorite':
-        queryset = Article.get_most_favorited()
-        favorite = True
-    else:
-       raise Http404('Sort order not found: %s' % order) 
-   
-    from django.core.paginator  import Paginator, InvalidPage
+from django.core.paginator  import Paginator, InvalidPage
+class GenericViews():
+
+    @classmethod
+    def object_list(cls, request, queryset = None):        
+        paginator = Paginator(queryset, 3,  allow_empty_first_page=True)
+        page = request.GET.get('page', 1)
+            
+        try:
+            page_number = int(page)
+        except ValueError:
+            if page == 'last':
+                page_number = paginator.num_pages
+            else:
+                # Page is not 'last', nor can it be converted to an int.
+                page_number = 1
+        try:
+            page_obj = paginator.page(page_number)
+        except InvalidPage:
+            page_obj = paginator.page(1)
     
-    paginator = Paginator(queryset, 3,  allow_empty_first_page=True)
-    page = request.GET.get('page', 1)
+        object_list = page_obj.object_list
         
-    try:
-        page_number = int(page)
-    except ValueError:
-        if page == 'last':
-            page_number = paginator.num_pages
-        else:
-            # Page is not 'last', nor can it be converted to an int.
-            page_number = 1
-    try:
-        page_obj = paginator.page(page_number)
-    except InvalidPage:
-        page_obj = paginator.page(1)
+        return AutoRendResponse(request, template='article/article_list.html', autoAjax=False, redirectBack=False, context=locals())
 
-    object_list = page_obj.object_list
+
+    @classmethod
+    def detail(cls, request, id, title=None):
+        object = cls.model.get_by_id(int(id))
+        if object is None: 
+            raise Http404('%s Not found.' % id) 
+      
+        return AutoRendResponse(request, template='article/article_detail.html', autoAjax=False, redirectBack=False, context=locals())
+        
+class ArticleViews(GenericViews):
+    model = Article
     
-    return locals()
+    @classmethod
+    def object_list(cls, request, order=None):
+        if order is None: 
+            queryset = Article.get_latest()
+            latest = True
+        elif order == 'discuss':
+            queryset = Article.get_most_discussed()
+            discuss = True
+        elif order == 'favorite':
+            queryset = Article.get_most_favorited()
+            favorite = True
+        else:
+           raise Http404('Sort order not found: %s' % order) 
+        
+        return GenericViews.object_list(request, queryset)
 
 
-@AutoResponse(template='article/article_detail.html', autoAjax=False, redirectBack=False)
-def show_article(request, id, title=None):
-    object = Article.get_by_id(int(id))
-    if object is None: 
-        raise Http404('Post %s Not found.' % id) 
-    return locals()
+
+
 
 @login_required
 def new_article(request):

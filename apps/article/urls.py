@@ -8,8 +8,8 @@ urlpatterns = patterns('',
     (r'^dele/(?P<id>\d+)/$', delete_article), 
     
     # display the articles
-    (r'^(?P<id>\d+)/(?P<title>.+)/$', show_article),
-    (r'^(?P<id>\d+)/$', show_article),    
+    url(r'^(?P<id>\d+)/(?P<title>.+)/$', ArticleViews.detail, name='article_detail'),
+    url(r'^(?P<id>\d+)/$', ArticleViews.detail, name='article_detail'),    
     
     (r'^ajax/preview/(?P<id>\d+)/$', ajax_preview),
     (r'^ajax/save/(?P<id>\d+)/$', ajax_save),
@@ -17,6 +17,6 @@ urlpatterns = patterns('',
     (r'^unpublish/(?P<id>\d+)/$', unpublish),
     
     # list the articles
-    (r'^$', list_article), 
-    (r'^(?P<order>\w+)/$', list_article), 
+    url(r'^$', ArticleViews.object_list, name='article_list'), 
+    url(r'^(?P<order>\w+)/$', ArticleViews.object_list,name='article_list' ), 
     )
