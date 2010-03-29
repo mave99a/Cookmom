@@ -4,10 +4,10 @@ from views import *
 
 urlpatterns = patterns('',
     (r'^new/$', new_article), 
-    (r'^edit/(?P<id>\d+)/$', edit_article),
-    (r'^dele/(?P<id>\d+)/$', delete_article), 
+    url(r'^edit/(?P<id>\d+)/$', ArticleViews.update, name='article_edit'),
     
-    # display the articles
+    url(r'^dele/(?P<id>\d+)/$', ArticleViews.delete, name='article_delete'), 
+
     url(r'^(?P<id>\d+)/(?P<title>.+)/$', ArticleViews.detail, name='article_detail'),
     url(r'^(?P<id>\d+)/$', ArticleViews.detail, name='article_detail'),    
     
@@ -17,6 +17,6 @@ urlpatterns = patterns('',
     (r'^unpublish/(?P<id>\d+)/$', unpublish),
     
     # list the articles
-    url(r'^$', ArticleViews.object_list, name='article_list'), 
-    url(r'^(?P<order>\w+)/$', ArticleViews.object_list,name='article_list' ), 
+    url(r'^$', ArticleViews.list, name='article_list'), 
+    url(r'^(?P<order>\w+)/$', ArticleViews.list,name='article_list' ), 
     )

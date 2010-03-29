@@ -28,8 +28,8 @@
 <div>
 <ul>
 {% check_access object.author %}
-<li><a class='awesome green' href='{% url article.views.edit_article id=object.id %}'>Edit this post</a></li>
-<li><a class='awesome red' href='{% url article.views.delete_article id=object.id %}'>Unpublish this post</a></li>
+<li><a class='awesome green' href='{% url article_edit id=object.id %}'>Edit this post</a></li>
+<li><a class='awesome red' href='{% url article_delete id=object.id %}'>Unpublish this post</a></li>
 {% else %}
 <a href='#' class='awesome green'>+ Add to the favorite</a><br/>
 <a href='#' class='awesome red'>Flag</a>

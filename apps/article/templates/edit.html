@@ -25,7 +25,7 @@
 <div id='editor-panel'>
 <div class="span-18">
 
-<form id='post' method='POST' action='{% url article.views.edit_article id=object.id%}'>
+<form id='post' method='POST' action='{% url article_edit id=object.id%}'>
 	<input type='hidden' name='images_list' value='{{object.images_list|join:"&#10;" }}' />
 	<p>
 	<input type='edit' name='title' id='title' title='Enter the title here...' value='{{object.title}}'/>
