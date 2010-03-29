@@ -4,8 +4,8 @@ from django.http import HttpResponse, Http404
 from django.views.generic.create_update import delete_object
 from generic_view_patch.create_update import create_object, update_object
 from renderhelpers.renderblock import direct_block_to_template
-from renderhelpers.decorators import AutoResponse, AutoRendResponse
-
+from renderhelpers.utils import AutoRendResponse
+from renderhelpers.decorators import AutoResponse
 from models import Article, ArticleForm
 from auth.decorators import login_required
 from people.models import User
