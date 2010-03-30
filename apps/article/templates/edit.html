@@ -9,7 +9,7 @@
 	</div>
 	<ul class="tab">
 		<li class="active"><a href="#" id='editor' title='Switch to editor'>Editor</a></li>
-    	<li class=""><a href='/article/ajax/preview/{{object.id}}/' id='preview' title='Switch to preview'>Preview</a></li>
+    	<li class=""><a href='{% url article_preview id=object.id%}' id='preview' title='Switch to preview'>Preview</a></li>
     	<li class=''>
     		<div style='padding-left: 40px; padding-top:2px;'>
     			<input type='button' title='Save this post...' href="#" class="small awesome blue" value='Save'/>&nbsp;

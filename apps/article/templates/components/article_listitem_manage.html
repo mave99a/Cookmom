@@ -10,7 +10,7 @@
 {% if object.published %}
 <a href='{% url article.views.unpublish id=object.id %}' class='small awesome red ajax_action'>make draft</a>
 {% else %}
-<a href='{% url article.views.publish id=object.id %}' class='small awesome green ajax_action'>Publish</a>
+<a href='{% url article_publish id=object.id %}' class='small awesome green ajax_action'>Publish</a>
 {% endif %}
 <a href='{% url article_delete id=object.id %}' class='small awesome red'>Delete</a>
 <a href='{% url article_edit id=object.id %}' class='small awesome blue'>Edit</a>

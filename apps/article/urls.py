@@ -3,7 +3,8 @@ from django.views.generic.simple import direct_to_template
 from views import *
 
 urlpatterns = patterns('',
-    (r'^new/$', new_article), 
+    url(r'^new/$', ArticleViews.new_article, name='article_new'), 
+    
     url(r'^edit/(?P<id>\d+)/$', ArticleViews.update, name='article_edit'),
     
     url(r'^dele/(?P<id>\d+)/$', ArticleViews.delete, name='article_delete'), 
@@ -11,10 +12,11 @@ urlpatterns = patterns('',
     url(r'^(?P<id>\d+)/(?P<title>.+)/$', ArticleViews.detail, name='article_detail'),
     url(r'^(?P<id>\d+)/$', ArticleViews.detail, name='article_detail'),    
     
-    (r'^ajax/preview/(?P<id>\d+)/$', ajax_preview),
-    (r'^ajax/save/(?P<id>\d+)/$', ajax_save),
-    (r'^publish/(?P<id>\d+)/$', publish),
-    (r'^unpublish/(?P<id>\d+)/$', unpublish),
+    url(r'^ajax/preview/(?P<id>\d+)/$', ArticleViews.ajax_preview, name='article_preview'),
+    url(r'^ajax/save/(?P<id>\d+)/$', ArticleViews.ajax_save, name='article_save'),
+    
+    url(r'^publish/(?P<id>\d+)/$', ArticleViews.publish, name='article_publish'),
+    url(r'^unpublish/(?P<id>\d+)/$', ArticleViews.publish, name='article_unpublish'),
     
     # list the articles
     url(r'^$', ArticleViews.list, name='article_list'), 
